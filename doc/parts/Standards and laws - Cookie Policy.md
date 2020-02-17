@@ -19,9 +19,9 @@ A session cookie is used to identify a particular visit to our Website. These co
 
 A persistent cookie will remain on your devices for a set period of time specified in the cookie. We use these cookies where we need to identify you over a longer period of time. For example, we would use a persistent cookie if you asked that we keep you signed in.
 
-### **How do third parties use cookies on the BestWebshop Website?**
+### **How do third parties use cookies on the XYZ-books Website?**
 
-Third party companies like analytics companies and ad networks generally use cookies to collect user information on an anonymous basis. They may use that information to build a profile of your activities on the BestWebshop Website and other websites that you've visited.
+Third party companies like analytics companies and ad networks generally use cookies to collect user information on an anonymous basis. They may use that information to build a profile of your activities on the XYZ-books website and other websites that you've visited.
 
 ### **What are your cookies options?**
 
