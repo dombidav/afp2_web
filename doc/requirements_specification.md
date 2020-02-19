@@ -5,7 +5,7 @@
 <TEXT>
 
 # Client Report
-<TEXT>
+To keep this document easy to understand client report is not included. The original transcript is available [here](https://github.com/dombidav/afp2_web/blob/master/doc/parts/Client%20Report.md).
 
 # Goals
 <TEXT>
