@@ -22,9 +22,9 @@ When you register for an Account, we may ask for your contact information, inclu
 
 We use the information we collect in various ways, including to:
 
--   Provide, operate, and maintain our webste
--   Improve, personalize, and expand our webste
--   Understand and analyze how you use our webste
+-   Provide, operate, and maintain our website
+-   Improve, personalize, and expand our website
+-   Understand and analyze how you use our website
 -   Develop new services, features, and functionality
 -   Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the webste, and for marketing and promotional purposes
 -   Send you emails
