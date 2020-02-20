@@ -3,17 +3,14 @@ Our team is a small but ambitious web developer team that aims to achieve the hi
 
 # About this document
 Our team accepted a commission of creating a fully functional webshop for *XYZ-Books Kft*. Following the first meeting with the company representatives, this document will describe the project under development. For the full transcript of the meeting see the client report.
-This document establishes the basis for the agreement between *XYZ-Books Kft*. and our team on how the software product should function.
-The software requirements specification document lists requirements for the project development.
+This document together with the Requirement Specification establishes the basis for the agreement between *XYZ-Books Kft*. and our team on how the software product should function.
+The functional specification document lists working functions and features for the project under development.
 
 # Client Report
 To keep this document easy to understand client report is not included. The original transcript is available [here](https://github.com/dombidav/afp2_web/blob/master/doc/parts/Client%20Report.md).
 
-# Goals
-<TEXT>
-
 # Current State
-<TEXT>
+XYZ-Books Kft. is a relatively new bookstore chain with shops in Budapest and Eger. The company sells both physical copies and e-books in multiple languages mainly Hungarian, English and German. As the customer base is growing rapidly it became harder and harder to complete orders in only these two locations over time. For this reason, XYZ-Books decided to expand to new cities and open a webshop, so customers can place orders on books from home.  As of now, the company has a website at XYZ-books.example.com, however, this site is a static website only containing basic contact information. Having a webshop would help the company keep in touch with customers, and help customers to purchase more easily and from a much wider inventory. That is why XYZ-Books Kft. contacted us.
 
 # Standards, Laws
 ## General Standards
@@ -139,3 +136,6 @@ As a result, customers will more likely spend their money on books at the XYZ bo
 **Product management:** The admin should be able to add, remove and modify books.  These functions should be user friendly and easy to do as well. Furthermore, they should be able to give discount on specific books and combination of books, which should be displayed on the shop page, the product page as well as on the order page.
 
 **Order management:** The admin should be able to review and manage the incoming orders.
+
+# Design Mockups
+<TEXT>
