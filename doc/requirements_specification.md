@@ -6,7 +6,7 @@ Our team is a small but ambitious web developer team that aims to achieve the hi
 
 Our team accepted a commission of creating a fully functional webshop for *XYZ-Books Kft*. Following the first meeting with the company representatives, this document will describe the project under development. For the full transcript of the meeting see the client report.
 This document together with the Requirement Specification establishes the basis for the agreement between *XYZ-Books Kft*. and our team on how the software product should function.
-The functional specification document lists working functions and features for the project under development.
+The software requirements specification document lists requirements for the project under development.
 
 # Client Report
 
