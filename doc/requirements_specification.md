@@ -31,6 +31,20 @@ Furthermore, ordering an item online is much more convinient than taking any for
 As a result, customers will more likely spend their money on books at the XYZ bookshop and hopefully they want to use the online bookstore more and more often, because it is so much easier if they can make an order from their computer at home, or from their phone at work, or any remote place that is not any of the bookstores of the Company. That is the main reason the website shall be created and help to make the customers' lives so much easier.
 
 # Requested business model
-<TEXT>
+- Customers must have an internet connection in order to connect to the website and use it without any disruption.
+
+- Being a registered user is not neccesary for online purchases.
+
+- Users who registered and logged in, they can use extra functions (for example a "favorites" option where they can save the items they want to buy later)
+
+- Database connection has to be set and fully functional.
+
+- Users have to use a 16:9 pc monitor for the best experience but other aspect rations can be used too.
+
+- Users have to be logged in in order to reach the profile page – guest users do not have a profile page, and only have limited permission to most of the possibilities (mostly only read, but no write.)
+
+- Admins can add, they can delete or modify the items on the online bookstore.
+
+- Admins can set discounts to certain books for limited time.
 
 # Requirement list
