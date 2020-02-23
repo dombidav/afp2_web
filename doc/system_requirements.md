@@ -367,7 +367,7 @@ Ref: address.country > country.id
 ```
 
 ### UML
-![Database plan in UML](%)
+![Database plan in UML](https://github.com/dombidav/afp2_web/raw/master/doc/xyz-books_database_uml.png)
 
 
 # Standards and Laws
