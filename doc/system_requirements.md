@@ -119,9 +119,71 @@
 
 <TEXT>
 
-# Permission Scheme
 
-<TEXT>
+# Permission Scheme  
+  
+
+As the webshop will implement a user authentication system, we must determine who can access the resources, what is allowed for them and what is not. These permissions are the following:  
+  
+
+## Guest  
+  
+
+Registration is recommended but not necessary. Every unregistered or logged out visitor is in this category.  
+Guests are allowed to:  
+
+- See informational pages (about us, policies, etc.)  
+- List every item in the shop inventory, if it is not deleted or hidden.  
+- Use the item filters.  
+- Show the details of a specific item.  
+- Purchase items  
+- Registrate a new account  
+- Log In to an existing account  
+- Ask for password reset on an existing account  
+  
+
+## Customer  
+  
+
+A customer is a user who registered through the registration form of the webshop.  
+They are allowed to:  
+
+- See informational pages (about us, policies, etc.)  
+- See their own profile  
+- Edit the following fields on their own account:  
+- Full name  
+- Email  
+- Password  
+- Date of birth  
+- Default UI language (in a later version)  
+- Saved billing address  
+- Saved shipping address  
+- List every item in the shop inventory, if it is not deleted or hidden.  
+- Use the item filters.  
+- Show the details of a specific item.  
+- Purchase items  
+- Log Out to an existing account  
+  
+
+## Secretary  
+  
+
+This role can only be given by an Administrator. This role is responsible for managing stock items. Secretaries have every permission as a customer, furthermore, they can:  
+
+- Add new items  
+- Remove items  
+- Edit every field on items except the ID field.  
+  
+
+## Support  
+  
+
+This role can only be given by an Administrator. This role is responsible for the user helpdesk. Supports have every permission as a customer, furthermore, they can:  
+
+- See every detail on customers  
+- Modify every field on customers except ID  
+- See every detail on orders  
+- Modify every field on orders except ID
 
 # Database
 
