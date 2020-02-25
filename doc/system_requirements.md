@@ -98,13 +98,17 @@
 **Data modification:** The customer should be able to modify his/her personal informations at the Pofile Page. (after some sort of verification)
 
 
-<TEXT>
+## Management requirements 
+**Add product:** Should be able to add new product which are displayed at the shop page. They should be able to give the product"s title, author, publisher, page number, hard-back/paperback, description, language, year of publication and ISBN. As well as the price and possible discounts.
 
 
-## Management requirements – What should staff and management be able to do? Examples: access admin panel, check order history, create invoices, etc.
+**Delete product:** Should be able to delete product. After that the product is no longer available at the Shop Page.
 
-<TEXT>
 
+**Modify product:** Should be able to modify a product's properties. After the modification, the product displays with the new properties at the Shop Page and the Product Page.
+
+
+**Order management:** Should be able to rewiew the incoming orders.
 
 ## Marketing requirements – What type of marketing activities should your website support? Examples: launch email marketing campaigns, create discounts and promo codes/gift cards, change cart price rules, etc.
 
