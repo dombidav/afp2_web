@@ -1,4 +1,4 @@
-# Overview
+﻿# Overview
 
 ## About this document
 
@@ -73,7 +73,30 @@
 
 # Functional Requirements
 
-## UX requirements – What should users be able to do? How can they interact with your website? Examples: buy products, add products to cart, go through secure checkout process, pay online, etc.
+## UX requirements 
+**Browsing:** The customer should be able to look around between the products at the Shop Page.
+
+
+**Search:** The customer should be able to filter and search products. The user could search a book by its name, author, publisher or category.
+
+
+**Detailed information:** The customer should be able to get detailed informations about the product of his/her choice. 
+
+
+**Shopping cart:** The customer should be able to add products to his/her cart. 
+
+
+**Wish list:** The customer should be able to add products to his/her wish list.
+
+
+**Purchase:** The customer should be able to buy products. They could buy the products in their shopping cart. They can finalize their order by giving their shipping information. They should select the mode of delivery (the delivery company, the place of receipt). Moreover, they should choose the payment method. They should be able to use coupons.
+
+
+**Register:** The users should be able to sign up. This is also required for shopping and to use the shopping cart and the wish list. After registration they will have a Profile Page.
+
+
+**Data modification:** The customer should be able to modify his/her personal informations at the Pofile Page. (after some sort of verification)
+
 
 <TEXT>
 
