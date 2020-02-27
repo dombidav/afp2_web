@@ -15,7 +15,8 @@
 
 ## Content management system (CMS) – Laravel
 
-<TEXT>
+Laravel is a free open source php web framework indtended for the development of web applications following the model–view–controller (MVC) architectural pattern and based on Symfony. Some of the features of Laravel are a modular packaging system with a dedicated dependency manager, different ways for accessing relational databases, utilities that aid in application deployment and maintenance, and its orientation toward syntactic sugar.
+We are going to use this system to make the project building procedure faster.
 
 
 ## Web framework – Bootstap
