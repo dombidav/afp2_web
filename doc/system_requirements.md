@@ -9,7 +9,8 @@ The software requirements specification document lists requirements for the proj
 
 ## Project overview
 
-<TEXT>
+This document contains the various technologies and softwares that are gonna be used during development, the Business Requirements, Goals and objectives of the project, what reseources will be used during development, the work schedule, the team members that are going to work on this project, what members doing what in said project, the functional requirements of the project, the features requested by the clients, the database structure and plan, the laws and industry standards that this project is subjected, regulations, terms and conditions, privacy policy, consent about user data collecting and how said information is stored, cookies, logging, advertising policies, third party privacy policies, CCPA and GDPR data protection rights, and child protection services(childproofing the webshop).
+The clients were really specific about what they wanted, that maskes our job much easier.
 
 
 
