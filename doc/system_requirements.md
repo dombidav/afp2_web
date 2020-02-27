@@ -2,9 +2,7 @@
 
 ## About this document
 
-Our team accepted a commission of creating a fully functional webshop for *XYZ-Books Kft*. Following the first meeting with the company representatives, this document will describe the project under development. For the full transcript of the meeting see the client report.
-This document together with the Requirement Specification establishes the basis for the agreement between *XYZ-Books Kft*. and our team on how the software product should function.
-The software requirements specification document lists requirements for the project under development.
+<TEXT>
 
 
 ## Project overview
@@ -17,45 +15,37 @@ The software requirements specification document lists requirements for the proj
 
 ## Content management system (CMS) – Laravel
 
-+Laravel is a free open source php web framework indtended for the development of web applications following the model–view–controller (MVC) architectural pattern and based on Symfony. Some of the features of Laravel are a modular packaging system with a dedicated dependency manager, different ways for accessing relational databases, utilities that aid in application deployment and maintenance, and its orientation toward syntactic sugar.
-We are going to use this system to make the project building procedure faster.
+<TEXT>
 
 
 ## Web framework – Bootstap
 
-Bootstap will be used to make the dynamic layout of the webshop, so it works smoothly on all resolutions in the browsers.
+<TEXT>
 
 
 ## Web server – Apache
 
-An Apache web server will be used to store the database information, in which we will store the database writen in MySQL structure.
+<TEXT>
 
 
 ## Programming language – PHP
 
-We are going to write our code in php, since it is the most used programming language for building websites.
-The PHP version which is going to be used is PHP 7.2 or higher since Laravel needs that environment.
+<TEXT>
 
 
 ## Communication – Discord, GitHub
 
-+Discord is a communication software made for voice chat.
-Since Discord is free we are gonna use this software, because it is not sure that all of us will be in the same room when our company develops the webshop the client asked for. With this we will be able to communicate in real time with our coding partners, and since it has a normal chat function that follows the written messages, it will be easy to trace back with the problems that are brought up during development.
-
-
-GitHub is a free repository where the project will be stored during development. With this we can share and retrivel the versions of our work, and if something is not working we can reroll the changes so we don't have to start from the beginning.
+<TEXT>
 
 
 ## Data structure store – MySQL
 
-The database structure will be written accordig to the MySQL standards.
-Recommended version: MySQL 8.0
+<TEXT>
 
 
 ## JavaScript frameworks – jQuery, etc...
 
-Since the project requires the use of JavaScript we need a framework that is able to use the language.
-During the development of this project our company plans to use the jQuery development library.
+<TEXT>
 
 
 
@@ -115,19 +105,22 @@ Since there isn't any Senior Developer or Lead Programmer, everyone do a little 
 
  -- *Bognár Viktória*
  
+## Task workflow
 
+We use an online website for create new tasks, named as Trello where anyone can add a new task with labels to easily find it between the other tasks, we can set dates to them to know how much time left for finish our tasks, we can comment them, give short description and add lists if its needed. We can modify our tasks anytime if we want, for example add new comment, add new list item or marked it as finished.
 
+For make it more simple and easier we can create cards with the names of:
 
+-- **Backlog Work**
+-- **Backlog**
+-- **In Progress Work**
+-- **In Progress**
+-- **Validate**
+-- **Done Work**
+-- **Done**
+-- **Sprint Results**
 
-## Task workflow – Who creates tasks? Where do they create them? Who decides if a task is completed?
-
-<TEXT>
-
-
-## Deploy workflow – How many deploy environments are you going to have? Who has access to them? Who decides when and where to deploy?
-
-<TEXT>
-
+To mark a task finished or completed we put our tasks in the **Validate** card and one member of the team will going through the task and if there is a problem with it, they will report the problem and fix it or leave a comment on the task what they need to, and how to fix it.
 
 # Functional Requirements
 
