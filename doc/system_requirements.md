@@ -20,12 +20,12 @@
 
 ## Web framework – Bootstap
 
-<TEXT>
+Bootstap will be used to make the dynamic layout of the webshop, so it works smoothly on all resolutions in the browsers.
 
 
 ## Web server – Apache
 
-<TEXT>
+An Apache web server will be used to store the database information, in which we will store the database writen in MySQL structure.
 
 
 ## Programming language – PHP
