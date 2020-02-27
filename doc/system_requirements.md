@@ -15,34 +15,27 @@
 
 ## Content management system (CMS) – Laravel
 
-Laravel is a free open source php web framework indtended for the development of web applications following the model–view–controller (MVC) architectural pattern and based on Symfony. Some of the features of Laravel are a modular packaging system with a dedicated dependency manager, different ways for accessing relational databases, utilities that aid in application deployment and maintenance, and its orientation toward syntactic sugar.
-We are going to use this system to make the project building procedure faster.
+<TEXT>
 
 
 ## Web framework – Bootstap
 
-Bootstap will be used to make the dynamic layout of the webshop, so it works smoothly on all resolutions in the browsers.
+<TEXT>
 
 
 ## Web server – Apache
 
-An Apache web server will be used to store the database information, in which we will store the database writen in MySQL structure.
+<TEXT>
 
 
 ## Programming language – PHP
 
-We are going to write our code in php, since it is the most used programming language for building websites.
-The PHP version which is going to be used is PHP 7.2 or higher since Laravel needs that environment.
+<TEXT>
 
 
 ## Communication – Discord, GitHub
 
-Discord is a communication software made for voice chat.
-Since Discord is free we are gonna use this software, because it is not sure that all of us will be in the same room when our company develops the webshop the client asked for. With this we will be able to communicate in real time with our coding partners, and since it has a normal chat function that follows the written messages, it will be easy to trace back with the problems that are brought up during development.
-
-
-GitHub is a free repository where the project will be stored during development. With this we can share and retrivel the versions of our work, and if something is not working we can reroll the changes so we don't have to start from the beginning.
- 
+<TEXT>
 
 
 ## Data structure store – MySQL
@@ -58,10 +51,45 @@ GitHub is a free repository where the project will be stored during development.
 
 # Business Requirements
 
-## Scope – A breakdown of the project, from development to release, to support.
+## Scope
+- **Project objectives**
+We want to bulid a website that can be used to buy ebooks, and real life books too. With using the online bookshop too, we want to help the bookstore in its revenue increase by selling more books.
 
-<TEXT>
+- **Goals**
+We want to bulid a fully working online bookstore where we can register in and log in too for buying some books. On this website there will some features too like saving books what we want to buy later. There will be two types of books: real life books and ebooks too. For some specific products there will be sales and we could use coupon codes too. Not just users can use the online bookshop but admins too who can add, modify and delete the products.
 
+- **Sub-phases**
+There would be several phases during the work to finish successfully each tasks:
+--*Planning*: what we want to create, what would be the best idea.
+--*Documenting*: write the documents for the chosen idea.
+--*Create*: Start to programming the idea what we already documented, (here the website) while doing tests too.
+--*Testing*: Doing major overall tests for know how the program working or is it working the way we want it.
+--*Finishing*: Handover the finished program to the customer, and present each features, the working of the website and how to use it properly.
+
+- **Tasks**
+--*Writing the documents*:
+System Requirements, Functional specification, Requirements specification, Test plan
+--*Programming*:
+Back End, Database, Front End, Tests
+--*Testing*
+
+- **Resources** 
+ -- *PHP 7.2*
+ -- *Apache 2.4.0*
+ --*MySQL 8.0 Recommended IDE*
+ -- *NetBeans IDE 9.0*
+
+- **Schedule**
+ -- *From 02.13 to 02.27*
+ Writing the documents for the website: System Requirements, Functional specification, Requirements specification.
+ -- *From 02.27 to 03.05*
+ Writing the test plan for the program
+ -- *From 03.05 to 04.30*
+ Creation of the website
+ -- *From 04.30 to 05.07*
+Doint the major tests
+-- *On 05.14*
+Handover to the customer
 
 ## Team – Roles and responsibilities for each member of the project.
 
