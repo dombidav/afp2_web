@@ -125,7 +125,21 @@ They can review all the orders at the Order Management Page.
 
 # Features
 
-<TEXT>
+ **For customers:**
+ - Registration
+ - Log in / Log out
+ - A product wishlist
+ - Shopping cart
+ - Profile Page with editable personal informations
+ - Search by title/publisher/author/year of publication and categories
+ - Filter by category
+ - Coupon usage
+- Browsing the Shop Page
+- See detailed informations about the product on the Product Page
+
+**For admins:**
+ - Add/delete/modify products
+ - Review orders
 
 
 # Permission Scheme  
