@@ -37,7 +37,12 @@ The PHP version which is going to be used is PHP 7.2 or higher since Laravel nee
 
 ## Communication – Discord, GitHub
 
-<TEXT>
+Discord is a communication software made for voice chat.
+Since Discord is free we are gonna use this software, because it is not sure that all of us will be in the same room when our company develops the webshop the client asked for. With this we will be able to communicate in real time with our coding partners, and since it has a normal chat function that follows the written messages, it will be easy to trace back with the problems that are brought up during development.
+
+
+GitHub is a free repository where the project will be stored during development. With this we can share and retrivel the versions of our work, and if something is not working we can reroll the changes so we don't have to start from the beginning.
+ 
 
 
 ## Data structure store – MySQL
