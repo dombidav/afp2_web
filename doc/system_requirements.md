@@ -110,14 +110,18 @@
 
 **Order management:** Should be able to rewiew the incoming orders.
 
-## Marketing requirements – What type of marketing activities should your website support? Examples: launch email marketing campaigns, create discounts and promo codes/gift cards, change cart price rules, etc.
+## Marketing requirements 
+**Coupons:** At the payment methods the customer should be able to use coupons which give them discounts.
 
-<TEXT>
+
+**Discounts:** The admin should be able to add discounts on products which should be displayed at the Shop Page, the Product Page and at the Order Page as well.
+
+## Sales requirements 
+The management team should be able to add, delete and modify products. When they modify a product they can change any property which they gave to the product when they added it to the shop.
 
 
-## Sales requirements – What should your sales/management team be able to do? Examples: add payment and shipping methods, change prices, manage categories, etc.
+They can review all the orders at the Order Management Page.
 
-<TEXT>
 
 # Features
 
