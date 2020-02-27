@@ -91,9 +91,22 @@ Doint the major tests
 -- *On 05.14*
 Handover to the customer
 
-## Team – Roles and responsibilities for each member of the project.
+## Team
 
-<TEXT>
+Since there isn't any Senior Developer or Lead Programmer, everyone do a little bit in everything: documenting, programming and testing.
+
+**Team members:**
+
+ -- *Dombi Tibor Dávid*
+
+ -- *Marton Péter Márton*
+
+-- *Urbán Regina Enikő*
+
+ -- *Bognár Viktória*
+ 
+
+
 
 
 ## Task workflow – Who creates tasks? Where do they create them? Who decides if a task is completed?
