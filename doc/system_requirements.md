@@ -69,7 +69,7 @@ During the development of this project our company plans to use the jQuery devel
 We want to bulid a website that can be used to buy ebooks, and real life books too. With using the online bookshop too, we want to help the bookstore in its revenue increase by selling more books.
 
 - **Goals**
-We want to bulid a fully working online bookstore where we can register in and log in too for buying some books. On this website there will some features too like saving books what we want to buy later. There will be two types of books: real life books and ebooks too. For some specific products there will be sales and we could use coupon codes too. Not just users can use the online bookshop but admins too who can add, modify and delete the products.
+We want to bulid a fully working online bookstore where we can register in and log in too for buying some books. On this website there will some features too like saving books what we want to buy later. There will be two types of books: real life books and ebooks. For some specific products there will be sales and we could use coupon codes as well. Not just users can use the online bookshop but admins too who can add, modify and delete the products.
 
 - **Sub-phases**
 There would be several phases during the work to finish successfully each tasks:
@@ -100,7 +100,7 @@ Back End, Database, Front End, Tests
  -- *From 03.05 to 04.30*
  Creation of the website
  -- *From 04.30 to 05.07*
-Doint the major tests
+Doing the major tests
 -- *On 05.14*
 Handover to the customer
 
