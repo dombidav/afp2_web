@@ -31,7 +31,8 @@ An Apache web server will be used to store the database information, in which we
 
 ## Programming language – PHP
 
-<TEXT>
+We are going to write our code in php, since it is the most used programming language for building websites.
+The PHP version which is going to be used is PHP 7.2 or higher since Laravel needs that environment.
 
 
 ## Communication – Discord, GitHub
