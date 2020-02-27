@@ -15,37 +15,45 @@
 
 ## Content management system (CMS) – Laravel
 
-<TEXT>
++Laravel is a free open source php web framework indtended for the development of web applications following the model–view–controller (MVC) architectural pattern and based on Symfony. Some of the features of Laravel are a modular packaging system with a dedicated dependency manager, different ways for accessing relational databases, utilities that aid in application deployment and maintenance, and its orientation toward syntactic sugar.
+We are going to use this system to make the project building procedure faster.
 
 
 ## Web framework – Bootstap
 
-<TEXT>
+Bootstap will be used to make the dynamic layout of the webshop, so it works smoothly on all resolutions in the browsers.
 
 
 ## Web server – Apache
 
-<TEXT>
+An Apache web server will be used to store the database information, in which we will store the database writen in MySQL structure.
 
 
 ## Programming language – PHP
 
-<TEXT>
+We are going to write our code in php, since it is the most used programming language for building websites.
+The PHP version which is going to be used is PHP 7.2 or higher since Laravel needs that environment.
 
 
 ## Communication – Discord, GitHub
 
-<TEXT>
++Discord is a communication software made for voice chat.
+Since Discord is free we are gonna use this software, because it is not sure that all of us will be in the same room when our company develops the webshop the client asked for. With this we will be able to communicate in real time with our coding partners, and since it has a normal chat function that follows the written messages, it will be easy to trace back with the problems that are brought up during development.
+
+
+GitHub is a free repository where the project will be stored during development. With this we can share and retrivel the versions of our work, and if something is not working we can reroll the changes so we don't have to start from the beginning.
 
 
 ## Data structure store – MySQL
 
-<TEXT>
+The database structure will be written accordig to the MySQL standards.
+Recommended version: MySQL 8.0
 
 
 ## JavaScript frameworks – jQuery, etc...
 
-<TEXT>
+Since the project requires the use of JavaScript we need a framework that is able to use the language.
+During the development of this project our company plans to use the jQuery development library.
 
 
 
