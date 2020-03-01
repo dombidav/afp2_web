@@ -131,7 +131,13 @@ The following documents are needed to be delivered during test lifecycle:
 
 ### Testing Tools
 
-<!--TIBI MEGÍRJA-->
+The following tool will be used for testing: (all included in “tests” folder)
+– Functional testing: Selenium on python
+– Usability testing: Any screenshot tool
+– Interface testing: Selenium on python
+– Database testing: various PHP scripts
+– Compatibility testing: Selenium on python
+
 
 ### Test Environment
 
