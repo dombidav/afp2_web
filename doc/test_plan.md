@@ -117,7 +117,15 @@ Compatibility tests ensures that your web application displays correctly across 
 
 ## Test Deliverables
 
-<!--TEXT-->
+The following documents are needed to be delivered during test lifecycle:
+
+- **Test Plan**: *Test plan* document is a document which contains the plan for all the testing activities to be done to deliver a quality product.
+
+- **Test Cases/Scripts**: *Test cases* are the set of positive and negative executable steps of a test scenario which has a set of pre-conditions, test data, expected result, post-conditions and actual results.
+
+- **Defect Report/Bug Report**: The purpose of using *Defect report* template or *Bug report* template is to convey the detailed information about the bug to the developers. It allows developers to replicate the bug easily.
+
+ - **Test summary report**: It contains the summary of test activities and final test results.
 
 ## Resource and Enviroment Needs
 
