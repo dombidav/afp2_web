@@ -141,6 +141,19 @@ The following tool will be used for testing: (all included in “tests” folder
 
 ### Test Environment
 
+The person executing tests will need the following software enviroment (or newer versions):
+– PHP 7.2
+– Composer 1.9.3
+– Apache 2.4.0
+– MySQL 8.0
+    – MariaDB 10.1.38
+– Python 3.7.6
+    – bs4
+    – urllib
+    – colorama
+    - selenium
+
+
 ## Terms and Acronyms
 
 Terms and acronyms used in the project
