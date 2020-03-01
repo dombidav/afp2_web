@@ -13,21 +13,31 @@
 
 ## Tab
 <This section is about the browser tab of the page>
-- Favicon: <Missing / Wrong / OK>
-- Title: <Missing / Wrong / OK>
+    
+    - Favicon: <Missing / Wrong / OK>
+    
+    - Title: <Missing / Wrong / OK>
 
 Details:
 <If one of the tests above failed you should write the details here, otherwise, ommit this section>
 
 ## Readability
 <Overall readability of the page>
+
 - Paragraph
+    
     - Is row distance good?
+    
     - Is letter spacing good?
+    
     - Is font size good?
+    
     - Is font color have good contrast?
+    
     - Is font style uniformed through the page AND across the site?
+    
     - Is paragraph style uniformed through the page AND across the site?
+    
     - Is there any encoding error?
 
 Details:
