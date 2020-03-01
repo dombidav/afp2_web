@@ -55,7 +55,7 @@ The database structure will be written accordig to the MySQL standards.
 Recommended version: MySQL 8.0
 
 
-## JavaScript frameworks – jQuery, etc...
+## JavaScript frameworks – jQuery
 
 Since the project requires the use of JavaScript we need a framework that is able to use the language.
 During the development of this project our company plans to use the jQuery development library.
