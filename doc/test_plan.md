@@ -1,4 +1,4 @@
-# Test Plan
+﻿# Test Plan
 
 ## Introduction
 
@@ -129,4 +129,16 @@ Compatibility tests ensures that your web application displays correctly across 
 
 ## Terms and Acronyms
 
-<!--TABLE-->
+Terms and acronyms used in the project
+
+|TERM/ACRONYM                          | DEFINITION                       |
+|-------------------------------|-----------------------------|
+|   API | Application Program Interface|
+| AUT |  Application Under Test |
+| DB | Database |
+| BE | Back end, during development mostly used to refer to PHP codes |
+| FE | Front end, during development mostly used to refer to the HTML and/or CSS code |
+| JS | JavaScript |
+| SYS | System plan |
+| RQ | Requirements specification |
+| FQ/FUNC | Functional specification | 
