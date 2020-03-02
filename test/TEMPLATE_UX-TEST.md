@@ -10,6 +10,7 @@
 | Browser | <Browser with version number> |
 | Resolution | <Screen resoulution> |
 | System language | <Default system lang> |
+| Commit | <Commit number>([<commit hash>](<commit link>)) |
 
 ## Tab
 <This section is about the browser tab of the page>
