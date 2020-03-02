@@ -78,6 +78,3 @@ Screen capture:
 Screen capture:
 
 ![Mobile](https://github.com/dombidav/afp2_web/raw/master/test/UX/Index_2020-03-02/Mobile.png)
-
-Other comments and observations:
-<Text summary of the test, remarks, recommendations>
