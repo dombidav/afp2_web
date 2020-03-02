@@ -4,6 +4,7 @@
 | -- | -- |
 | Date-Time | 2020.03.02 19:45 |
 | Executed by | Dombi Tibor |
+| Developed by | Dombi Tibor |
 | Module | UI |
 | Page | Index |
 | Result | FAIL |
