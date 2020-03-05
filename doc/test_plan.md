@@ -11,7 +11,13 @@ All the feature of the website which were defined in software requirement specs 
 
 #### In Scope
 
-<!--TABLE-->
+| Module Name | As Guest | As Customer | As Secretary | As Support | As Supervisor |
+| Profile | Register,
+ Log in, 
+ Ask for password reset,
+Informational pages | Log out, Edit profile, Save billing/shipping address | Can only be created by Supervisor | See Customer details, Edit Customer details except Id | Create Support/Secretary profiles, See/Edit Customer details except Id |
+| Order | Purchase items | Purchase Items | Same as Customer | Same as Customer, See Order details, Edit Order details except Id | Has the permissions of Customer,Secretary,Support |
+| Items | See Items, Use filters on shop page, See rating on items, See comments on items | Add/remove Items, Edit Items except the Item Id | Same as Secretary/Support |
 
 #### Out of Scope
 
