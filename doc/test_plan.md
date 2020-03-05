@@ -23,8 +23,11 @@ The plan is to identify the items,that need to be tested, the features to be tes
 
 ### Roles and Responsibilities
 
-<!--TEXT-->
-
+Testing will be executed by:
+	-Marton Péter Márton: Test manager, responsible for test documentations
+	-Urbán Regina Enikő: responsible for UI testing
+	-Bognár Viktória: responsible for BE testing (database excluded)
+	-Dombi Tibor Dávid: responsible for DB testing
 # Test Methodology
 
 ## Overview
