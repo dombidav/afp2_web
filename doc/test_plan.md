@@ -26,7 +26,6 @@ hese features are not be tested because they are not included in the software re
 	-API
 	-Website Security and Performance
 
-
 ### Quality Objective
 
 We must make sure:
