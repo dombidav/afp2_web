@@ -7,7 +7,7 @@ The plan is to identify the items,that need to be tested, the features to be tes
 
 ### Scope
 
-<!--TABLE-->
+All the feature of the website which were defined in software requirement specs are need to be tested.
 
 #### In Scope
 
