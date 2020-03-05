@@ -15,7 +15,11 @@ The plan is to identify the items,that need to be tested, the features to be tes
 
 #### Out of Scope
 
-<!--TEXT-->
+hese features are not be tested because they are not included in the software requirement specifications:
+	-Hardware Interfaces
+	-API
+	-Website Security and Performance
+
 
 ### Quality Objective
 
