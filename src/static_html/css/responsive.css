@@ -59,3 +59,8 @@
         flex-direction: column; } }
 
 /*# sourceMappingURL=responsive.css.map */
+
+/* ============== Cart_page =============*/
+thead th{
+    color: orange;
+}
