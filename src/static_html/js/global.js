@@ -3,6 +3,7 @@
 // jquery ready start
 $(document).ready(function() {
 	// jQuery code
+    $('#quick_search').tooltip({'trigger':'focus', 'title': 'Search for Author, Title, ISBN, etc.'});
 
 
 
