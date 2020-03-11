@@ -72,7 +72,7 @@
                         <div class="widgets-wrap float-md-right">
                             <div class="widget-header  mr-3">
                                 <a href="#" class="icon icon-sm rounded-circle border"><i class="fas fa-shopping-cart"></i></a>
-                                <span class="badge badge-pill badge-danger notify">0</span>
+                                <span class="badge badge-pill badge-danger notify">3</span>
                             </div>
                             <div class="widget-header icontext">
                                 <a href="#" class="icon icon-sm rounded-circle border"><i class="fas fa-user"></i></a>
@@ -173,9 +173,7 @@
                         <th scope="row"> <a href="#" class="img-wrap"> <img src="images/unknown_product.png" class="img-sm"> </a></th>
                         <td>The title of the book</td>  
                         <td>
-                            <p>1</p>
-                            <button type="button" class="btn btn-outline-warning">-</button>
-                            <button type="button" class="btn btn-outline-warning">+</button>
+                            <input type="number" value ="1" id="{{$ITEM->ID}}_pcs" class="form-control form-control-cart">
                         </td>
                         <td>10.00 €</td> 
                     </tr>
@@ -183,9 +181,7 @@
                         <th scope="row"> <a href="#" class="img-wrap"> <img src="images/unknown_product.png" class="img-sm"> </a></th>
                         <td>The title of the book</td>  
                         <td>
-                            <p>1</p>
-                            <button type="button" class="btn btn-outline-warning">-</button>
-                            <button type="button" class="btn btn-outline-warning">+</button>
+                            <input type="number" value ="1" id="{{$ITEM->ID}}_pcs" class="form-control form-control-cart">
                         </td>
                         <td>10.00 €</td> 
                     </tr>
@@ -193,17 +189,22 @@
                         <th scope="row"> <a href="#" class="img-wrap"> <img src="images/unknown_product.png" class="img-sm"> </a></th>
                         <td>The title of the book</td>  
                         <td>
-                            <p>1</p>
-                            <button type="button" class="btn btn-outline-warning">-</button>
-                            <button type="button" class="btn btn-outline-warning">+</button>
+                            <input type="number" value ="1" id="{{$ITEM->ID}}_pcs" class="form-control form-control-cart">
                         </td>
                         <td>10.00 €</td> 
                     </tr>
                     </tbody>
                   </table>
             </div>
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <div class="float-right">
+                        <label for="total">Total:</label>
+                        <input type="number" id="total" placeholder ="30.00 €" class="form-control" readonly>
+                    </div>
+                </div>
+            </div>
             <!-- row END -->
-
         </div>
         <!-- container // -->
     </section>

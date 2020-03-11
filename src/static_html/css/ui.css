@@ -1396,3 +1396,10 @@ a[class*='card']:hover .title {
     display: block; }
 
 /*# sourceMappingURL=ui.css.map */
+
+/* ============== Cart_page =============*/
+.form-control-cart{
+    width: 36%;  
+    margin-left: 32%;
+    margin-right: 32%;
+}
