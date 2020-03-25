@@ -1499,3 +1499,8 @@ input[type=range]::-webkit-slider-thumb {
     margin-left: 27%;
     margin-right: 27%;
 }
+
+.img-cart{    
+    height: 100%;
+    font-weight: 100%;
+}
