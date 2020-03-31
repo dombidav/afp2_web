@@ -38,4 +38,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function billing(){
+        //return $this->hasOne(App\Billing::class);
+    }
+
+    public function shipping(){
+        //return $this->hasOne(App\Shipping::class);
+    }
+
 }
