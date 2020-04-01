@@ -24,9 +24,9 @@ $factory->define(User::class, function (Faker $faker) {
         'name' => $faker->name,
         'date_of_birth' => $faker-> date(),//dateTimeBetween('1920-01-01', '2006-12-31')
         'email' => $faker->unique()->safeEmail,
-        'gender' => $faker->boolean,
+        'gender' => $faker->numberBetween(0,1),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'user_auth' => $faker->boolean,
+        'user_auth' => $faker->numberBetween(0,1),
         'billing' => $faker->numberBetween(0,100),
         'shipping' => $faker->numberBetween(0,100),
     ];

@@ -19,9 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->timestamp('date_of_birth');
             $table->string('email')->unique();
-            $table->boolean('gender');
+            $table->tinyInteger('gender');
             $table->string('password');
-            $table->boolean('user_auth');
+            $table->tinyInteger('user_auth');
             $table->integer('billing');
             $table->integer('shipping');
             $table->timestamp('created_at')->useCurrent(); //Kötelező Laravel miatt
