@@ -10,7 +10,8 @@ class Book_author extends Model
         return $this->belongsToMany(Author::class);
     }
 
+
     public function book(){
-        return "Könyv"; //$this->hasOne(App\Book:class);
+        return "Könyv"; //$this->hasMany(App\Book:class);
     }
 }
