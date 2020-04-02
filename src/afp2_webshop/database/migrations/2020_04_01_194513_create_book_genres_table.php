@@ -15,7 +15,10 @@ class CreateBookGenresTable extends Migration
     {
         Schema::create('book_genres', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->unsignedBigInteger('genre_id');
+            $table->unsignedBigInteger('book_id');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 
@@ -24,6 +27,7 @@ class CreateBookGenresTable extends Migration
      *
      * @return void
      */
+    
     public function down()
     {
         Schema::dropIfExists('book_genres');
