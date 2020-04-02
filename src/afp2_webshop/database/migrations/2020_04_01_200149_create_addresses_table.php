@@ -14,8 +14,8 @@ class CreateAddressesTable extends Migration
     public function up()
     {
         Schema::create('addresses', function (Blueprint $table) {
-            $table->integer('id');
-            $table->integer('country');
+            $table->bigIncrements('id');
+            $table->string('country');
             $table->string('tin');
             $table->string('postal_code');
             $table->string('city');
@@ -24,8 +24,8 @@ class CreateAddressesTable extends Migration
             $table->string('note');
             $table->timestamp('created_at')->useCurrent(); //Kötelező Laravel miatt
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')); //Kötelező Laravel miatt
-        
-            
+
+
         });
     }
 

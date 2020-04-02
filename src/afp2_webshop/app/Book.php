@@ -6,16 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-    public function author(){
-        return $this->hasMany(Book_author::class);
+    public function authors(){
+        return $this->belongsToMany(Author::class, 'book_authors');
     }
 
     public function publisher(){
-        //return $this->hasOne(Publisher::class);
-
+        return $this->belongsTo(Publisher::class);
     }
 
-    public function genre(){
-        return $this->hasMany(Book_genre::class);
+    public function genres(){
+        return $this->belongsToMany(Genre::class, 'book_genres');
     }
 }

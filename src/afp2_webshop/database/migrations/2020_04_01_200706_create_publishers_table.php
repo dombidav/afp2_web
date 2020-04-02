@@ -14,11 +14,11 @@ class CreatePublishersTable extends Migration
     public function up()
     {
         Schema::create('publishers', function (Blueprint $table) {
-            $table->integer('id');
+            $table->bigIncrements('id');
             $table->string('name');
             $table->timestamp('created_at')->useCurrent(); //Kötelező Laravel miatt
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')); //Kötelező Laravel miatt
-        
+
         });
     }
 

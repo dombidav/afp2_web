@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Publisher extends Model
 {
-   public function publisher()
+   public function books()
    {
-return $this->belongsTo(Publisher::class);
+       return $this->hasMany(Book::class);
    }
 }

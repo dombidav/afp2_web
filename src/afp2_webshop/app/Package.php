@@ -12,6 +12,6 @@ class Package extends Model
     }
 
     public function book(){
-        return "Könyv"; //$this->hasOne(App\Book::class);
+        $this->hasOne(Book::class);
     }
 }

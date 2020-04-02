@@ -7,7 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Genre::class, function (Faker $faker) {
     return [
-        'id' => $faker->numerify('###'),
         'name_en' => $faker->name
     ];
 });

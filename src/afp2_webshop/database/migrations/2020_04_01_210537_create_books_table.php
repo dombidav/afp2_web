@@ -20,11 +20,11 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->string('thumbnail');
             $table->string('sample');
-            $table->integer('author');
+            //$table->integer('author_id');
             $table->year('publish_year');
-            $table->integer('publisher');
-            $table->integer('genre');
-            $table->integer('language');
+            $table->integer('publisher_id');
+            //$table->integer('genre_id');
+            $table->string('language');
             $table->integer('page_count');
             $table->string('description');
             $table->tinyInteger('can_order');
