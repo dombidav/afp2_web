@@ -14,7 +14,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        return view('shop_page', ['asdasd' => App\Book::all()]);
     }
 
     /**
@@ -22,7 +22,7 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create() //NEM KELL!!!!
     {
         //
     }
@@ -44,7 +44,7 @@ class BookController extends Controller
      * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book)
+    public function show(Book $book) // EZT KELL
     {
         //
     }

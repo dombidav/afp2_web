@@ -22,8 +22,8 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('gender');
             $table->string('password');
             $table->tinyInteger('user_auth');
-            $table->integer('billing');
-            $table->integer('shipping');
+            $table->integer('billing')->nullable();
+            $table->integer('shipping')->nullable();
             $table->timestamp('created_at')->useCurrent(); //Kötelező Laravel miatt
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')); //Kötelező Laravel miatt
         });
