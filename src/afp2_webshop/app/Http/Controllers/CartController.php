@@ -23,6 +23,15 @@ class CartController extends Controller
     }
 
     public function add($id){
+        DB::insert('INSERT INTO `orders` (`id`, `user_id`, `billing`, `shipping`, `status`, `created_at`, `updated_at`) VALUES (:gen_id, :user_id, :billing, :shipping, \'0\', :created_at, :updated_at)',
+            [
+                'gen_id' => "asdawrxyc",
+                'user_id' => "sda",
+                'billing' => 0,
+                'shipping' => 0,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
         if(Auth::check()){
             DB::insert('INSERT INTO `orders` (`id`, `user_id`, `billing`, `shipping`, `status`) VALUES (:gen_id, :user_id, :billing, :shipping, \'0\')',
                 [
