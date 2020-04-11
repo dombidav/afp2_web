@@ -14,18 +14,17 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->string('id');
-            $table->string('username');
+            $table->id();
             $table->string('name');
             $table->timestamp('date_of_birth');
             $table->string('email')->unique();
-            $table->tinyInteger('gender');
+            $table->tinyInteger('gender')->default(0);
             $table->string('password');
-            $table->tinyInteger('user_auth');
+            $table->tinyInteger('user_auth')->default(0);
             $table->integer('billing')->nullable();
             $table->integer('shipping')->nullable();
             $table->timestamp('created_at')->useCurrent(); //Kötelező Laravel miatt
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')); //Kötelező Laravel miatt
+            $table->timestamp('updated_at')->useCurrent(); //Kötelező Laravel miatt
         });
     }
 
