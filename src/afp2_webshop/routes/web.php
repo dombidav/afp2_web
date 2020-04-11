@@ -43,3 +43,4 @@ Route::get('/author/{id}', 'AuthorController@single');
 Auth::routes();
 Route::get('/profile', 'ProfileController@show');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
