@@ -7,7 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Book::class, function (Faker $faker) {
     return [
-        'created_at'=> $faker-> dateTimeThisMonth,
         'ISBN' => $faker->randomNumber(7,true),
         'title' => $faker->title,
         'thumbnail' => $faker ->text,

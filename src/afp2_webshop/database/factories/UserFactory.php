@@ -19,8 +19,6 @@ use Illuminate\Support\Str;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'id' => $faker->lexify("????????"),
-        'username' => $faker->userName,
         'name' => $faker->name,
         'date_of_birth' => $faker-> date(),//dateTimeBetween('1920-01-01', '2006-12-31')
         'email' => $faker->unique()->safeEmail,
