@@ -28,11 +28,21 @@ class CartTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function testShowMethod(){
-        $table_count = Order::all()->count();
+    public function testCartShow(){
+        $user = factory(\App\User::class)->create();
+
+        $response = $this->actingAs($user)->get('/cart');
+        $response->assertStatus(200);
+        $this->assertStringNotContainsString('Vendég', $this->actingAs($user)->get('/cart')->content());
+        $this->assertStringContainsString('Bejelentkezve', $this->actingAs($user)->get('/cart')->content());
+    }
+
+    public function testAddMethod(){
+        /*$table_count = Package::all()->count();
         $response = $this->get("/cart/add/5");
 
         $response->assertStatus(200);
-        $this->assertEquals($table_count + 1, Order::all()->count());
+        $this->assertEquals($table_count + 1, Order::all()->count());*/
     }
+
 }

@@ -25,13 +25,9 @@ Route::get('/', function () {
  * DELETE - "Törlöm"
  */
 
-Route::get('/shop', function (){
-    return view('shop_page', ['asdasd' => App\Book::all()]);
-});
+Route::get('/shop', 'BookController@index');
 
-Route::get('/shop/{id}', function ($id){
-    return view('item_page', ['param' => '<script> alert("hello");</script>']);
-});
+Route::get('/shop/{id}', 'BookController@show');
 
 Route::get('/cart', 'CartController@show');
 
@@ -39,8 +35,11 @@ Route::get('/cart/add/{id}', 'CartController@add');
 
 Route::get('/cart/delete/{id}', 'CartController@delete');
 
+Route::get('/author', 'AuthorController@show');
+Route::get('/author/{id}', 'AuthorController@single');
+
 //Route::get('/cart/edit/{id}', 'CartController@delete');
 
 Auth::routes();
-
+Route::get('/profile', 'ProfileController@show');
 Route::get('/home', 'HomeController@index')->name('home');

@@ -1,7 +1,8 @@
-{{ var_dump($cart_content) }}
-
 @auth()
-    Üdv {{ \Illuminate\Support\Facades\Auth::user()->id }}
+    Bejelentkezve<br>
+    @foreach($cart_content as $item)
+        {{ $item->id }}
+    @endforeach
 @else
-    Üdv vendég!
+    Vendég
 @endauth
