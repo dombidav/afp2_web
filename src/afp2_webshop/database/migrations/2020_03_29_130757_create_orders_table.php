@@ -16,9 +16,9 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('user_id');
-            $table->integer('billing');
-            $table->integer('shipping');
-            $table->tinyInteger('status');
+            $table->integer('billing')->nullable();
+            $table->integer('shipping')->nullable();
+            $table->tinyInteger('status')->default(0);
             $table->timestamp('created_at')->useCurrent(); //Kötelező Laravel miatt
             $table->timestamp('updated_at')->useCurrent(); //Kötelező Laravel miatt
         });

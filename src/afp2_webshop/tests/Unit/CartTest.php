@@ -6,6 +6,7 @@ use App\Http\Controllers;
 //use PHPUnit\Framework\TestCase;
 use App\Order;
 use App\Package;
+use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -20,29 +21,43 @@ class CartTest extends TestCase
         parent::setUp();
     }
 
-    public function testStatusIsOk(){
-        //Set up
-        $response = $this->get('/cart');
-
-        //Execute
-        $response->assertStatus(200);
+    public function testCartStatus(){
+        $response = $this->get('/cart')->assertStatus(200);
+        $content = json_decode($response->content());
+        $this->assertNotNull($content);
+        $this->assertEmpty($content);
     }
 
-    public function testCartShow(){
-        $user = factory(\App\User::class)->create();
+    public function testCartIndexAsGuest(){
+         $response = $this->call('GET', '/cart', [], ['guest_id' => '0']);
+         $response->assertStatus(200);
 
-        $response = $this->actingAs($user)->get('/cart');
-        $response->assertStatus(200);
-        $this->assertStringNotContainsString('Vendég', $this->actingAs($user)->get('/cart')->content());
-        $this->assertStringContainsString('Bejelentkezve', $this->actingAs($user)->get('/cart')->content());
+         $content = json_decode($response->content());
+         $this->assertNotNull($content);
+         $this->assertEmpty($content);
     }
 
-    public function testAddMethod(){
-        /*$table_count = Package::all()->count();
-        $response = $this->get("/cart/add/5");
-
+    public function testCartIndexAsUser(){
+        Order::emptyForTest();
+        $response = $this->actingAs(User::testUser())->get('/cart');
         $response->assertStatus(200);
-        $this->assertEquals($table_count + 1, Order::all()->count());*/
+
+        $content = json_decode($response->content());
+        $this->assertNotNull($content);
+        $this->assertEmpty($content);
     }
 
+    public function testCartAddAsGuest(){
+        Order::emptyForTest();
+        $book = '5';
+        $cookies = ['guest_id' => encrypt('0', true)];
+        $response = $this->call('GET', "/cart/add/$book", [], $cookies);
+        $response->assertStatus(200);
+
+        $content = json_decode($response->content());
+        $this->assertNotEmpty($content);
+        $this->assertEquals(true, $content->Success);
+        $this->assertEquals(Order::getCartIDFor(0), $content->Order);
+        $this->assertEquals($book, $content->Book);
+    }
 }

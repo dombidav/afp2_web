@@ -26,14 +26,16 @@ Route::get('/', function () {
  */
 
 Route::get('/shop', 'BookController@index');
-
 Route::get('/shop/{id}', 'BookController@show');
 
-Route::get('/cart', 'CartController@show');
-
+Route::get('/cart', 'CartController@index');
+Route::get('/cart/{id}', 'CartController@show');
 Route::get('/cart/add/{id}', 'CartController@add');
-
-Route::get('/cart/delete/{id}', 'CartController@delete');
+Route::get('/cart/add/{book_id}/{user_id}', 'CartController@add2');
+Route::get('/cart/remove/{id}', 'CartController@remove');
+Route::get('/cart/remove/{book_id}/{user_id}', 'CartController@remove2');
+Route::get('/cart/edit/{book_id}/{quantity}', 'CartController@edit');
+Route::get('/cart/edit/{book_id}/{quantity}/{user_id}', 'CartController@edit2');
 
 Route::get('/author', 'AuthorController@show');
 Route::get('/author/{id}', 'AuthorController@single');

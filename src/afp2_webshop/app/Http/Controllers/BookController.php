@@ -14,7 +14,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view('shop_page', ['asdasd' => App\Book::all()]);
+        //return view('shop_page', ['all_books' => \App\Book::all()]);
+        return json_encode(\App\Book::all());
     }
 
     /**
@@ -44,9 +45,9 @@ class BookController extends Controller
      * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book) // EZT KELL
+    public function show($id) // EZT KELL
     {
-        //
+        return json_encode(Book::where('id', $id)->first());
     }
 
     /**

@@ -39,6 +39,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public static function testUser()
+    {
+        $user = User::query()->where('id', '=', '0');
+        if($user->count() > 0)
+            return $user->get()[0];
+        return factory(User::class)->create();
+
+    }
+
     public function billing(){
         //return $this->hasOne(App\Billing::class);
     }

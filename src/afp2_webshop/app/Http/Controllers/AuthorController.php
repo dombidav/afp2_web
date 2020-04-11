@@ -14,7 +14,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+        //Megjeleníti az összeset
     }
 
     /**
@@ -46,7 +46,7 @@ class AuthorController extends Controller
      */
     public function show(Author $author)
     {
-        //
+        return response(json_encode(Author::all())); //Show 1 db kell mutasson!!!
     }
 
     /**
@@ -67,7 +67,7 @@ class AuthorController extends Controller
      * @param  \App\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Author $genre)
+    public function update(Request $request, Author $author)
     {
         //
     }
@@ -78,8 +78,12 @@ class AuthorController extends Controller
      * @param  \App\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Author $genre)
+    public function destroy(Author $author)
     {
         //
+    }
+
+    public function single($id){
+        return json_encode(Author::find($id));
     }
 }

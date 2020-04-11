@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\AppHelper;
 use App\Order;
 use App\Package;
-use Illuminate\Support\Facades\Cookie;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Helpers\AppHelper;
 
 class CartController extends Controller
 {
@@ -17,73 +17,76 @@ class CartController extends Controller
     {
     }
 
-    public  function show(){
-        if(Auth::check()){
-            return view('cart_page', ['cart_content' => DB::table('orders')->where('user_id', '=', Auth::id())->where('status', '=', '0')->get()]);
-        }
-        return response('TEST')->cookie('guest_id', AppHelper::generateUserID(), 9999);
+    public function index(){
+        $this->getUserId($user_id, $needs_id);
+        $order_id = Order::getCartIDFor($user_id);
+        $packages = Package::forOrder($order_id);
+        if($needs_id)
+            return response(json_encode($packages))->cookie('guest_id', $user_id, 9999);
+        return json_encode($packages);
     }
 
     public function add($id){
-        $user_id = Auth::check() ? Auth::id() : \Cookie::get('guest_id');
+        $this->getUserId($user_id, $needs_id);
+        $order_id = Order::getCartIDFor($user_id);
+       Package::IncrementQuantityOrInsertNew($order_id, $id);
+       if ($needs_id)
+           return response(json_encode(['Success' => true, 'Order' => $order_id, 'Book' => $id]))->cookie('guest_id', $user_id, 9999);
+       return json_encode(['Success' => true, 'Order' => $order_id, 'Book' => $id]);
+    }
+
+    public function add2($book_id, $user_id){
+        $order_id = Order::getCartIDFor($user_id);
+        Package::IncrementQuantityOrInsertNew($order_id, $book_id);
+        return json_encode(['Success' => true, 'Order' => $order_id, 'Book' => $book_id]);
+    }
+
+    public function remove($id){
+        $this->getUserId($user_id, $needs_id);
+        $order_id = Order::getCartIDFor($user_id);
+        Package::DeleteWhere($order_id, $id);
+        if ($needs_id)
+            return response(json_encode(['Success' => true, 'Order' => $order_id, 'Book' => $id]))->cookie('guest_id', $user_id, 9999);
+        return json_encode(['Success' => true, 'Order' => $order_id, 'Book' => $id]);
+    }
+
+    public function remove2($book_id, $user_id){
+        $order_id = Order::getCartIDFor($user_id);
+        Package::DeleteWhere($order_id, $book_id);
+        return json_encode(['Success' => true, 'Order' => $order_id, 'Book' => $book_id]);
+    }
+
+    public function edit($book_id, $quantity){
+        $this->getUserId($user_id, $needs_id);
+        $order_id = Order::getCartIDFor($user_id);
+        Package::UpdateOrInset($order_id, $book_id, $quantity);
+        if ($needs_id)
+            return response(json_encode(['Success' => true, 'Order' => $order_id, 'Book' => $book_id]))->cookie('guest_id', $user_id, 9999);
+        return json_encode(['Success' => true, 'Order' => $order_id, 'Book' => $book_id]);
+    }
+    public function edit2($book_id, $quantity, $user_id){
+        $order_id = Order::getCartIDFor($user_id);
+        Package::UpdateOrInset($order_id, $book_id, $quantity);
+        return json_encode(['Success' => true, 'Order' => $order_id, 'Book' => $book_id]);
+    }
+
+    public function show($id){
+        $order_id = Order::getCartIDFor($id);
+        $packages = Package::forOrder($order_id);
+        return json_encode($packages);
+    }
+
+    /**
+     * @param $user_id
+     * @param $needs_id
+     */
+    public function getUserId(&$user_id, &$needs_id): void
+    {
+        $user_id = Auth::check() ? Auth::id() : Cookie::get('guest_id');
         $needs_id = false;
-        if(!$user_id){
+        if (!$user_id) {
             $needs_id = true;
             $user_id = AppHelper::generateUserID();
         }
-        $order_id = DB::table('orders')->where('user_id', '=', $user_id)->get();
-        if($order_id->count() < 1){
-            $order_id = AppHelper::generateOrderID();
-            DB::insert('INSERT INTO `orders` (`id`, `user_id`, `billing`, `shipping`, `status`) VALUES (:gen_id, :user_id, :billing, :shipping, \'0\')',
-                [
-                    'gen_id' => $order_id,
-                    'user_id' => $user_id,
-                    'billing' => Auth::user()->billing ?? 0,
-                    'shipping' => Auth::user()->shipping ?? 0,
-                ]);
-        }
-        else{
-            $order_id = $order_id[0]->id;
-        }
-        if(DB::table('packages')->where('order_id', '=', $order_id)->where('book_id', '=', $id)->count() > 0){
-            $ok = DB::update('UPDATE `packages` SET `quantity`=`quantity`+1 WHERE `book_id`=:book_id AND `order_id`=:order_id',
-                [
-                    'book_id' => $id,
-                    'order_id' => $order_id
-                ]
-            );
-        }else{
-            $ok = DB::insert('INSERT INTO `packages` (`order_id`, `book_id`) VALUES (:order_id, :book_id)',
-                [
-                    'order_id' => $order_id,
-                    'book_id' => $id
-                ]);
-        }
-        if($needs_id) {
-            if ($ok)
-                return response("$id => $order_id")->cookie('guest_id', $user_id, 9999);
-            else
-                return response('eh')->cookie('guest_id', $user_id, 9999);
-        }
-        else{
-            if ($ok)
-                return response("$id => $order_id");
-            else
-                return response('eh');
-        }
-    }
-
-    public function delete($id){
-        if(Auth::check()){
-            $order_id = DB::table('orders')->where('user_id', '=',Auth::id())->where('status', '=', '0')->get()[0];
-            DB::delete ('DELETE FROM `packages` where `order_id` = :order_id AND `book_id` = :book_id',
-                [
-                    'order_id' => $order_id,
-                    'book_id' => $id
-                ]);
-        }else{
-            //...cookies...
-        }
-        return view('cart_add_success');
     }
 }
