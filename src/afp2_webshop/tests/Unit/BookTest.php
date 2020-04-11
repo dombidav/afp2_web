@@ -30,6 +30,7 @@ class BookTest extends TestCase
         $response->assertStatus(200);
 
         $content = json_decode($this->get('/shop')->content());
+        factory(Book::class, 2)->create();
         $this->assertNotEmpty($content[1]->id);
     }
 
@@ -38,6 +39,7 @@ class BookTest extends TestCase
         $response->assertStatus(200);
 
         $content = json_decode($this->get('/shop/5')->content());
+        factory(Book::class, 2)->create();
         $this->assertNotEmpty($content->id);
     }
 
