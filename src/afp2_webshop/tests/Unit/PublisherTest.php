@@ -1,0 +1,51 @@
+<?php
+
+namespace Tests\Unit;
+
+use App\Publisher;
+use App\Book;
+//use PHPUnit\Framework\TestCase;
+use Illuminate\Support\Facades\DB;
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+//use Illuminate\Foundation\Testing\RefreshDatabase;
+
+class PublisherTest extends TestCase
+{
+
+    public function setUp(): void
+    {
+        parent::setUp();
+    }
+
+    public function testIfPublisherStatusIsOkay()
+    {
+        $response = $this->get('/publisher');
+        $response->assertStatus(200);
+    }
+
+    public function testMultiplePublisherShow(){
+        $response = $this->get('/publisher');
+        $response->assertStatus(200);
+
+        $content = json_decode($this->get('/publisher')->content());
+        $this->assertNotEmpty($content[1]->id);
+    }
+
+    public function testSinglePublisherShow(){
+        $response = $this->get('/publisher/5');
+        $response->assertStatus(200);
+
+        $content = json_decode($this->get('/publisher/5')->content());
+        $this->assertNotEmpty($content->id);
+    }
+
+    public function testPublisherAdd(){
+        $table_count = Publisher::all()->count();
+        factory(Publisher::class)->create();
+
+        $this->assertEquals($table_count + 1, Publisher::all()->count());
+    }
+}
