@@ -26,6 +26,7 @@ class BookTest extends TestCase
     }
 
     public function testMultipleBookShow(){
+        factory(Book::class, 2)->create();
         $response = $this->get('/shop');
         $response->assertStatus(200);
 
@@ -35,6 +36,7 @@ class BookTest extends TestCase
     }
 
     public function testSingleBookShow(){
+        factory(Book::class)->create();
         $response = $this->get('/shop/5');
         $response->assertStatus(200);
 
