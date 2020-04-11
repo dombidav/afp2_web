@@ -17,7 +17,8 @@ class CreateBookGenresTable extends Migration
             $table->bigInteger('book_id');
             $table->bigInteger('genre_id');
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent(); //Kötelező Laravel miatt
+            $table->timestamp('updated_at')->useCurrent(); //Kötelező Laravel miatt
         });
     }
 

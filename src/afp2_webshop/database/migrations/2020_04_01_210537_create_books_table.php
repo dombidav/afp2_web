@@ -32,7 +32,7 @@ class CreateBooksTable extends Migration
             $table->integer('in_stock');
             $table->integer('price');
             $table->integer('discount');
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->useCurrent();
 
         });
     }

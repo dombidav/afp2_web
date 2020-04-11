@@ -17,7 +17,7 @@ class CreateGenresTable extends Migration
             $table->bigIncrements('id');
             $table->string('name_en');
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

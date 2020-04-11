@@ -23,7 +23,7 @@ class CreateAddressesTable extends Migration
             $table->string('house');
             $table->string('note');
             $table->timestamp('created_at')->useCurrent(); //Kötelező Laravel miatt
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')); //Kötelező Laravel miatt
+            $table->timestamp('updated_at')->useCurrent(); //Kötelező Laravel miatt
 
 
         });
