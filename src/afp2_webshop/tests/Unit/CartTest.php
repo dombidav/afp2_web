@@ -47,6 +47,19 @@ class CartTest extends TestCase
         $this->assertEmpty($content);
     }
 
+    public function testCartIndexToID(){
+        $user_id = 0;
+        $order_id = '0000000000000000';
+        Order::CreateCart($user_id, $order_id);
+        Package::IncrementQuantityOrInsertNew($order_id, 1);
+        $response = $this->get("/cart/$user_id");
+        $response->assertStatus(200);
+
+        $content = json_decode($response->content());
+        $this->assertNotNull($content);
+        $this->assertEquals(1, $content[0]->book_id);
+    }
+
     public function testCartAddAsGuest(){
         Order::emptyForTest();
         $book = '5';
@@ -58,6 +71,18 @@ class CartTest extends TestCase
         $this->assertNotEmpty($content);
         $this->assertEquals(true, $content->Success);
         $this->assertEquals(Order::getCartIDFor(0), $content->Order);
+        $this->assertEquals($book, $content->Book);
+    }
+
+    public function testCartAddAsUser(){
+        Order::emptyForTest();
+        $book = '5';
+        $user = User::testUser();
+        $response = $this->actingAs($user)->get("cart/add/$book");
+        $content = json_decode($response->content());
+        $this->assertNotEmpty($content);
+        $this->assertEquals(true, $content->Success);
+        $this->assertEquals(Order::getCartIDFor($user->id), $content->Order);
         $this->assertEquals($book, $content->Book);
     }
 }
