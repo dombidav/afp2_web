@@ -26,20 +26,20 @@ class BookTest extends TestCase
     }
 
     public function testMultipleBookShow(){
+        factory(Book::class, 2)->create();
         $response = $this->get('/shop');
         $response->assertStatus(200);
 
         $content = json_decode($this->get('/shop')->content());
-        factory(Book::class, 2)->create();
         $this->assertNotEmpty($content[1]->id);
     }
 
     public function testSingleBookShow(){
+        factory(Book::class)->create();
         $response = $this->get('/shop/5');
         $response->assertStatus(200);
 
         $content = json_decode($this->get('/shop/5')->content());
-        factory(Book::class)->create();
         $this->assertNotEmpty($content->id);
     }
 
