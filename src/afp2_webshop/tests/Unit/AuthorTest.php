@@ -27,6 +27,7 @@ class AuthorTest extends TestCase
     }
 
     public function testMultipleAuthorShow(){
+        factory(Author::class, 2)->create();
         $response = $this->get('/author');
         $response->assertStatus(200);
 
@@ -35,6 +36,7 @@ class AuthorTest extends TestCase
     }
 
     public function testSingleAuthorShow(){
+        factory(Author::class, 6)->create(); //6db kell legalább, hogy legyen 5-ös ID
         $response = $this->get('/author/5');
         $response->assertStatus(200);
 
