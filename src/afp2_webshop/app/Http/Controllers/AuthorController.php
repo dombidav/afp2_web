@@ -14,7 +14,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //Megjeleníti az összeset
+        return json_encode(\App\Author::all());
     }
 
     /**
@@ -44,9 +44,9 @@ class AuthorController extends Controller
      * @param  \App\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function show(Author $author)
+    public function show($id)
     {
-        return response(json_encode(Author::all())); //Show 1 db kell mutasson!!!
+        return (json_encode(Author::where('id', $id)->first()));
     }
 
     /**

@@ -36,6 +36,10 @@ Route::get('/cart/edit/{book_id}/{quantity}/{user_id}', 'CartController@edit2');
 Route::get('/author', 'AuthorController@show');
 Route::get('/author/{id}', 'AuthorController@single');
 
+Route::get('/publisher', 'publisherController@index');
+
+Route::get('/genre', 'publisherController@index');
+
 //Route::get('/cart/edit/{id}', 'CartController@delete');
 
 Auth::routes();
