@@ -15,26 +15,27 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class CartTest extends TestCase
 {
-
     public function setUp(): void
     {
         parent::setUp();
     }
 
     public function testCartStatus(){
-        $response = $this->get('/cart')->assertStatus(200);
+        $response = $this->get('/cart');
+        $response->assertStatus(200);
+
         $content = json_decode($response->content());
         $this->assertNotNull($content);
         $this->assertEmpty($content);
     }
 
     public function testCartIndexAsGuest(){
-         $response = $this->call('GET', '/cart', [], ['guest_id' => '0']);
-         $response->assertStatus(200);
+        $response = $this->call('GET', '/cart', [], ['guest_id' => '0']);
+        $response->assertStatus(200);
 
-         $content = json_decode($response->content());
-         $this->assertNotNull($content);
-         $this->assertEmpty($content);
+        $content = json_decode($response->content());
+        $this->assertNotNull($content);
+        $this->assertEmpty($content);
     }
 
     public function testCartIndexAsUser(){
@@ -47,17 +48,44 @@ class CartTest extends TestCase
         $this->assertEmpty($content);
     }
 
+    public function testCartShow(){
+        $user_id = 0;
+        $order_id = '0000000000000000';
+        $book_id = 1;
+        Order::CreateCart($user_id, $order_id);
+        Package::IncrementQuantityOrInsertNew($order_id, $book_id);
+        $response = $this->get("/cart/$user_id");
+        $response->assertStatus(200);
+
+        $content = json_decode($response->content());
+        //dd($content); //Dump & Die
+        $this->assertNotNull($content);
+        $this->assertEquals($book_id, $content[0]->book_id);
+    }
+
     public function testCartAddAsGuest(){
         Order::emptyForTest();
         $book = '5';
         $cookies = ['guest_id' => encrypt('0', true)];
-        $response = $this->call('GET', "/cart/add/$book", [], $cookies);
+        $response = $this->call('GET', "cart/add/$book", [], $cookies);
         $response->assertStatus(200);
 
         $content = json_decode($response->content());
         $this->assertNotEmpty($content);
-        $this->assertEquals(true, $content->Success);
+        $this->assertTrue($content->Success);
         $this->assertEquals(Order::getCartIDFor(0), $content->Order);
+        $this->assertEquals($book, $content->Book);
+    }
+
+    public function testCartAddAsUser(){
+        Order::emptyForTest();
+        $book = '5';
+        $user = User::testUser();
+        $response = $this->actingAs($user)->get("cart/add/$book");
+        $content = json_decode($response->content());
+        $this->assertNotEmpty($content);
+        $this->assertTrue($content->Success);
+        $this->assertEquals(Order::getCartIDFor($user->id), $content->Order);
         $this->assertEquals($book, $content->Book);
     }
 }

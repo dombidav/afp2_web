@@ -14,7 +14,7 @@ class Package extends Model
 
     /**
      * @param string $order_id Order for the package
-     * @param $book_id Book for the package
+     * @param $book_id int|string Book for the package
      * @return bool If Successful
      */
     public static function IncrementQuantityOrInsertNew(string $order_id, $book_id) : bool
