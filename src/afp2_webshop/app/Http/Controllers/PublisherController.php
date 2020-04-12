@@ -14,7 +14,7 @@ class PublisherController extends Controller
      */
     public function index()
     {
-        //
+        return json_encode(\App\Publisher::all());
     }
 
     /**
@@ -44,9 +44,9 @@ class PublisherController extends Controller
      * @param  \App\Publisher  $publisher
      * @return \Illuminate\Http\Response
      */
-    public function show(Publisher $publisher)
+    public function show($id)
     {
-        //
+        return (json_encode(Publisher::where('id', $id)->first()));
     }
 
     /**
@@ -82,4 +82,5 @@ class PublisherController extends Controller
     {
         //
     }
+
 }

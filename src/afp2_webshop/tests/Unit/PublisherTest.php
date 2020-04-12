@@ -27,6 +27,7 @@ class PublisherTest extends TestCase
     }
 
     public function testMultiplePublisherShow(){
+        factory(Publisher::class, 2)->create();
         $response = $this->get('/publisher');
         $response->assertStatus(200);
 
@@ -35,6 +36,7 @@ class PublisherTest extends TestCase
     }
 
     public function testSinglePublisherShow(){
+        factory(Publisher::class, 6)->create();
         $response = $this->get('/publisher/5');
         $response->assertStatus(200);
 
