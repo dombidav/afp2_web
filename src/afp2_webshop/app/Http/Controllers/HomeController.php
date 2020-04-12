@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+       // $new = json_encode(Book::orderBy('created_at')->limit(5)->get());
+      //  $random =json_encode(Book::inRandomOrder()->limit(5)->get());
+
+
+        return 'Legújabbak:'.'<br>'.
+                json_encode(Book::orderBy('created_at')->limit(5)->get()).'<br>'.
+                'Random:'.
+                '<br>'.json_encode(Book::inRandomOrder()->limit(5)->get());
     }
 }

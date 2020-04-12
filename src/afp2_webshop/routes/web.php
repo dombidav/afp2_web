@@ -13,11 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-    //return json_encode(["hello", "asd"]);
-});
-
+Route::get('/', 'HomeController@index');
 /*
  * GET - "Kérem" > könyv adatai
  * POST - "Adom" > új könyv
@@ -44,5 +40,4 @@ Route::get('/author/{id}', 'AuthorController@single');
 
 Auth::routes();
 Route::get('/profile', 'ProfileController@show');
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

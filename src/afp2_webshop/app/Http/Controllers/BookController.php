@@ -45,15 +45,9 @@ class BookController extends Controller
      * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
-<<<<<<< Updated upstream
-    public function show($id) // EZT KELL
-    {
-        return json_encode(Book::where('id', $id)->first());
-=======
     public function show($id)
     {
-        $book = Book::findOrFail($id);
->>>>>>> Stashed changes
+        return json_encode(Book::where('id', $id)->first());
     }
 
     /**
