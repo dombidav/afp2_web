@@ -14,7 +14,7 @@ class GenreController extends Controller
      */
     public function index()
     {
-        //
+        return json_encode(\App\Genre::all());
     }
 
     /**
@@ -44,9 +44,9 @@ class GenreController extends Controller
      * @param  \App\Genre  $genre
      * @return \Illuminate\Http\Response
      */
-    public function show(Genre $genre)
+    public function show($id)
     {
-        //
+        return (json_encode(Genre::where('id', $id)->first()));
     }
 
     /**

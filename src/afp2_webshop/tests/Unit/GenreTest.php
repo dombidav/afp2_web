@@ -27,6 +27,7 @@ class GenreTest extends TestCase
     }
 
     public function testMultipleGenreShow(){
+        factory(Genre::class, 2)->create();
         $response = $this->get('/genre');
         $response->assertStatus(200);
 
@@ -35,6 +36,7 @@ class GenreTest extends TestCase
     }
 
     public function testSingleGenreShow(){
+        factory(Genre::class, 6)->create();
         $response = $this->get('/genre/5');
         $response->assertStatus(200);
 
