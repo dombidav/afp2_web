@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use App\Helpers\AppHelper;
 use App\Order;
 use App\Package;
+//use Crypt;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
@@ -21,9 +24,13 @@ class CartController extends Controller
         $this->getUserId($user_id, $needs_id);
         $order_id = Order::getCartIDFor($user_id);
         $packages = Package::forOrder($order_id);
+        $ans = [];
+        foreach ($packages as $pack){
+            array_push($ans, ['book' => Book::find($pack->book_id), 'count' => $pack->quantity]);
+        }
         if($needs_id)
-            return response(json_encode($packages))->cookie('guest_id', $user_id, 9999);
-        return json_encode($packages);
+            return response(view('Cart.cart_page', ['user_id' => $user_id, 'order_id' => $order_id, 'packs' => $ans]))->cookie('guest_id', $user_id, 9999);
+        return view('Cart.cart_page', ['user_id' => $user_id, 'order_id' => $order_id, 'packs' => $ans]);
     }
 
     public function add($id){
@@ -82,7 +89,14 @@ class CartController extends Controller
      */
     public function getUserId(&$user_id, &$needs_id): void
     {
-        $user_id = Auth::check() ? Auth::id() : Cookie::get('guest_id');
+        if (Auth::check()) {
+            $user_id = Auth::id();
+        } else {
+            $user_id = Cookie::get('guest_id');
+            if(strlen($user_id) > 10){
+                $user_id = Crypt::decryptString($user_id);
+            }
+        }
         $needs_id = false;
         if (!$user_id) {
             $needs_id = true;

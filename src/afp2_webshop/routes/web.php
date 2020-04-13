@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'StaticController@showHome');
+Route::get('/contact/', 'StaticController@showContact');
+Route::get('/about/', 'StaticController@showAbout');
 /*
  * GET - "Kérem" > könyv adatai
  * POST - "Adom" > új könyv

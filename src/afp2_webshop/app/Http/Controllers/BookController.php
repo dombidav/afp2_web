@@ -10,12 +10,12 @@ class BookController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
         //return view('shop_page', ['all_books' => \App\Book::all()]);
-        return json_encode(\App\Book::all());
+        return view('shop.shop_page', [ 'books' => \App\Book::all()]);
     }
 
     /**
@@ -43,11 +43,11 @@ class BookController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Book  $book
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function show($id)
     {
-        return json_encode(Book::where('id', $id)->first());
+        return view('shop.item', ['book' => Book::where('id', $id)->first()]);
     }
 
     /**
