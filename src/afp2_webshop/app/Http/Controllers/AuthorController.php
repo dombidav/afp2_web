@@ -46,7 +46,7 @@ class AuthorController extends Controller
      */
     public function show($id)
     {
-        return (json_encode(Author::where('id', $id)->first()));
+        return response(json_encode(Author::where('id', $id)->first()));
     }
 
     /**
@@ -81,9 +81,5 @@ class AuthorController extends Controller
     public function destroy(Author $author)
     {
         //
-    }
-
-    public function single($id){
-        return json_encode(Author::find($id));
     }
 }

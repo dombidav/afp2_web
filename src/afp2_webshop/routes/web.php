@@ -33,14 +33,14 @@ Route::get('/cart/remove/{book_id}/{user_id}', 'CartController@remove2');
 Route::get('/cart/edit/{book_id}/{quantity}', 'CartController@edit');
 Route::get('/cart/edit/{book_id}/{quantity}/{user_id}', 'CartController@edit2');
 
-Route::get('/author', 'AuthorController@show');
-Route::get('/author/{id}', 'AuthorController@single');
+Route::get('/author', 'AuthorController@index');
+Route::get('/author/{id}', 'AuthorController@show');
 
 Route::get('/publisher', 'publisherController@index');
+Route::get('/publisher/{id}', 'publisherController@show');
 
 Route::get('/genre', 'publisherController@index');
-
-//Route::get('/cart/edit/{id}', 'CartController@delete');
+Route::get('/genre/{id}', 'publisherController@show');
 
 Auth::routes();
 Route::get('/profile', 'ProfileController@show');
