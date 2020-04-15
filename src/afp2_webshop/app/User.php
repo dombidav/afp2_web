@@ -2,9 +2,13 @@
 
 namespace App;
 
+use Faker\Provider\Address;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Crypt;
 
 class User extends Authenticatable
 {
@@ -50,11 +54,41 @@ class User extends Authenticatable
     }
 
     public function billing(){
-        //return $this->hasOne(App\Billing::class);
+        return $this->hasOne(Address::class);
     }
 
     public function shipping(){
-        //return $this->hasOne(App\Shipping::class);
+        return $this->hasOne(Address::class);
+    }
+
+    public static function cart(){
+        $order_id = Order::getCartIDFor(User::whoami());
+        $packages = Package::forOrder($order_id);
+        $ans = [];
+        foreach ($packages as $pack){
+            array_push($ans, ['book' => Book::find($pack->book_id), 'count' => $pack->quantity]);
+        }
+        return $ans;
+    }
+
+    public static function cartCount(){
+        $sum = 0;
+        foreach (User::cart() as $item){
+            $sum += $item['count'];
+        }
+        return $sum;
+    }
+
+    public static function whoami(){
+        if (Auth::check()) {
+            $user_id = Auth::id();
+        } else {
+            $user_id = Cookie::get('guest_id');
+            if(strlen($user_id) > 10){
+                $user_id = Crypt::decryptString($user_id);
+            }
+        }
+        return $user_id;
     }
 
 }
