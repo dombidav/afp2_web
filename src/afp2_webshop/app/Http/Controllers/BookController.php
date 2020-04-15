@@ -18,6 +18,11 @@ class BookController extends Controller
         return view('shop.shop_page', [ 'books' => \App\Book::all()]);
     }
 
+    public function search(Request $request){
+        $books = Book::search(htmlspecialchars(trim($request->input('search_field'))));
+        return view('shop.shop_page', ['books' => $books]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
