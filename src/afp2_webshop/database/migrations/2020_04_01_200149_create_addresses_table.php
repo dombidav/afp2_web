@@ -16,12 +16,12 @@ class CreateAddressesTable extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('country');
-            $table->string('tin');
+            $table->string('tin')->nullable();
             $table->string('postal_code');
             $table->string('city');
             $table->string('street');
             $table->string('house');
-            $table->string('note');
+            $table->string('note')->nullable();
             $table->timestamp('created_at')->useCurrent(); //Kötelező Laravel miatt
             $table->timestamp('updated_at')->useCurrent(); //Kötelező Laravel miatt
 

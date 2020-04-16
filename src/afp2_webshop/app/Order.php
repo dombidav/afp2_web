@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Helpers\AppHelper;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -57,15 +58,45 @@ class Order extends Model
         }
     }
 
+    /**
+     * @param int|null $whoami
+     * @return Collection
+     */
+    public static function ofUser(?int $whoami)
+    {
+        return Order::query()->where('user_id', '=', $whoami)->where('status', '<>', 0)->get();
+    }
+
+    /**
+     * Create new order
+     * @param int|null $user_id
+     * @param int|null $billing
+     * @param int|null $shipping
+     * @param int $status
+     * @return string
+     */
+    public static function create(?int $user_id, int $billing = null, int $shipping = null, int $status = 1)
+    {
+        $id = AppHelper::generateOrderID();
+        DB::insert('INSERT INTO orders (id, user_id, billing, shipping, status) VALUES (:id, :user_id, :billing, :shipping, :status)', [
+            'id' => $id,
+            'user_id' => $user_id,
+            'billing' => $billing,
+            'shipping' => $shipping,
+            'status' => $status,
+        ]);
+        return $id;
+    }
+
     public function user(){
         return $this->belongsTo(User::class);
     }
 
     public function billing(){
-        //return $this->belongsTo(Address::class, "billing");
+        return $this->belongsTo(Addresses::class, "billing");
     }
 
     public function shipping(){
-        //return $this->belongsTo(Address::class, "shipping");
+        return $this->belongsTo(Addresses::class, "shipping");
     }
 }

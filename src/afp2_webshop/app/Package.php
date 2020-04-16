@@ -28,7 +28,7 @@ class Package extends Model
             );
         }
         else{
-            return DB::insert('INSERT INTO `packages` (`order_id`, `book_id`) VALUES (:order_id, :book_id)',
+            return DB::insert('INSERT INTO `packages` (`order_id`, `book_id`, `quantity`) VALUES (:order_id, :book_id, 1)',
                 [
                     'order_id' => $order_id,
                     'book_id' => $book_id
@@ -75,6 +75,14 @@ class Package extends Model
                 'order_id' => $order_id
             ]
         );
+    }
+
+    public static function move(string $from, string $to)
+    {
+        DB::update('UPDATE packages SET order_id = :to WHERE order_id = :from',[
+            'to' => $to,
+            'from' => $from
+        ]);
     }
 
     public function order(){
