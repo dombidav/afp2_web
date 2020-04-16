@@ -14,7 +14,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        return json_encode(\App\Author::all());
+        return json_encode(\App\Author::all()); //return view('apg.author', ['authors' => Author::all()]); --> {{ json_encode($authors) }}
     }
 
     /**

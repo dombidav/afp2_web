@@ -59,7 +59,7 @@ use Illuminate\Support\Facades\Auth;
                     <!-- brand-wrap END -->
                 </div>
                 <div class="col-lg-4 col-sm-12">
-                    <form method="post" action="{{ route('shop') }}" class="search">
+                    <form method="post" action="{{ route('shop.search') }}" class="search">
                         @csrf
                         <div class="input-group w-100">
                             <label for="search_field" class="d-none">Search</label>
