@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property int id
+ */
 class Book extends Model
 {
     /**
@@ -21,7 +24,15 @@ class Book extends Model
     }
 
     public function authors(){
-        return $this->belongsToMany(Author::class, 'book_authors');
+        return $this->belongsToMany(Author::class, 'book_authors')->get();
+    }
+
+    public function getAuthorNames($or = ''){
+        $ans = '';
+        foreach ($this->authors() as $author){
+            $ans .= $author->name . ', ';
+        }
+        return strlen($ans) > 0 ? trim($ans, ', ') : $or;
     }
 
     public function publisher(){

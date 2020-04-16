@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class StaticController extends Controller
 {
     public function showHome(){
-        return view('static.home', ['newest' => Book::orderBy('created_at')->limit(5)->get(), 'featured' => Book::inRandomOrder()->limit(5)->get()]);
+        return view('static.home', ['newest' => Book::orderBy('created_at')->limit(4)->get(), 'featured' => Book::inRandomOrder()->limit(10)->get()]);
     }
 
     public function showContact(){
