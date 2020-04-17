@@ -177,7 +177,7 @@ return [
         /*
          * IDE helper
          */
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+
         /*
          * Custom Blade directives
          */
