@@ -4,6 +4,12 @@
 namespace App\Helpers;
 
 
+use App\Book;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Crypt;
+
 class AppHelper
 {
     public static function generateUserID(){
@@ -51,5 +57,17 @@ class AppHelper
             $output = $text;
         }
         return $output;
+    }
+
+    /**
+     * @param string $string
+     * @param array $array
+     * @return \Illuminate\Http\Response
+     */
+    public static function viewWithGuestId(string $string, array $array = [])
+    {
+        if(User::whoami() == null)
+            return response(view($string, $array))->cookie('guest_id', AppHelper::generateUserID(), 9999);
+        return response(view($string, $array));
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Helpers\AppHelper;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -20,7 +21,7 @@ class BookController extends Controller
 
     public function search(Request $request){
         $books = Book::search(htmlspecialchars(trim($request->input('search_field'))));
-        return view('shop.shop_page', ['books' => $books]);
+        return AppHelper::viewWithGuestId('shop.shop_page', ['books' => $books]);
     }
 
     /**
@@ -52,7 +53,7 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        return view('shop.item', ['book' => Book::where('id', $id)->first()]);
+        return AppHelper::viewWithGuestId('shop.item', ['book' => Book::where('id', $id)->first()]);
     }
 
     /**

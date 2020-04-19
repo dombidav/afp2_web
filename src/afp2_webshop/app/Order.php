@@ -36,14 +36,16 @@ class Order extends Model
      */
     public static function CreateCart($user_id, string $order_id): bool
     {
-        return DB::insert('INSERT INTO `orders` (`id`, `user_id`, `billing`, `shipping`, `status`) VALUES (:gen_id, :user_id, :billing, :shipping, 0)',
-            [
-                'gen_id' => $order_id,
-                'user_id' => $user_id,
-                'billing' => Auth::check() ? Auth::user()->billing() : 0,
-                'shipping' => Auth::check() ? Auth::user()->shipping() : 0,
-            ]
-        );
+        if(!$user_id = null && !$order_id == null)
+            return DB::insert('INSERT INTO `orders` (`id`, `user_id`, `billing`, `shipping`, `status`) VALUES (:gen_id, :user_id, :billing, :shipping, 0)',
+                [
+                    'gen_id' => $order_id,
+                    'user_id' => $user_id,
+                    'billing' => Auth::check() ? Auth::user()->billing() : 0,
+                    'shipping' => Auth::check() ? Auth::user()->shipping() : 0,
+                ]
+            );
+        return false;
     }
 
     public static function emptyForTest()

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Addresses;
+use App\Helpers\AppHelper;
 use App\Order;
 use App\Package;
 use App\User;
@@ -28,7 +29,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return view('order.create', ['cart' => User::cart()]);
+        return AppHelper::viewWithGuestId('order.create', ['cart' => User::cart()]);
     }
 
     /**
@@ -86,7 +87,7 @@ class OrderController extends Controller
         );
         $order_id = Order::create(User::whoami(), $billing ?? $shipping, $shipping);
         Package::move(Order::getCartIDFor(User::whoami()), $order_id);
-        return view('order.complete', ['order_id' => $order_id]);
+        return AppHelper::viewWithGuestId('order.complete', ['order_id' => $order_id]);
     }
 
     /**
