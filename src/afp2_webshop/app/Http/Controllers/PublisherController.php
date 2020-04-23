@@ -14,7 +14,14 @@ class PublisherController extends Controller
      */
     public function index()
     {
-        return json_encode(\App\Publisher::all());
+        //return json_encode(\App\Publisher::all());
+        return view('publisher', ['publishers' => Publisher::all()]);
+    }
+
+    public function search(Request $request)
+    {
+        $publishers = Publisher::search(htmlspecialchars(trim($request->input('search_field'))));
+        return view('publisher', ['publishers' => $publishers]);
     }
 
     /**
@@ -46,7 +53,8 @@ class PublisherController extends Controller
      */
     public function show($id)
     {
-        return (json_encode(Publisher::where('id', $id)->first()));
+        //return (json_encode(Publisher::where('id', $id)->first()));
+        return view('publisher_id', ['publisher' => Publisher::where('id', $id)->first()]);
     }
 
     /**
