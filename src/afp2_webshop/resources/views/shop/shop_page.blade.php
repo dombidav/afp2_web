@@ -53,9 +53,10 @@
                             </header>
                             <div class="filter-content collapse show" id="collapse_2" style="">
                                 <div class="card-body">
-                                    <form class="pb-3">
+                                    @csrf
+                                    <form class="pb-3" action="{{ route('shop.filter.author') }}">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search">
+                                            <input type="text" class="form-control" id="search_author" name="search_author" placeholder="Search">
                                             <div class="input-group-append">
                                                 <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
                                             </div>
@@ -74,9 +75,9 @@
                             </header>
                             <div class="filter-content collapse show" id="collapse_3" style="">
                                 <div class="card-body">
-                                    <form class="pb-3">
+                                    <form class="pb-3" action="{{ route('shop.filter.genre') }}">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search">
+                                            <input type="text" class="form-control" id="search_genre" name="search_genre" placeholder="Search">
                                             <div class="input-group-append">
                                                 <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
                                             </div>
@@ -114,13 +115,13 @@
                             </div>
                         </article> <!-- filter-group .// -->
                         <article class="filter-group">
-                            <header class="card-header">
+                            <header class="card-header" >
                                 <a href="#" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" class="">
                                     <i class="icon-control orange fa fa-chevron-down"></i>
                                     <h6 class="title">Price range </h6>
                                 </a>
                             </header>
-                            <div class="filter-content collapse show" id="collapse_4" style="">
+                            <div class="filter-content collapse show"  id="collapse_4" style="">
                                 <div class="card-body">
                                     <input type="range" class="custom-range" min="0" max="100" name="">
                                     <div class="form-row">
@@ -168,9 +169,9 @@
                                 </div><!-- card-body.// -->
                                 <h6 class="title card-header">Publisher </h6>
                                 <div class="card-body">
-                                    <form class="pb-3">
+                                    <form class="pb-3"  action="{{ route('shop.filter.publisher') }}">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search">
+                                            <input type="text" class="form-control" id="search_publisher" name="search_publisher" placeholder="Search">
                                             <div class="input-group-append">
                                                 <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
                                             </div>
@@ -230,7 +231,7 @@
                                             <span class="price">{{$books[$i]->price}}€</span>
                                         </div> <!-- price-wrap.// -->
                                     </div>
-                                    <a href="#" class="btn btn-block btn-warning">Add to cart </a>
+                                    <a href="afp2.test/cart/add/{{$i}}" class="btn btn-block btn-warning">Add to cart </a>
                                 </figcaption>
                             </figure>
                         </div> <!-- col.// -->
@@ -248,7 +249,7 @@
                                             <span class="price">{{$books[$i+1]->price}}€</span>
                                         </div> <!-- price-wrap.// -->
                                     </div>
-                                    <a href="#" class="btn btn-block btn-warning">Add to cart </a>
+                                    <a href="afp2.test/cart/add/{{$i+1}}" class="btn btn-block btn-warning">Add to cart </a>
                                 </figcaption>
                             </figure>
                         </div> <!-- col.// -->
@@ -263,10 +264,10 @@
                                     <div class="fix-height">
                                         <a href="#" class="title">{{$books[$i+2]->title}}</a>
                                         <div class="price-wrap mt-2">
-                                            <span class="price">{{$books[$i+1]->price}}€</span>
+                                            <span class="price">{{$books[$i+2]->price}}€</span>
                                         </div> <!-- price-wrap.// -->
                                     </div>
-                                    <a href="#" class="btn btn-block btn-warning">Add to cart </a>
+                                    <a href="afp2.test/cart/add/{{$i+2}}" class="btn btn-block btn-warning">Add to cart </a>
                                 </figcaption>
                             </figure>
                         </div> <!-- col.// -->

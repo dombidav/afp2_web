@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Book_author;
+use App\Genre;
 use App\Helpers\AppHelper;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\DocBlock\Tags\Author;
 
 class BookController extends Controller
 {
@@ -24,6 +27,26 @@ class BookController extends Controller
         return AppHelper::viewWithGuestId('shop.shop_page', ['books' => $books]);
     }
 
+    public function searchAuthor(Request $request){
+        $author = Author::search(htmlspecialchars(trim($request->input('search_author'))));
+        $authorId = $author->id;
+        $book_author= Book_author::where('author_id', $authorId)->all();
+        $books = $book_author->book_id;
+        return AppHelper::viewWithGuestId('shop.shop_page', ['books' => $books]);
+    }
+
+    public function searchGenre(Request $request){
+        $genre = Genre::search(htmlspecialchars(trim($request->input('search_genre'))));
+        $books=Book::where('genre', $genre)->all();
+
+        return AppHelper::viewWithGuestId('shop.shop_page', ['books' => $books]);
+    }
+    public function searchPublisher(Request $request){
+        $publisher= Publisher::search(htmlspecialchars(trim($request->input('search_publisher'))));
+        $books=Book::where('publisher', $publisher)->all();
+
+        return AppHelper::viewWithGuestId('shop.shop_page', ['books' => $books]);
+    }
     /**
      * Show the form for creating a new resource.
      *
