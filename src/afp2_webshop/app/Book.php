@@ -23,6 +23,51 @@ class Book extends Model
         return false;
     }
 
+    public static function searchAuthor($input)
+    {
+        $b_a = Book_author::query()->where((Author::where('name', 'like', '%'.$input.'%')->id),'==', 'author_id')->get();
+
+        try{
+            if ($b_a->count() > 0)
+                $ans= Book::query()->where('id', '==', $b_a->book_id)->get();
+                try{
+                    if ($ans->count() > 0)
+                        return $ans;
+                }catch (\Exception $e){ return false; }
+        }catch (\Exception $e){ return false; }
+        return false;
+    }
+
+    public static function searchGenre($input)
+    {
+        $b_g= Book_author::query()->where((Genre::where('name_en', 'like', '%'.$input.'%')->id),'==', 'genre_id')->get();
+
+        try{
+            if ($b_g->count() > 0)
+                $ans= Book::query()->where('id', '==', $b_g->book_id)->get();
+            try{
+                if ($ans->count() > 0)
+                    return $ans;
+            }catch (\Exception $e){ return false; }
+        }catch (\Exception $e){ return false; }
+        return false;
+    }
+
+    public static function searchPublisher($input)
+    {
+        $pub = Publisher::query()->where('name', 'like', '%'.$input.'%')->get();
+        try{
+            if ($pub->count() > 0)
+                $ans = Book::query()->where('publisher_id', '==', $pub->id)->get();
+            try{
+                if ($ans->count() > 0)
+                    return $ans;
+            }catch (\Exception $e){ return false; }
+        }catch (\Exception $e){ return false; }
+
+        return false;
+    }
+
     public function authors(){
         return $this->belongsToMany(Author::class, 'book_authors')->get();
     }
