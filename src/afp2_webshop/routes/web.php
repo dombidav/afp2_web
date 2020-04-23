@@ -37,13 +37,16 @@ Route::get('/cart/edit/{book_id}/{quantity}/{user_id}', 'CartController@edit2')-
 Route::get('order', 'OrderController@index')->name('orders');
 
 Route::get('/author', 'AuthorController@index')->name('author');
+Route::post('/author', 'AuthorController@search')->name('author.search');
 Route::get('/author/{id}', 'AuthorController@show')->name('author.get');
 
-Route::get('/publisher', 'publisherController@index')->name('publisher');
-Route::get('/publisher/{id}', 'publisherController@show')->name('publisher.get');
+Route::get('/publisher', 'PublisherController@index')->name('publisher');
+Route::post('/publisher', 'PublisherController@search')->name('publisher.search');
+Route::get('/publisher/{id}', 'PublisherController@show')->name('publisher.get');
 
-Route::get('/genre', 'publisherController@index')->name('genre');
-Route::get('/genre/{id}', 'publisherController@show')->name('genre.get');
+Route::get('/genre', 'GenreController@index')->name('genre');
+Route::post('/genre', 'GenreController@search')->name('genre.search');
+Route::get('/genre/{id}', 'GenreController@show')->name('genre.get');
 
 Auth::routes();
 Route::get('/profile', 'ProfileController@show')->name('profile');
