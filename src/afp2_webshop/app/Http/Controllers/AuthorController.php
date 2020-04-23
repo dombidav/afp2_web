@@ -14,7 +14,14 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        return json_encode(\App\Author::all()); //return view('apg.author', ['authors' => Author::all()]); --> {{ json_encode($authors) }}
+        //return json_encode(\App\Author::all());
+        return view('author', ['authors' => Author::all()]); //--> {{ json_encode($authors) }}
+    }
+
+    public function search(Request $request)
+    {
+        $authors = Author::search(htmlspecialchars(trim($request->input('search_field'))));
+        return view('author', ['authors' => $authors]);
     }
 
     /**
@@ -46,7 +53,8 @@ class AuthorController extends Controller
      */
     public function show($id)
     {
-        return response(json_encode(Author::where('id', $id)->first()));
+        //return response(json_encode(Author::where('id', $id)->first()));
+        return view('author_id', ['author' => Author::where('id', $id)->first()]);
     }
 
     /**
