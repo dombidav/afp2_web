@@ -54,11 +54,15 @@ class User extends Authenticatable
     }
 
     public function billing(){
-        return $this->hasOne(Address::class);
+        if($this->billing)
+            return Addresses::find($this->billing);
+        return null;
     }
 
     public function shipping(){
-        return $this->hasOne(Address::class);
+        if($this->shipping)
+            return Addresses::find($this->shipping);
+        return null;
     }
 
     public static function cart(){

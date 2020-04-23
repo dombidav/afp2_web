@@ -35,6 +35,7 @@ Route::get('/cart/edit/{book_id}/{quantity}', 'CartController@edit')->name('cart
 Route::get('/cart/edit/{book_id}/{quantity}/{user_id}', 'CartController@edit2')->name('cart.edit-user');
 
 Route::get('order', 'OrderController@index')->name('orders');
+Route::get('order', 'OrderController@place')->name('orders.place');
 
 Route::get('/author', 'AuthorController@index')->name('author');
 Route::post('/author', 'AuthorController@search')->name('author.search');

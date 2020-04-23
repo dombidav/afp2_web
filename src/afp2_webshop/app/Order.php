@@ -36,15 +36,24 @@ class Order extends Model
      */
     public static function CreateCart($user_id, string $order_id): bool
     {
-        if(!$user_id = null && !$order_id == null)
+        if(!$user_id = null && !$order_id == null) {
+            $billing = 0;
+            $shipping = 0;
+            if(Auth::check()){
+                if(!empty(Auth::user()->billing()))
+                    $billing = Auth::user()->billing()->id;
+                if(!empty(Auth::user()->shipping()))
+                    $shipping = Auth::user()->shipping()->id;
+            }
             return DB::insert('INSERT INTO `orders` (`id`, `user_id`, `billing`, `shipping`, `status`) VALUES (:gen_id, :user_id, :billing, :shipping, 0)',
                 [
                     'gen_id' => $order_id,
                     'user_id' => $user_id,
-                    'billing' => Auth::check() ? Auth::user()->billing() : 0,
-                    'shipping' => Auth::check() ? Auth::user()->shipping() : 0,
+                    'billing' => $billing,
+                    'shipping' => $shipping,
                 ]
             );
+        }
         return false;
     }
 
