@@ -14,7 +14,14 @@ class GenreController extends Controller
      */
     public function index()
     {
-        return json_encode(\App\Genre::all());
+        //return json_encode(\App\Genre::all());
+        return view('genre', ['genres' => Genre::all()]);
+    }
+
+    public function search(Request $request)
+    {
+        $genres = Genre::search(htmlspecialchars(trim($request->input('search_field'))));
+        return view('genre', ['genres' => $genres]);
     }
 
     /**
@@ -46,7 +53,8 @@ class GenreController extends Controller
      */
     public function show($id)
     {
-        return (json_encode(Genre::where('id', $id)->first()));
+        //return (json_encode(Genre::where('id', $id)->first()));
+        return view('genre_id', ['genre' => Genre::where('id', $id)->first()]);
     }
 
     /**
