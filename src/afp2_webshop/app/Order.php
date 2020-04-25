@@ -20,8 +20,7 @@ class Order extends Model
     {
         $order = Order::query()->where('user_id', '=', $user_id)->where('status', '=', 0)->get();
         if ($order->count() == 0){
-            $order = AppHelper::generateOrderID();
-            self::CreateCart($user_id, $order);
+            self::CreateCart($user_id);
         }
         else{
             $order = $order[0]->id;
@@ -31,30 +30,29 @@ class Order extends Model
 
     /**
      * @param int $user_id
-     * @param string $order_id
      * @return bool
      */
-    public static function CreateCart($user_id, string $order_id): bool
+    public static function CreateCart($user_id): bool
     {
-        if(!$user_id = null && !$order_id == null) {
-            $billing = 0;
-            $shipping = 0;
-            if(Auth::check()){
-                if(!empty(Auth::user()->billing()))
-                    $billing = Auth::user()->billing()->id;
-                if(!empty(Auth::user()->shipping()))
-                    $shipping = Auth::user()->shipping()->id;
-            }
-            return DB::insert('INSERT INTO `orders` (`id`, `user_id`, `billing`, `shipping`, `status`) VALUES (:gen_id, :user_id, :billing, :shipping, 0)',
-                [
-                    'gen_id' => $order_id,
-                    'user_id' => $user_id,
-                    'billing' => $billing,
-                    'shipping' => $shipping,
-                ]
-            );
+        if(!is_int($user_id))
+            $user_id = User::whoami();
+        $billing = 0;
+        $shipping = 0;
+        if(Auth::check()){
+            if(!empty(Auth::user()->billing()))
+                $billing = Auth::user()->billing()->id;
+            if(!empty(Auth::user()->shipping()))
+                $shipping = Auth::user()->shipping()->id;
         }
-        return false;
+        $order_id = AppHelper::generateOrderID();
+        return DB::insert('INSERT INTO `orders` (`id`, `user_id`, `billing`, `shipping`, `status`) VALUES (:gen_id, :user_id, :billing, :shipping, 0)',
+            [
+                'gen_id' => $order_id,
+                'user_id' => $user_id,
+                'billing' => $billing,
+                'shipping' => $shipping,
+            ]
+        );
     }
 
     public static function emptyForTest()
