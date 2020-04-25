@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 /**
  * @property int id
@@ -19,8 +20,8 @@ class Book extends Model
         try{
             if ($ans->count() > 0)
                 return $ans;
-        }catch (\Exception $e){ return false; }
-        return false;
+        }catch (\Exception $e){ return []; }
+        return [];
     }
 
     public static function searchAuthor($input)
@@ -33,9 +34,9 @@ class Book extends Model
                 try{
                     if ($ans->count() > 0)
                         return $ans;
-                }catch (\Exception $e){ return false; }
-        }catch (\Exception $e){ return false; }
-        return false;
+                }catch (\Exception $e){ return []; }
+        }catch (\Exception $e){ return []; }
+        return [];
     }
 
     public static function searchGenre($input)
@@ -48,9 +49,9 @@ class Book extends Model
             try{
                 if ($ans->count() > 0)
                     return $ans;
-            }catch (\Exception $e){ return false; }
-        }catch (\Exception $e){ return false; }
-        return false;
+            }catch (\Exception $e){ return []; }
+        }catch (\Exception $e){ return []; }
+        return [];
     }
 
     public static function searchPublisher($input)
@@ -62,10 +63,55 @@ class Book extends Model
             try{
                 if ($ans->count() > 0)
                     return $ans;
-            }catch (\Exception $e){ return false; }
-        }catch (\Exception $e){ return false; }
+            }catch (\Exception $e){ return []; }
+        }catch (\Exception $e){ return []; }
 
-        return false;
+        return [];
+    }
+
+    public static function extendedSearch(array $requirements)
+    {
+        $ids =
+            DB::table('books')
+                ->join('book_authors', 'books.id', '=', 'book_authors.book_id')
+                ->join('authors', 'book_authors.author_id', '=', 'authors.id')
+                ->join('book_genres', 'books.id', '=', 'book_genres.book_id')
+                ->join('genres', 'book_genres.genre_id', '=', 'genres.id')
+                ->join('publishers', 'books.publisher_id', '=', 'publishers.id')
+
+//                ->Orwhere('title', 'like', (($requirements['quick_search'][0] ?? '') == '$' ? '' : '%') . trim($requirements['quick_search'], ' $') . (($requirements['quick_search'][strlen($requirements['quick_search']) - 1] ?? '') == '$' ? '' : '%'))
+//                ->Orwhere('ISBN', 'like', (($requirements['quick_search'][0] ?? '') == '$' ? '' : '%') . trim($requirements['quick_search'], ' $') . (($requirements['quick_search'][strlen($requirements['quick_search']) - 1] ?? '') == '$' ? '' : '%'))
+
+                ->where('price', '>=', trim($requirements['price_min'], ' $€'))
+                ->where('price', '<=', trim($requirements['price_max'], ' $€'))
+                ->where('page_count', '>=', $requirements['page_min'])
+                ->where('page_count', '<=', $requirements['page_max'])
+                ->where('language', 'like', $requirements['language']);
+                $ids = self::iterateWhere('author', $requirements, $ids);
+                $ids = self::iterateWhere('genre', $requirements, $ids, '_en');
+                $ids = self::iterateWhere('publisher', $requirements, $ids);
+        /** @var Book[] $books */
+        //dd($ids->toSql());
+        $books = [];
+        foreach ($ids->distinct()->orderBy('books.id')->get('books.id') as $id){
+            array_push($books, Book::find($id->id));
+        }
+        return $books;
+    }
+
+    /**
+     * @param string $model
+     * @param array $requirements
+     * @param \Illuminate\Database\Query\Builder $ids
+     * @param string $localized
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public static function iterateWhere(string $model, array $requirements, \Illuminate\Database\Query\Builder $ids, string $localized = ''): \Illuminate\Database\Query\Builder
+    {
+        foreach (array_map('trim', explode(',', $requirements[$model.'_search'])) as $and) {
+            $ids = $ids->where($model.'s.name'.$localized, 'like', (($and[0] ?? '') == '$' ? '' : '%') . trim($and, ' $') . (($and[strlen($and) - 1] ?? '') == '$' ? '' : '%'));
+        }
+        return $ids;
     }
 
     public function authors(){

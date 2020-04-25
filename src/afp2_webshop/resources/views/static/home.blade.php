@@ -109,3 +109,7 @@
     <!-- ========================= SECTION  END ========================= -->
     <!-- ========================= END CONTENT ========================= -->
 @endsection
+
+@section('page_script')
+    <script src="{{ URL::asset('js/multi-item-carousel.js') }}" type="text/javascript"></script>
+@endsection

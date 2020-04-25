@@ -23,8 +23,11 @@ class BookController extends Controller
     }
 
     public function search(Request $request){
-        $books = Book::search(htmlspecialchars(trim($request->input('search_field'))));
-        return AppHelper::viewWithGuestId('shop.shop_page', ['books' => $books]);
+        $books = ($request->input('search_field') == null)
+            ? Book::extendedSearch($request->all())
+            : Book::search(htmlspecialchars(trim($request->input('search_field'))));
+        return AppHelper::viewWithGuestId('shop.shop_ajax', ['books' => $books] );
+
     }
 
     public function searchAuthor(Request $request){

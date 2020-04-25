@@ -2,20 +2,6 @@
 
 @section('content')
 
-    <section class="section-pagetop bg">
-        <div class="container">
-            <h2 class="title-page">Category products</h2>
-            <nav>
-                <ol class="breadcrumb text-warning">
-                    <li class="breadcrumb-item"><a href="#" class="text-warning-dark">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#" class="text-warning-dark">Best category</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Great articles</li>
-                </ol>
-            </nav>
-        </div> <!-- container //  -->
-    </section>
-    <!-- ========================= SECTION INTRO END// ========================= -->
-
     <!-- ========================= SECTION CONTENT ========================= -->
     <section class="section-content padding-y">
         <div class="container">
@@ -36,9 +22,6 @@
                                     <form class="pb-3">
                                         <div class="input-group">
                                             <input type="text" class="form-control" placeholder="Search" id="quick_search">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
-                                            </div>
                                         </div>
                                     </form>
                                 </div> <!-- card-body.// -->
@@ -46,20 +29,20 @@
                         </article> <!-- filter-group  .// -->
                         <article class="filter-group">
                             <header class="card-header">
-                                <a href="#" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
+                                <a href="#" data-toggle="collapse" data-target="#collapse_2" aria-expanded="false" class="">
                                     <i class="icon-control orange fa fa-chevron-down"></i>
                                     <h6 class="title">Author</h6>
                                 </a>
                             </header>
-                            <div class="filter-content collapse show" id="collapse_2" style="">
+                            <div class="filter-content collapse in" id="collapse_2" style="">
                                 <div class="card-body">
                                     <form method="post" class="pb-3" action="{{ route('shop.search') }}">
                                         @csrf
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="search_author" name="search_author" placeholder="Search">
-                                            <div class="input-group-append">
+                                            <!--div class="input-group-append">
                                                 <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
-                                            </div>
+                                            </div-->
                                         </div>
                                     </form>
 
@@ -68,24 +51,23 @@
                         </article> <!-- filter-group  .// -->
                         <article class="filter-group">
                             <header class="card-header">
-                                <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
+                                <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="false" class="">
                                     <i class="icon-control orange fa fa-chevron-down"></i>
                                     <h6 class="title">Genre </h6>
                                 </a>
                             </header>
-                            <div class="filter-content collapse show" id="collapse_3" style="">
+                            <div class="filter-content collapse in" id="collapse_3" style="">
                                 <div class="card-body">
                                     <form method="post" class="pb-3" action="{{ route('shop.search') }}">
                                         @csrf
                                         <div class="input-group">
-                                            <label for="search_genre">Műfaj keresés</label>
                                             <input type="text" class="form-control" id="search_genre" name="search_genre" placeholder="Search">
-                                            <div class="input-group-append">
+                                            <!--div class="input-group-append">
                                                 <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
-                                            </div>
+                                            </div-->
                                         </div>
                                     </form>
-                                    <div>
+                                    <!--div>
                                         <div class="squaredThree">
                                             <input type="checkbox" name="optionsRadios" id="genre1" value="Genre 1" >
                                             <label for="genre1"></label>
@@ -112,28 +94,27 @@
                                             <label for="genre4"></label>
                                         </div>
                                         <label class="label-text" style="margin-left: 10px">Genre 4</label>
-                                    </div>
+                                    </div-->
                                 </div> <!-- card-body.// -->
                             </div>
                         </article> <!-- filter-group .// -->
                         <article class="filter-group">
                             <header class="card-header" >
-                                <a href="#" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" class="">
+                                <a href="#" data-toggle="collapse" data-target="#collapse_4" aria-expanded="false" class="">
                                     <i class="icon-control orange fa fa-chevron-down"></i>
                                     <h6 class="title">Price range </h6>
                                 </a>
                             </header>
-                            <div class="filter-content collapse show"  id="collapse_4" style="">
+                            <div class="filter-content collapse in"  id="collapse_4" style="">
                                 <div class="card-body">
-                                    <input type="range" class="custom-range" min="0" max="100" name="">
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label>Min</label>
-                                            <input class="form-control" placeholder="0 €" type="number" min="0" oninput="this.value = Math.abs(this.value)">
+                                            <label for="price_min">Min</label>
+                                            <input name="price_min" id="price_min" class="form-control" value="0" type="number" min="0" oninput="this.value = Math.abs(this.value)">
                                         </div>
                                         <div class="form-group text-right col-md-6">
-                                            <label>Max</label>
-                                            <input class="form-control" placeholder="1 000 €" type="number" min="0" oninput="this.value = Math.abs(this.value)">
+                                            <label for="price_max">Max</label>
+                                            <input name="price_max" id="price_max" class="form-control" value="999999" type="number" min="0" oninput="this.value = Math.abs(this.value)">
                                         </div>
                                     </div> <!-- form-row.// -->
                                 </div><!-- card-body.// -->
@@ -150,23 +131,28 @@
                                 <h6 class="title card-header">Language </h6>
                                 <div class="card-body">
                                     <label class="custom-control custom-radio">
-                                        <input type="radio" name="myfilter_radio" checked="" class="custom-control-input control-orange">
+                                        <input type="radio" name="language_radio" value="%" checked="" class="custom-control-input control-orange">
+                                        <div class="custom-control-label">Any</div>
+                                    </label>
+
+                                    <label class="custom-control custom-radio">
+                                        <input type="radio" name="language_radio" value="en" class="custom-control-input">
                                         <div class="custom-control-label">English</div>
                                     </label>
 
                                     <label class="custom-control custom-radio">
-                                        <input type="radio" name="myfilter_radio" class="custom-control-input">
+                                        <input type="radio" name="language_radio" value="fr" class="custom-control-input">
                                         <div class="custom-control-label">French</div>
                                     </label>
 
                                     <label class="custom-control custom-radio">
-                                        <input type="radio" name="myfilter_radio" class="custom-control-input">
+                                        <input type="radio" name="language_radio" value="de" class="custom-control-input">
                                         <div class="custom-control-label">German</div>
                                     </label>
 
                                     <label class="custom-control custom-radio">
-                                        <input type="radio" name="myfilter_radio" class="custom-control-input">
-                                        <div class="custom-control-label">Other</div>
+                                        <input type="radio" name="language_radio" value="hu" class="custom-control-input">
+                                        <div class="custom-control-label">Hungarian</div>
                                     </label>
                                 </div><!-- card-body.// -->
                                 <h6 class="title card-header">Publisher </h6>
@@ -175,23 +161,22 @@
                                         @csrf
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="search_publisher" name="search_publisher" placeholder="Search">
-                                            <div class="input-group-append">
+                                            <!--div class="input-group-append">
                                                 <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
-                                            </div>
+                                            </div-->
                                         </div>
                                     </form>
                                 </div><!-- card-body.// -->
                                 <h6 class="title card-header">Pages </h6>
                                 <div class="card-body">
-                                    <input type="range" class="custom-range" min="0" max="100" name="">
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label>Min</label>
-                                            <input class="form-control" placeholder="0" type="number" min="0" oninput="this.value = Math.abs(this.value)">
+                                            <label for="page_min">Min</label>
+                                            <input name="page_min" id="page_min" class="form-control" value="0" type="number" min="0" oninput="this.value = Math.abs(this.value)">
                                         </div>
                                         <div class="form-group text-right col-md-6">
-                                            <label>Max</label>
-                                            <input class="form-control" placeholder="10 000" type="number" min="0" oninput="this.value = Math.abs(this.value)">
+                                            <label for="page_max">Max</label>
+                                            <input name="page_max" id="page_max" class="form-control" value="999999" type="number" min="0" oninput="this.value = Math.abs(this.value)">
                                         </div>
                                     </div> <!-- form-row.// -->
                                 </div><!-- card-body.// -->
@@ -204,7 +189,7 @@
 
                     <header class="border-bottom mb-4 pb-3">
                         <div class="form-inline">
-                            <span class="mr-md-auto">{{sizeof($books)}} Items found </span>
+                            <span class="mr-md-auto">{{ sizeof($books) }} Items found </span>
                             <select class="mr-2 form-control">
                                 <option>Latest items</option>
                                 <option>Most Popular</option>
@@ -218,66 +203,10 @@
                             </div>
                         </div>
                     </header><!-- sect-heading -->
-                    @for($i = 0; $i < sizeof($books)-2; $i=$i+3)
 
-                    <div class="row">
-                        <div class="col-md-4">
-                            <figure class="card card-product-grid">
-                                <div class="img-wrap">
-                                    <img src="images/unknown_product.png">
-                                    <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> More</a>
-                                </div> <!-- img-wrap.// -->
-                                <figcaption class="info-wrap">
-                                    <div class="fix-height">
-                                        <a href="#" class="title">{{$books[$i]->title}}</a>
-                                        <div class="price-wrap mt-2">
-                                            <span class="price">{{$books[$i]->price}}€</span>
-                                        </div> <!-- price-wrap.// -->
-                                    </div>
-                                    <a href="afp2.test/cart/add/{{$i}}" class="btn btn-block btn-warning">Add to cart </a>
-                                </figcaption>
-                            </figure>
-                        </div> <!-- col.// -->
-
-                        <div class="col-md-4">
-                            <figure class="card card-product-grid">
-                                <div class="img-wrap">
-                                    <img src="images/unknown_product.png">
-                                    <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> More</a>
-                                </div> <!-- img-wrap.// -->
-                                <figcaption class="info-wrap">
-                                    <div class="fix-height">
-                                        <a href="#" class="title">{{$books[$i+1]->title}}</a>
-                                        <div class="price-wrap mt-2">
-                                            <span class="price">{{$books[$i+1]->price}}€</span>
-                                        </div> <!-- price-wrap.// -->
-                                    </div>
-                                    <a href="afp2.test/cart/add/{{$i+1}}" class="btn btn-block btn-warning">Add to cart </a>
-                                </figcaption>
-                            </figure>
-                        </div> <!-- col.// -->
-
-                        <div class="col-md-4">
-                            <figure class="card card-product-grid">
-                                <div class="img-wrap">
-                                    <img src="images/unknown_product.png">
-                                    <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> More</a>
-                                </div> <!-- img-wrap.// -->
-                                <figcaption class="info-wrap">
-                                    <div class="fix-height">
-                                        <a href="#" class="title">{{$books[$i+2]->title}}</a>
-                                        <div class="price-wrap mt-2">
-                                            <span class="price">{{$books[$i+2]->price}}€</span>
-                                        </div> <!-- price-wrap.// -->
-                                    </div>
-                                    <a href="afp2.test/cart/add/{{$i+2}}" class="btn btn-block btn-warning">Add to cart </a>
-                                </figcaption>
-                            </figure>
-                        </div> <!-- col.// -->
+                    <div id="ajax_target"></div>
 
 
-                    </div> <!-- row end.// -->
-                    @endfor
 
                     <nav class="mt-4" aria-label="Page navigation sample">
                         <div class="row">
@@ -303,3 +232,7 @@
     </section>
     <!-- ========================= SECTION CONTENT END// ========================= -->
  @endsection
+
+@section('page_script')
+    <script src="{{ URL::asset('js/shop_ajax.js') }}" type="text/javascript"></script>
+@endsection
