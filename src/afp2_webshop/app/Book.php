@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Doctrine\DBAL\Query\QueryBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +17,7 @@ class Book extends Model
      */
     public static function search($input)
     {
-        $ans = Book::query()->where('title', 'like', '%'.$input.'%')->orWhere('id', '=', $input)->get();
+        $ans = Book::query()->where('title', 'like', '%'.$input.'%')->orWhere('id', '=', $input)->orWhere('ISBN', '=', $input)->get();
         try{
             if ($ans->count() > 0)
                 return $ans;
@@ -71,6 +72,7 @@ class Book extends Model
 
     public static function extendedSearch(array $requirements)
     {
+        /** @var \Illuminate\Database\Query\Builder $ids */
         $ids =
             DB::table('books')
                 ->join('book_authors', 'books.id', '=', 'book_authors.book_id')
@@ -78,10 +80,12 @@ class Book extends Model
                 ->join('book_genres', 'books.id', '=', 'book_genres.book_id')
                 ->join('genres', 'book_genres.genre_id', '=', 'genres.id')
                 ->join('publishers', 'books.publisher_id', '=', 'publishers.id')
-
-//                ->Orwhere('title', 'like', (($requirements['quick_search'][0] ?? '') == '$' ? '' : '%') . trim($requirements['quick_search'], ' $') . (($requirements['quick_search'][strlen($requirements['quick_search']) - 1] ?? '') == '$' ? '' : '%'))
-//                ->Orwhere('ISBN', 'like', (($requirements['quick_search'][0] ?? '') == '$' ? '' : '%') . trim($requirements['quick_search'], ' $') . (($requirements['quick_search'][strlen($requirements['quick_search']) - 1] ?? '') == '$' ? '' : '%'))
-
+                ->where(function ($query) use ($requirements){
+                    /** @var \Illuminate\Database\Query\Builder $query */
+                    $query->where('title', 'like', self::searchStringFormatter($requirements['quick_search']))
+                        ->orWhere('ISBN', 'like', self::searchStringFormatter($requirements['quick_search']))
+                        ->orWhere('books.id', '=', $requirements['quick_search'] ?? 0);
+                })
                 ->where('price', '>=', trim($requirements['price_min'], ' $€'))
                 ->where('price', '<=', trim($requirements['price_max'], ' $€'))
                 ->where('page_count', '>=', $requirements['page_min'])
@@ -92,8 +96,10 @@ class Book extends Model
                 $ids = self::iterateWhere('publisher', $requirements, $ids);
         /** @var Book[] $books */
         //dd($ids->toSql());
+        $query = vsprintf(str_replace(array('?'), array('\'%s\''), $ids->toSql()), $ids->getBindings()); dd($query);
         $books = [];
-        foreach ($ids->distinct()->orderBy('books.id')->get('books.id') as $id){
+        $array = $ids->distinct()->orderBy('books.id')->get('books.id');
+        foreach ($array as $id){
             array_push($books, Book::find($id->id));
         }
         return $books;
@@ -109,9 +115,13 @@ class Book extends Model
     public static function iterateWhere(string $model, array $requirements, \Illuminate\Database\Query\Builder $ids, string $localized = ''): \Illuminate\Database\Query\Builder
     {
         foreach (array_map('trim', explode(',', $requirements[$model.'_search'])) as $and) {
-            $ids = $ids->where($model.'s.name'.$localized, 'like', (($and[0] ?? '') == '$' ? '' : '%') . trim($and, ' $') . (($and[strlen($and) - 1] ?? '') == '$' ? '' : '%'));
+            $ids = $ids->where($model.'s.name'.$localized, 'like', self::searchStringFormatter($and));
         }
         return $ids;
+    }
+
+    public static function searchStringFormatter($str){
+        return (($str[0] ?? '') == '$' ? '' : '%') . trim($str, ' $') . (($str[strlen($str) - 1] ?? '') == '$' ? '' : '%');
     }
 
     public function authors(){

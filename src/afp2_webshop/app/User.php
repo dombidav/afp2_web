@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Helpers\AppHelper;
 use Faker\Provider\Address;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -92,7 +93,7 @@ class User extends Authenticatable
                 $user_id = Crypt::decryptString($user_id);
             }
         }
-        return $user_id;
+        return $user_id ?? AppHelper::generateUserID();
     }
 
 }

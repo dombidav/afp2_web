@@ -20,10 +20,11 @@ Route::get('/about', 'StaticController@showAbout')->name('about');
 
 Route::get('/shop', 'BookController@index')->name('shop');
 Route::post('/shop', 'BookController@search')->name('shop.search');
+Route::get('/shop/q/{query}', 'BookController@searchQuery')->name('shop.search.query');
 Route::get('/shop/{id}', 'BookController@show')->name('shop.get');
 Route::get('/shop/filterA', 'BookController@searchAuthor')->name('shop.filter.author');
 Route::get('/shop/filterG', 'BookController@searchGenre')->name('shop.filter.genre');
-Route::get('/shop/filterP', 'BookController@searchGenre')->name('shop.filter.publisher');
+Route::get('/shop/filterP', 'BookController@searchPublisher')->name('shop.filter.publisher');
 
 Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/cart/{id}', 'CartController@show')->name('cart-id');
