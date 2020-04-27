@@ -63,7 +63,7 @@ class BladeServiceProvider extends ServiceProvider
 
         Blade::directive('thumbnail', function ($expression) {
             $path = file_exists('images/book/thumbnails/'.$expression) ? 'images/book/thumbnails/'.$expression : 'images/unknown_product.png';
-            return "<img src=\"$path\"/>";
+            return '<img src="' . asset($path) . '"/>';
         });
 
         Blade::directive('thumbnail_fluid', function () {

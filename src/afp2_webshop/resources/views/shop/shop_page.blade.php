@@ -61,7 +61,8 @@
                                     <form method="post" class="pb-3" action="{{ route('shop.search') }}">
                                         @csrf
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="search_genre" name="search_genre" placeholder="Search">
+                                            <input type="text" class="form-control" id="search_genre" name="search_genre" placeholder="Search" />
+                                            <input type="hidden" id="rq_main_search" value="{{ $search_field ?? '' }}" />
                                             <!--div class="input-group-append">
                                                 <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
                                             </div-->

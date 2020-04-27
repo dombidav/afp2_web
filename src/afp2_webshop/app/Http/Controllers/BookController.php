@@ -7,6 +7,7 @@ use App\Book_author;
 use App\Genre;
 use App\Helpers\AppHelper;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use phpDocumentor\Reflection\DocBlock\Tags\Author;
 
 class BookController extends Controller
@@ -28,6 +29,14 @@ class BookController extends Controller
             : Book::search(htmlspecialchars(trim($request->input('search_field'))));
         return AppHelper::viewWithGuestId('shop.shop_ajax', ['books' => $books] );
 
+    }
+
+    public function searchMiddleware(Request $request){
+        return redirect()->route('shop.search.query', $request->input('search_field'));
+    }
+
+    public function searchQ(string $query){
+        return AppHelper::viewWithGuestId('shop.shop_page', ['search_field' => $query]);
     }
 
     public function searchAuthor(Request $request){

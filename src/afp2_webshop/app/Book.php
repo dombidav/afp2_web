@@ -96,7 +96,7 @@ class Book extends Model
                 $ids = self::iterateWhere('publisher', $requirements, $ids);
         /** @var Book[] $books */
         //dd($ids->toSql());
-        $query = vsprintf(str_replace(array('?'), array('\'%s\''), $ids->toSql()), $ids->getBindings()); dd($query);
+        //$query = vsprintf(str_replace(array('?'), array('\'%s\''), $ids->toSql()), $ids->getBindings()); dd($query);
         $books = [];
         $array = $ids->distinct()->orderBy('books.id')->get('books.id');
         foreach ($array as $id){
