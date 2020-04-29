@@ -57,7 +57,7 @@
                         <tbody>
                         <tr class="bg table table-borderless text-md-center col-3">
                             <td>
-
+                                {{\App\Publisher::where('id', $book->publisher_id)->first()->name}}
                             </td>
                         </tr>
                         </tbody>
@@ -76,7 +76,7 @@
                         <tbody>
                         <tr class="bg table table-borderless text-md-center col-3">
                             <td>
-
+                                {{\App\Genre::where('id', \App\Book_genre::where('book_id',$book->publisher_id)->first()->genre_id)->first()->name_en}}
                             </td>
                         </tr>
                         </tbody>
