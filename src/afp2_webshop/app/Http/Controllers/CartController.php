@@ -52,9 +52,7 @@ class CartController extends Controller
         $this->getUserId($user_id, $needs_id);
         $order_id = Order::getCartIDFor($user_id);
         Package::DeleteWhere($order_id, $id);
-        if ($needs_id)
-            return response(json_encode(['Success' => true, 'Order' => $order_id, 'Book' => $id]))->cookie('guest_id', $user_id, 9999);
-        return json_encode(['Success' => true, 'Order' => $order_id, 'Book' => $id]);
+        return redirect('cart'); //return json_encode(['Success' => true, 'Order' => $order_id, 'Book' => $id]);
     }
 
     public function remove2($book_id, $user_id){
