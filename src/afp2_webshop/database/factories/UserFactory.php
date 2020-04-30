@@ -20,7 +20,7 @@ use Illuminate\Support\Str;
 $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        'date_of_birth' => $faker-> date(),//dateTimeBetween('1920-01-01', '2006-12-31')
+        'date_of_birth' => $faker->date('Y-m-d', '2000-01-01'),
         'email' => $faker->unique()->safeEmail,
         'gender' => $faker->numberBetween(0,1),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
