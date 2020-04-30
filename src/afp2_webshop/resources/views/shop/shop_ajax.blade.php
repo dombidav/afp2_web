@@ -10,7 +10,7 @@
             <figure class="card card-product-grid">
                 <div class="img-wrap">
                     @thumbnail({{ $books[$i]->thumbnail }})
-                    <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> More</a>
+                    <a class="btn-overlay" href="{{ route('shop.get', $books[$i]->id) }}"><i class="fa fa-search-plus"></i> More</a>
                 </div> <!-- img-wrap.// -->
                 <figcaption class="info-wrap">
                     <div class="fix-height">

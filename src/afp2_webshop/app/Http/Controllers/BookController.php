@@ -53,6 +53,10 @@ class BookController extends Controller
 
         return AppHelper::viewWithGuestId('shop.shop_page', ['books' => $books]);
     }
+
+    public function searchRedirect(){
+        return redirect()->route('shop');
+    }
     /**
      * Show the form for creating a new resource.
      *
