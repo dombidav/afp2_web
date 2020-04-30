@@ -120,7 +120,7 @@ class Book extends Model
         return $ids;
     }
 
-    public static function searchStringFormatter($str){
+    private static function searchStringFormatter($str){
         return (($str[0] ?? '') == '$' ? '' : '%') . trim($str, ' $') . (($str[strlen($str) - 1] ?? '') == '$' ? '' : '%');
     }
 
@@ -131,7 +131,19 @@ class Book extends Model
     public function getAuthorNames($or = ''){
         $ans = '';
         foreach ($this->authors() as $author){
-            $ans .= $author->name . ', ';
+            try {
+                $ans .= $author->name . ', ';
+            }catch (\Exception $e){}
+        }
+        return strlen($ans) > 0 ? trim($ans, ', ') : $or;
+    }
+
+    public function getGenreNames($or = ''){
+        $ans = '';
+        foreach ($this->genres() as $genre){
+            try {
+                $ans .= $genre->name . ', ';
+            }catch (\Exception $e){}
         }
         return strlen($ans) > 0 ? trim($ans, ', ') : $or;
     }

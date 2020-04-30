@@ -14,7 +14,7 @@
                             <th scope="row"> <a href="#" class="img-wrap"> <img src="/images/unknown_product.png" class="img-sm"> </a>
                             </th>
                             <th>
-                                {{$book->title}}
+                                @title
                             </th>
                         </tr>
                         </tbody>
@@ -38,7 +38,7 @@
                         <tbody>
                         <tr class="bg table table-borderless text-md-center col-3">
                             <td>
-                                {{$book->getAuthorNames()}}
+                                @authors
                             </td>
                         </tr>
                         </tbody>
@@ -76,7 +76,7 @@
                         <tbody>
                         <tr class="bg table table-borderless text-md-center col-3">
                             <td>
-                                {{\App\Genre::where('id', \App\Book_genre::where('book_id',$book->publisher_id)->first()->genre_id)->first()->name_en}}
+                                {{ $book->getGenreNames() }}
                             </td>
                         </tr>
                         </tbody>
@@ -114,14 +114,14 @@
                         <tbody>
                         <tr class="bg table table-borderless text-md-center col-3">
                             <td>
-                                {{$book->price}} FT
+                                @price
                             </td>
                         </tr>
                         </tbody>
                         <tbody>
                         <tr class="bg table table-borderless text-md-center col-3">
                             <td>
-                                <a href="afp2.test/cart/add/{{$book->id}}" class="btn btn-block btn-warning">Add to cart </a>
+                                <a href="{{ route('cart.add', $book->id) }}" class="btn btn-block btn-warning">Add to cart </a> <-- Ez jó
                             </td>
                         </tr>
                         </tbody>
