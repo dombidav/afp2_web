@@ -76,7 +76,7 @@ class BladeServiceProvider extends ServiceProvider
         });
 
         Blade::directive('price', function () {
-            return "{{ number_format(\$book->price, 2, '.', ' ') }} €";
+            return "{{ number_format(\$book->price, 0, '.', ' ') }} Ft";
         });
 
         Blade::directive('title', function (){

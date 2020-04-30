@@ -16,7 +16,7 @@
                     <div class="fix-height">
                         <a href="#" class="title">{{$books[$i]->title}}</a>
                         <div class="price-wrap mt-2">
-                            <span class="price">{{$books[$i]->price}}€</span>
+                            <span class="price">{{$books[$i]->price}} Ft</span>
                         </div> <!-- price-wrap.// -->
                     </div>
                     <a href="{{ route('cart.add', $books[$i]->id) }}" class="btn btn-block btn-warning">Add to cart </a>
