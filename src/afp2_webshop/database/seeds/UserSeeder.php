@@ -14,19 +14,21 @@ class UserSeeder extends Seeder
     {
         $faker = \Faker\Factory::create();
 
-        DB::table('users')
-            ->insert([
-                'name' => 'TEST USER',
-                'date_of_birth' => $faker->date('Y-m-d'),
-                'gender' => 0,
-                'email' => 'test@example.com',
-                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-                'billing' => 0,
-                'shipping' => 0
-            ]);
+        try{
+            DB::table('users')
+                ->insert([
+                    'name' => 'TEST USER',
+                    'date_of_birth' => $faker->date('Y-m-d'),
+                    'gender' => 0,
+                    'email' => 'test@example.com',
+                    'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                    'billing' => 0,
+                    'shipping' => 0
+                ]);
+        }catch (Exception $e) {}
 
-        for($i=0; $i<100; $i++){
-
+        for($i=0; $i<50; $i++){
+            echo("\rGenerating " . (50-$i) . " more... ");
             $hasShipping = rand(0, 2);
             $shipping = null;
             $billing = null;
@@ -47,6 +49,6 @@ class UserSeeder extends Seeder
                     'billing' => $billing,
                     'shipping' => $shipping
                 ]);
-        }
+        }echo("\r");
     }
 }

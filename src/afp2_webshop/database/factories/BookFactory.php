@@ -10,7 +10,6 @@ $factory->define(Book::class, function (Faker $faker) {
         'ISBN' => $faker->randomNumber(7,true),
         'title' => $faker->sentence(4),
         'thumbnail' => $faker ->text,
-        'sample' => $faker ->text,
         //'author_id' => $faker->numberBetween(0,10),
         'publish_year' => $faker ->year(),
         'publisher_id'=> factory(App\Publisher::class),
@@ -22,6 +21,5 @@ $factory->define(Book::class, function (Faker $faker) {
         'can_preorder'=> $faker ->numberBetween(0,1),
         'in_stock' => $faker ->numberBetween(0,1500),
         'price' => $faker ->numberBetween(1,100000),
-        'discount' => $faker ->numberBetween(0,100000),
         ];
     });
