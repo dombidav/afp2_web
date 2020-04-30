@@ -18,20 +18,18 @@ class CreateBooksTable extends Migration
             $table->timestamp('created_at')->useCurrent();
             $table->string('ISBN')->unique();
             $table->string('title');
-            $table->string('thumbnail');
-            $table->string('sample');
+            $table->string('thumbnail')->nullable();
             //$table->integer('author_id');
             $table->year('publish_year');
             $table->integer('publisher_id');
             //$table->integer('genre_id');
             $table->string('language');
             $table->integer('page_count');
-            $table->string('description');
+            $table->text('description');
             $table->tinyInteger('can_order');
             $table->tinyInteger('can_preorder');
             $table->integer('in_stock');
             $table->integer('price');
-            $table->integer('discount');
             $table->timestamp('updated_at')->useCurrent();
 
         });
