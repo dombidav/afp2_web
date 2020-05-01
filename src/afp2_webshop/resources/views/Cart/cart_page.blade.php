@@ -20,9 +20,9 @@
                     <th scope="col"></th>
                     <th scope="col">Title</th>
                     <th scope="col">Piece</th>
-                    <th scope="col">Price per item</th>
-                    <th scope="col">Sum price</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Unit price</th>
+                    <th scope="col">Subtotal</th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -39,10 +39,10 @@
                             <a id="price_{{ $pack['book']->id }}">{{ $pack['book']->price }}</a> Ft
                         </td>
                         <td>
-                             <div id="sum_price_{{ $pack['book']->id }}"></div>
+                             <div id="sum_price_{{ $pack['book']->id}}"></div> Ft
                         </td>
                         <td>
-                            <a href="{{ route('cart.remove', $pack['book']->id) }}">DELETE</a>
+                            <a href="{{ route('cart.remove', $pack['book']->id) }}">Remove</a>
                         </td>
                     </tr>
                 @endforeach
@@ -53,7 +53,7 @@
             <div class="col-8">
                 <div class="float-right">
                     <label for="total">Total:</label>
-                    <input type="number" id="total" placeholder = "totalprice" class="form-control" readonly><br> //{$pack->sum('sum_price')}
+                    <input type="number" id="total" placeholder = "totalprice"  class="form-control" readonly ><br>
                     <button type="submit" form="post_form" class="btn btn-outline-warning form-control">Buy</button>
                 </div>
             </div>
@@ -61,7 +61,7 @@
         @else
             <section class="section-pagetop bg">
                 <div class="container">
-                    <h2 class="title-page">There is nothing in the cart.</h2>
+                    <h2 class="title-page">Your cart is currently empty.</h2>
                 </div>
             </section>
         @endif
