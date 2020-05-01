@@ -9,12 +9,12 @@
         <div class="col-md-4">
             <figure class="card card-product-grid">
                 <div class="img-wrap">
-                    <img src="{{ asset("images/book/thumbnails/" . $books[$i]->thumbnail) }}"/>
+                    <img src="images/book/thumbnails/{{ $books[$i]->thumbnail }}"/>
                     <a class="btn-overlay" href="{{ route('shop.get', $books[$i]->id) }}"><i class="fa fa-search-plus"></i> More</a>
                 </div> <!-- img-wrap.// -->
                 <figcaption class="info-wrap">
                     <div class="fix-height">
-                        <a href="#" class="title">{{ \App\Helpers\AppHelper::wrap($books[$i]->title, 55) }}</a>
+                        <a href="#" class="title">{{$books[$i]->title}}</a>
                         <div class="price-wrap mt-2">
                             <span class="price">{{$books[$i]->price}} Ft</span>
                         </div> <!-- price-wrap.// -->
