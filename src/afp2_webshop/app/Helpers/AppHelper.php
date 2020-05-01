@@ -5,6 +5,8 @@ namespace App\Helpers;
 
 
 use App\Book;
+use App\Order;
+use App\Package;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
@@ -69,5 +71,15 @@ class AppHelper
         if(User::whoami() == null)
             return response(view($string, $array))->cookie('guest_id', AppHelper::generateUserID(), 9999);
         return response(view($string, $array));
+    }
+
+    public static function getPackages(string $orderId){
+        $order_id = Order::getCartIDFor(User::whoami());
+        $packages = Package::forOrder($order_id);
+        $ans = [];
+        foreach ($packages as $pack){
+            array_push($ans, ['book' => Book::find($pack->book_id), 'count' => $pack->quantity]);
+        }
+        return $ans;
     }
 }

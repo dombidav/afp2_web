@@ -3,13 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Package extends Model
 {
     public static function forOrder(string $order_id)
     {
-        return DB::table('packages')->where('order_id', '=', $order_id)->get();
+        return DB::table('packages')->where('order_id', 'like', "%$order_id%")->get();
     }
 
     /**

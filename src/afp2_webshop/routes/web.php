@@ -56,5 +56,7 @@ Route::get('/genre/{id}', 'GenreController@show')->name('genre.get');
 
 Auth::routes();
 Route::get('/profile', 'ProfileController@show')->name('profile');
+Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
+Route::post('/profile/update', 'ProfileController@update')->name('profile.update');
 Route::get('/signout', '\App\Http\Controllers\Auth\LoginController@logout')->name('signout');
 
