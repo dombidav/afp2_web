@@ -42,6 +42,38 @@
                                       <input type="text" name="billing_city" value="{{ $user->billing()->city }}">
                                   </td>
                               </tr>
+                              <tr>
+                                  <td>
+                                      Country:
+                                  </td>
+                                  <td>
+                                      <input type="text" name="billing_country" value="{{ $user->billing()->country }}">
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      Postal code:
+                                  </td>
+                                  <td>
+                                      <input type="text" name="billing_postal_code" value="{{ $user->billing()->postal_code }}">
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      Street:
+                                  </td>
+                                  <td>
+                                      <input type="text" name="billing_street" value="{{ $user->billing()->street }}">
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      House:
+                                  </td>
+                                  <td>
+                                      <input type="text" name="billing_house" value="{{ $user->billing()->house }}">
+                                  </td>
+                              </tr>
                               </tbody>
                           </table>
                       </div>
@@ -58,6 +90,38 @@
                                   </td>
                                   <td>
                                       <input type="text" name="shipping_city" value="{{ $user->shipping()->city }}">
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      Country:
+                                  </td>
+                                  <td>
+                                      <input type="text" name="shipping_country" value="{{ $user->shipping()->country }}">
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      Postal code:
+                                  </td>
+                                  <td>
+                                      <input type="text" name="shipping_postal_code" value="{{ $user->shipping()->postal_code }}">
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      Street:
+                                  </td>
+                                  <td>
+                                      <input type="text" name="shipping_street" value="{{ $user->shipping()->street }}">
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      House:
+                                  </td>
+                                  <td>
+                                      <input type="text" name="shipping_house" value="{{ $user->shipping()->house }}">
                                   </td>
                               </tr>
                               </tbody>

@@ -17,6 +17,18 @@
                                <th>
                                Email:
                                </th>
+                               <th>
+                               Gender:
+                               </th>
+                               <th>
+                               Date Of Birth:
+                               </th>
+                               <th>
+                               Billing:
+                               </th>
+                               <th>
+                               Shipping:
+                               </th>
                            </tr>
                            </thead>
                            <tbody>
@@ -27,6 +39,19 @@
                                <td>
                                    {{ $user->email }}
                                </td>
+                               <td>
+                                   {{ $user->gender }}
+                               </td>
+                               <td>
+                                   {{ $user->date_of_birth }}
+                               </td>
+                               <td>
+                                   {{ $user->billing }}
+                               </td>
+                               <td>
+                                   {{ $user->shipping }}
+                               </td>
+                               
                            </tr>
                            </tbody>
                        </table>

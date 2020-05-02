@@ -38,6 +38,20 @@
                 </td>
                 <td>
                     {{ $order->status }}
+                    
+                        @if ($status == 1)
+                        `Order` in processing!
+
+                        @elseif ($status == 2)
+                        `Order` delivering!
+
+                        @elseif ($status==3)
+                        'Order' is completed!
+
+                        @elseif ($status==4)
+                        'Order' is cancelled!
+                        
+                        @endif
                 </td>
             </tr>
         @endforeach
