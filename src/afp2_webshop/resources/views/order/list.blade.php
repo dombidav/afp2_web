@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-md-6">
+<div class="col-sm-6 col-md-8">
+
     <table>
         <thead>
         <tr>
@@ -37,24 +42,39 @@
                     {{ $order->created_at }}
                 </td>
                 <td>
-                    {{ $order->status }}
                     
-                        @if ($status == 1)
-                        `Order` in processing!
 
-                        @elseif ($status == 2)
-                        `Order` delivering!
+                    @switch($order->status)
+    @case('1')
+        Processing
+        @break
 
-                        @elseif ($status==3)
-                        'Order' is completed!
+    @case(2)
+        Delivering
+        @break
 
-                        @elseif ($status==4)
-                        'Order' is cancelled!
-                        
-                        @endif
+    @case(3)
+        Completed
+        @break
+
+    @case(4)
+        Cancelled
+        @break
+
+    @case(5)
+        Lost
+        @break                
+
+    @default
+        Processing
+@endswitch
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
+</div>    
+</div>
+</div>    
+</div>
 @endsection
