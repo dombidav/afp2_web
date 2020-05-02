@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+<div class="jumbotron" style="background:#F5F5F5">
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
              <div class="col-sm-6 col-md-8">
@@ -139,5 +140,6 @@
 
         </div>
     </div>
+</div>
 </div>
 @endsection
