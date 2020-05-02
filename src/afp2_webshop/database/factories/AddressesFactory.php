@@ -6,7 +6,7 @@ use App\Addresses;
 use Faker\Generator as Faker;
 
 $factory->define(Addresses::class, function (Faker $faker) {
-    $tin = rand(0,1) == 0 ? null : $faker->numerify('##########');
+    $tin = rand(0,5) == 0 ? null : $faker->numerify('##########');
     return [
         'country' => $faker->numberBetween(0,100),
         'tin' => $tin,
