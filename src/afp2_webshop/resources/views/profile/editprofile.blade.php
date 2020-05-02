@@ -15,6 +15,7 @@
                               <tr>
                               <th>Name: <input id="name" type="text" name="name"></th>
                               <th>Email: <input id="email" type="email" name="email"></th>
+                              <th>Phone: <input id="phone" type="text" name="phone"></th>
                               <th>Gender: <select id="genders">
                                       <option value="male">Male</option>
                                       <option value="female">Female</option>
@@ -38,8 +39,10 @@
                                   <td>
                                       City:
                                   </td>
+                                  
                                   <td>
-                                      <input type="text" name="billing_city" value="{{ $user->billing()->city }}">
+                                      
+                                      <input type="text" name="billing_city" value="{{ $user->billing() == null ? "" : $user->billing()->city }}">
                                   </td>
                               </tr>
                               <tr>
@@ -47,7 +50,7 @@
                                       Country:
                                   </td>
                                   <td>
-                                      <input type="text" name="billing_country" value="{{ $user->billing()->country }}">
+                                      <input type="text" name="billing_country" value="{{ $user->billing() == null ? "" : $user->billing()->country }}">
                                   </td>
                               </tr>
                               <tr>
@@ -55,7 +58,7 @@
                                       Postal code:
                                   </td>
                                   <td>
-                                      <input type="text" name="billing_postal_code" value="{{ $user->billing()->postal_code }}">
+                                      <input type="text" name="billing_postal_code" value="{{ $user->billing() == null ? "" : $user->billing()->postal_code }}">
                                   </td>
                               </tr>
                               <tr>
@@ -63,7 +66,7 @@
                                       Street:
                                   </td>
                                   <td>
-                                      <input type="text" name="billing_street" value="{{ $user->billing()->street }}">
+                                      <input type="text" name="billing_street" value="{{ $user->billing() == null ? "" : $user->billing()->street }}">
                                   </td>
                               </tr>
                               <tr>
@@ -71,7 +74,7 @@
                                       House:
                                   </td>
                                   <td>
-                                      <input type="text" name="billing_house" value="{{ $user->billing()->house }}">
+                                      <input type="text" name="billing_house" value="{{ $user->billing() == null ? "" : $user->billing()->house }}">
                                   </td>
                               </tr>
                               </tbody>
@@ -89,7 +92,7 @@
                                       City:
                                   </td>
                                   <td>
-                                      <input type="text" name="shipping_city" value="{{ $user->shipping()->city }}">
+                                      <input type="text" name="shipping_city" value="{{ $user->shipping()== null ? "" : $user->shipping()->city }}">
                                   </td>
                               </tr>
                               <tr>
@@ -97,7 +100,7 @@
                                       Country:
                                   </td>
                                   <td>
-                                      <input type="text" name="shipping_country" value="{{ $user->shipping()->country }}">
+                                      <input type="text" name="shipping_country" value="{{ $user->shipping() == null ? "" : $user->shipping()->country }}">
                                   </td>
                               </tr>
                               <tr>
@@ -105,7 +108,7 @@
                                       Postal code:
                                   </td>
                                   <td>
-                                      <input type="text" name="shipping_postal_code" value="{{ $user->shipping()->postal_code }}">
+                                      <input type="text" name="shipping_postal_code" value="{{ $user->shipping()== null ? "" : $user->shipping()->postal_code }}">
                                   </td>
                               </tr>
                               <tr>
@@ -113,7 +116,7 @@
                                       Street:
                                   </td>
                                   <td>
-                                      <input type="text" name="shipping_street" value="{{ $user->shipping()->street }}">
+                                      <input type="text" name="shipping_street" value="{{ $user->shipping()== null ? "" : $user->shipping()->street }}">
                                   </td>
                               </tr>
                               <tr>
@@ -121,7 +124,7 @@
                                       House:
                                   </td>
                                   <td>
-                                      <input type="text" name="shipping_house" value="{{ $user->shipping()->house }}">
+                                      <input type="text" name="shipping_house" value="{{ $user->shipping()== null ? "" : $user->shipping()->house }}">
                                   </td>
                               </tr>
                               </tbody>

@@ -45,29 +45,27 @@
                     
 
                     @switch($order->status)
-    @case('1')
-        Processing
-        @break
+                        @case('1')
+                        Processing
+                         @break
 
-    @case(2)
-        Delivering
-        @break
+                        @case(2)
+                        Delivering
+                        @break
 
-    @case(3)
-        Completed
-        @break
+                        @case(3)
+                        Completed
+                        @break
 
-    @case(4)
-        Cancelled
-        @break
+                        @case(4)
+                        Cancelled
+                        @break
 
-    @case(5)
-        Lost
-        @break                
+                                       
 
-    @default
-        Processing
-@endswitch
+                        @default
+                        Processing
+                    @endswitch
                 </td>
             </tr>
         @endforeach

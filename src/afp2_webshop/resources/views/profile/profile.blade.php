@@ -18,6 +18,9 @@
                                Email:
                                </th>
                                <th>
+                               Phone:
+                               </th>
+                               <th>
                                Gender:
                                </th>
                                <th>
@@ -40,16 +43,20 @@
                                    {{ $user->email }}
                                </td>
                                <td>
+                                    {{$user->phone}}
+                               </td>
+                               <td>
                                    {{ $user->gender }}
                                </td>
                                <td>
                                    {{ $user->date_of_birth }}
                                </td>
                                <td>
-                                   {{ $user->billing }}
+                                   {{ $user->billing}}
+                                   
                                </td>
                                <td>
-                                   {{ $user->shipping }}
+                                   {{ $user->shipping}}
                                </td>
                                
                            </tr>
