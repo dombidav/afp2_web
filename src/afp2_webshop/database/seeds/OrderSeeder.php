@@ -34,7 +34,7 @@ class OrderSeeder extends Seeder
                 'user_id' => $user->id,
                 'billing' => $user->billing ?? factory(\App\Addresses::class)->create()->id,
                 'shipping' => (rand(0, 9) == 0) ? ($user->shipping ?? factory(\App\Addresses::class)->create()->id) : null,
-                'status' => rand(1,5)
+                'status' => rand(1,4)
             ]);
         }
 
