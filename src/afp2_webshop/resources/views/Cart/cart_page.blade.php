@@ -11,8 +11,10 @@
         <!-- sect-heading -->
 
         <div class="row justify-content-center">
-            <form id="post_form" action="{{ route('orders.place', $order_id) }}" method="post">
+            <form id="post_form" action="{{ route('orders.place') }}" method="get">
                 @csrf
+                <input type="hidden" name="status" value="place" />
+                <input type="hidden" name="order" value="{{ $order_id }}" />
             </form>
             <table class="table table-borderless text-md-center col-8">
                 <thead>
@@ -33,7 +35,7 @@
                             {{ $pack['book']->title }}
                         </td>
                         <td>
-                            <input id="quantity_{{ $pack['book']->id }}" type="number" value ="{{$pack['count']}}" min="0" class="form-control form-control-cart" form="post_form">
+                            <input name="quantity_{{ $pack['book']->id }}" id="quantity_{{ $pack['book']->id }}" type="number" value ="{{$pack['count']}}" min="0" class="form-control form-control-cart" form="post_form">
                         </td>
                         <td>
                             <a id="price_{{ $pack['book']->id }}">{{ $pack['book']->price }}</a> Ft

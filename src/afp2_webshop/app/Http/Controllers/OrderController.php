@@ -50,14 +50,14 @@ class OrderController extends Controller
             's_city' => 'required|max:255',
             's_street' => 'required|max:255',
             's_house' => 'required|max:255',
-            's_note' => 'max:255',
+            's_note' => 'max:255'
         ]);
         if(
-            !ctype_space($request->input('b_country')) ||
-            !ctype_space($request->input('b_postal_code')) ||
-            !ctype_space($request->input('b_city')) ||
-            !ctype_space($request->input('b_street')) ||
-            !ctype_space($request->input('b_house'))
+            null != ($request->input('b_country')) ||
+            null != ($request->input('b_postal_code')) ||
+            null != ($request->input('b_city')) ||
+            null != ($request->input('b_street')) ||
+            null != ($request->input('b_house'))
         ){
             $request->validate([
                 'b_country' => 'required|max:255',
@@ -88,6 +88,20 @@ class OrderController extends Controller
         $order_id = Order::create(User::whoami(), $billing ?? $shipping, $shipping);
         Package::move(Order::getCartIDFor(User::whoami()), $order_id);
         return AppHelper::viewWithGuestId('order.complete', ['order_id' => $order_id]);
+    }
+
+    public static function place(Request $request){
+        $order_id = $request->input('order');
+        foreach (array_keys($request->all()) as $key){
+            if(substr( $key, 0, 9 ) === "quantity_"){
+                $book_id = substr($key, strpos($key, "_") + 1);
+                Package::UpdateOrInset($order_id, $book_id, $request->input($key));
+            }
+        }
+
+        return AppHelper::viewWithGuestId('order.place', [
+            'order_id' => $order_id,
+        ]);
     }
 
     /**
