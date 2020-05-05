@@ -190,10 +190,6 @@
 
                     <div id="ajax_target"></div>
 
-
-
-
-
                 </main> <!-- col.// -->
 
             </div>
