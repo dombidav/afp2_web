@@ -17,7 +17,7 @@ function ajax_init(){
     });
 }
 
-function ajax_refresh(to_page = 0) {
+function ajax_refresh() {
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -34,7 +34,6 @@ function ajax_refresh(to_page = 0) {
         publisher_search: $('#search_publisher').val(),
         page_min: $('#page_min').val(),
         page_max: $('#page_max').val(),
-        toPage: to_page
     };
 
     $.ajax({
