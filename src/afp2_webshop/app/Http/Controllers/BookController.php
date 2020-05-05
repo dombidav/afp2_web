@@ -24,10 +24,26 @@ class BookController extends Controller
     }
 
     public function search(Request $request){
+        $PER_PAGE = 15;
         $books = ($request->input('search_field') == null)
             ? Book::extendedSearch($request->all())
             : Book::search(htmlspecialchars(trim($request->input('search_field'))));
-        return AppHelper::viewWithGuestId('shop.shop_ajax', ['books' => $books] );
+        $current_page = $request->get("toPage") ?? 0;
+        $found = $books->count();
+        $books = $books->skip($current_page * $PER_PAGE)->take($PER_PAGE);
+        $pages = ceil($found / $PER_PAGE);
+        if($current_page < 0){
+            $current_page = 0;
+        }elseif ($current_page > $pages){
+            $current_page = $pages;
+        }
+
+        return AppHelper::viewWithGuestId('shop.shop_ajax', [
+            'books' => $books->values(),
+            'found' => $found,
+            'page_count' => $pages,
+            'current_page' => $current_page
+        ]);
 
     }
 
