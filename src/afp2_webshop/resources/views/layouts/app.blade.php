@@ -53,7 +53,7 @@ use Illuminate\Support\Facades\Auth;
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 col-4">
-                    <a href="#" class="brand-wrap" style="color: orange">
+                    <a href="{{ route('main') }}" class="brand-wrap" style="color: orange">
                         <h1 class="text-nowrap">XYZ-Books</h1>
                     </a>
                     <!-- brand-wrap END -->
@@ -161,38 +161,34 @@ use Illuminate\Support\Facades\Auth;
                 <aside class="col-md col-6">
                     <h6 class="title">Shops</h6>
                     <ul class="list-unstyled">
-                        <li><a href="#">Eger</a></li>
-                        <li><a href="#">Budapest</a></li>
-                        <li><a href="#">Opening Soon</a></li>
+                        <li><a href="{{ route('contact') }}">Eger</a></li>
+                        <li><a href="{{ route('contact') }}">Budapest</a></li>
+                        <li><a href="{{ route('contact') }}">Opening Soon</a></li>
                     </ul>
                 </aside>
                 <aside class="col-md col-6">
                     <h6 class="title">Company</h6>
                     <ul class="list-unstyled">
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="#">Find a store</a></li>
-                        <li><a href="#">Rules and terms</a></li>
-                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="{{ route('about') }}">About us</a></li>
+                        <li><a href="{{ route('about') }}">Find a store</a></li>
+                        <li><a href="{{ route('about') }}">Rules and terms</a></li>
                     </ul>
                 </aside>
                 <aside class="col-md col-6">
                     <h6 class="title">Help</h6>
                     <ul class="list-unstyled">
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Money refund</a></li>
-                        <li><a href="#">Order status</a></li>
-                        <li><a href="#">Shipping info</a></li>
-                        <li><a href="#">Policies</a></li>
+                        <li><a href="{{ route('contact') }}">Contact us</a></li>
+                        <li><a href="{{ route('contact') }}">Money refund</a></li>
+                        <li><a href="{{ route('about') }}">Policies</a></li>
                     </ul>
                 </aside>
                 <aside class="col-md col-6">
                     <h6 class="title">Account</h6>
                     <ul class="list-unstyled">
-                        <li><a href="#"> User Login </a></li>
-                        <li><a href="#"> User register </a></li>
-                        <li><a href="#"> Account Setting </a></li>
-                        <li><a href="#"> My Orders </a></li>
+                        <li><a href="{{ route('login') }}"> User Login </a></li>
+                        <li><a href="{{ route('register') }}"> User register </a></li>
+                        <li><a href="{{ route('profile') }}"> Account Setting </a></li>
+                        <li><a href="{{ route('orders') }}"> My Orders </a></li>
                     </ul>
                 </aside>
                 <aside class="col-md">
