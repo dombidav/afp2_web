@@ -34,7 +34,7 @@
                             <span class="price">{{$book->price}} Ft</span>
                         </div> <!-- price-wrap.// -->
                     </div>
-                    <a href="{{ route('cart.add', $book->id) }}" class="btn btn-block btn-warning">Add to cart </a>
+                    <a onclick="add_to_cart('{{ route('cart.add', $book->id) }}')" class="btn btn-block btn-warning">Add to cart </a>
                 </figcaption>
             </figure>
         </div> <!-- col.// -->

@@ -121,7 +121,7 @@
                         <tbody>
                         <tr class="bg table table-borderless text-md-center col-3">
                             <td>
-                                <a href="{{ route('cart.add', $book->id) }}" class="btn btn-block btn-warning">Add to cart </a> <-- Ez jó
+                                <a onclick="add_to_cart('{{ route('cart.add', $book->id) }}')" class="btn btn-block btn-warning">Add to cart </a>
                             </td>
                         </tr>
                         </tbody>
@@ -169,3 +169,7 @@
 
     @endif
 @endsection('content')
+
+@section('page_script')
+    <script src="{{ URL::asset('js/add_cart.js') }}" type="text/javascript"></script>
+@endsection

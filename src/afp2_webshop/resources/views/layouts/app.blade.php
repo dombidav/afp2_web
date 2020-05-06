@@ -78,7 +78,7 @@ use Illuminate\Support\Facades\Auth;
                     <div class="widgets-wrap float-md-right">
                         <div class="widget-header  mr-3">
                             <a href="{{ route('cart') }}" class="icon icon-sm rounded-circle border"><i class="fas fa-shopping-cart"></i></a>
-                            <span class="badge badge-pill badge-danger notify">{{ \App\User::cartCount() }}</span>
+                            <span id="user_cart_count" class="badge badge-pill badge-danger notify">{{ \App\User::cartCount() }}</span>
                         </div>
                         <div class="widget-header icontext">
                             <a href="{{ Auth::check() ? route('profile') : route('login') }}" class="icon icon-sm rounded-circle border"><i class="fas fa-user"></i></a>

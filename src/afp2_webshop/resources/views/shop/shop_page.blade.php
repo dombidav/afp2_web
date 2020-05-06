@@ -201,4 +201,6 @@
 
 @section('page_script')
     <script src="{{ URL::asset('js/shop_ajax.js') }}" type="text/javascript"></script>
+
+    <script src="{{ URL::asset('js/add_cart.js') }}" type="text/javascript"></script>
 @endsection
