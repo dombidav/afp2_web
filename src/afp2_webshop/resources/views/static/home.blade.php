@@ -10,12 +10,12 @@
                 <aside class="col-md-3">
                     <nav class="card">
                         <ul class="menu-category">
-                            <li><a href="#">Books</a></li>
-                            <li><a href="#">E-Books</a></li>
-                            <li><a href="#">Foreign books</a></li>
-                            <li><a href="#">Newest</a></li>
-                            <li><a href="#">On Sale</a></li>
-                            <li><a href="#">Preorder</a></li>
+                            <li><a href="{{ route('shop') }}">Books</a></li>
+                            <li><a href="{{ route('shop') }}">E-Books</a></li>
+                            <li><a href="{{ route('shop') }}">Foreign books</a></li>
+                            <li><a href="{{ route('shop') }}">Newest</a></li>
+                            <li><a href="{{ route('shop') }}">On Sale</a></li>
+                            <li><a href="{{ route('shop') }}">Preorder</a></li>
                         </ul>
                     </nav>
                 </aside>
