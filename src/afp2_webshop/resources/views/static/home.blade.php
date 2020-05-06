@@ -16,13 +16,6 @@
                             <li><a href="#">Newest</a></li>
                             <li><a href="#">On Sale</a></li>
                             <li><a href="#">Preorder</a></li>
-                            <li class="has-submenu"><a href="#">Gifts</a>
-                                <ul class="submenu">
-                                    <li><a href="#">Coupons</a></li>
-                                    <li><a href="#">Calendars</a></li>
-                                    <li><a href="#">Gift cards</a></li>
-                                </ul>
-                            </li>
                         </ul>
                     </nav>
                 </aside>
@@ -90,7 +83,7 @@
                 <div class="col-md-3">
                     <div href="#" class="card card-product-grid">
                         <a href="{{ route('shop.get', ['id' => $book->id]) }}" class="img-wrap">
-                            @thumbnail({{ $book->thumbnail }})
+                            <img src="{{ asset("images/book/thumbnails/" . $book->thumbnail) }}"/>
                         </a>
                         <figcaption class="info-wrap">
                             <a href="{{ route('shop.get', ['id' => $book->id]) }}" class="title">@title_cut(40)</a>
