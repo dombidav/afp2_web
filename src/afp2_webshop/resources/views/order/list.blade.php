@@ -5,11 +5,11 @@
 <div class="jumbotron" style="background:#F5F5F5">
 <div class="table responsive">
 <div class="row">
-<div class="col-xs-12 col-sm-6 col-md-6">
-<div class="col-sm-6 col-md-8">
+<div class="col-xs-12 col-sm-12 col-md-12">
+
 
 <table>
-<thead>
+    <thead>
         <tr>
             <th>Order ID</th>
             <th>Items</th>
@@ -18,7 +18,7 @@
             <th>Status</th>
 
         </tr>
-        </thead>
+    </thead>
 <tbody>
 @foreach($orders as $order)
 <tr>
@@ -67,7 +67,6 @@
 
     
 </div>    
-</div>
 </div>
 </div>    
 </div>
