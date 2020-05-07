@@ -12,7 +12,7 @@
 | Browser | Chrome 80.0.3987.149  |
 | Resolution | 1920×1080 |
 | System language | hun |
-| Commit | 275([cc6d33a](https://github.com/dombidav/afp2_web/commit/f6bc3907227386a59b0125c458b9ba4e373d60be)) |
+| Commit | 275([f6bc390](https://github.com/dombidav/afp2_web/commit/f6bc3907227386a59b0125c458b9ba4e373d60be)) |
 
 ## Tab
 ```diff
