@@ -118,24 +118,20 @@ use Illuminate\Support\Facades\Auth;
 <?php //$routes = collect(\Route::getRoutes())->map(function ($route) { return $route->uri(); }); dd($routes); ?>
         <div class="collapse navbar-collapse" id="main_nav">
             <ul class="navbar-nav">
-                @nav_item('main', 'Home')
+                <li class="nav-item  {{ strpos(\Route::currentRouteName(), "main") === false ? '' : 'active' }}">
+                    <a class="nav-link" href="{{ route("main") }}">{{ strpos(\Route::currentRouteName(), "main") === false ? '' : '> ' }} Home</a>
+                </li>
                 @nav_split()
-                @nav_item('shop')
+                <li class="nav-item {{ strpos(\Route::currentRouteName(), "shop") === false ? '' : 'active' }}">
+                    <a class="nav-link" href="{{ route("shop") }}">{{ strpos(\Route::currentRouteName(), "shop") === false ? '' : '> ' }} Shop</a>
+                </li>
                 @nav_split()
-                @nav_item('about')
+                <li class="nav-item  {{ strpos(\Route::currentRouteName(), "about") === false ? '' : 'active' }}">
+                    <a class="nav-link" href="{{ route("about") }}">{{ strpos(\Route::currentRouteName(), "about") === false ? '' : '> ' }} About</a>
+                </li>
                 @nav_split()
-                @nav_item('contact')
-                <li class="nav-item nav-link"> | </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> More</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Category 1</a>
-                        <a class="dropdown-item" href="#">Category 2</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Category 3</a>
-                        <a class="dropdown-item" href="#">Category 4</a>
-                        <a class="dropdown-item" href="#">Category 5</a>
-                    </div>
+                <li class="nav-item  {{ strpos(\Route::currentRouteName(), "contact") === false ? '' : 'active' }}">
+                    <a class="nav-link" href="{{ route("contact") }}">{{ strpos(\Route::currentRouteName(), "contact") === false ? '' : '> ' }} Contact</a>
                 </li>
             </ul>
         </div>
