@@ -4,6 +4,7 @@
 | -- | -- |
 | Date-Time | <DATE AND TIME (YYYY.MM.DD HH:mm)> |
 | Executed by | <TESTED BY> |
+|Developed by |  |
 | Module | UI |
 | Page |  <PAGE> |
 | Result |   <PASS / FAIL (If any test fails)> |
