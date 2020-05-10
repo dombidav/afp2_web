@@ -10,7 +10,7 @@ The functional specification document lists working functions and features for t
 To keep this document easy to understand client report is not included. The original transcript is available [here](https://github.com/dombidav/afp2_web/blob/master/doc/parts/Client%20Report.md).
 
 # Current State
-XYZ-Books Kft. is a relatively new bookstore chain with shops in Budapest and Eger. The company sells both physical copies and e-books in multiple languages mainly Hungarian, English and German. As the customer base is growing rapidly it became harder and harder to complete orders in only these two locations over time. For this reason, XYZ-Books decided to expand to new cities and open a webshop, so customers can place orders on books from home.  As of now, the company has a website at XYZ-books.example.com, however, this site is a static website only containing basic contact information. Having a webshop would help the company keep in touch with customers, and help customers to purchase more easily and from a much wider inventory. That is why XYZ-Books Kft. contacted us.
+XYZ-Books Kft. is a relatively new bookstore chain with shops in Budapest and Eger. The company sells physical copies in multiple languages mainly Hungarian, English and German. As the customer base is growing rapidly it became harder and harder to complete orders in only these two locations over time. For this reason, XYZ-Books decided to expand to new cities and open a webshop, so customers can place orders on books from home. As of now, the company has a website at XYZ-books.example.com, however, this site is a static website only containing basic contact information. Having a webshop would help the company keep in touch with customers, and help customers to purchase more easily and from a much wider inventory. That is why XYZ-Books Kft. contacted us.
 
 # Standards, Laws
 ## General Standards
@@ -37,9 +37,9 @@ Recommended IDE:
 
 Web application must function and display properly in the following browser versions:
 -   Mozilla Firefox
--   Apple Safari
+-   Microsoft Edge
 -   Google Chrome
--   Opera
+-   Internet Explorer
 
 ##  Online shop regulations
 **Definitions:**
@@ -54,8 +54,7 @@ Web application must function and display properly in the following browser vers
 2.  The regulations define the rules for the conclusion between the seller and the customer contracts for the sale of goods by means of distance communication and use by customers of the online store.
 3. Information about the price given in the online store is binding from the moment of receipt of the e-mails. After successful submission of the order, this price will not change regardless of changes in the prices in the store, which may arise in relation to particular goods.
 4. Photos of the goods are placed in the online store for exemplary purposes only and are specifically indicated in the presentation of the goods.
- 5. Customers are not able to purchase goods in the online store if they not registrated users.
- 6. Prerequisite for a successful placing an order, is to provide accurate and real datas at registration as well as at the Order Page.
+ 5. Prerequisite for a successful placing an order, is to provide accurate and real datas at registration as well as at the Order Page.
 
 **The scope of the terms and conditions of use the online shop:** 
   1. To use the service provided by the online store, the customer need to cognize these rules and accept them.  
@@ -65,7 +64,7 @@ Web application must function and display properly in the following browser vers
 **Placing an order:**    
 1. Orders for goods available in the online shop are made through the Order Page, available in the store.    
 2. Placing an order through Order Page is possible around the clock, every day of the week. Orders placed on weekdays will be implemented on  an ongoing basis. Orders placed on saturdays, sundays and holidays will be implemented no earlier than the next business day.    
-3. An order shall be made by logging in to the store, addition of the goods to the shopping cart and confirmation of the order. In the absence of the customer registration in the online shop placing an oreder is not possible.  
+3. An order may be made by logging in to the store, addition of the goods to the shopping cart and confirmation of the order. In the absence of the customer registration, in the online shop placing an order is still possible.  
 4. Sending the order by the customer constitutes an offer submitted by the customer to the seller to enter into a contract of sale, in accordance with the regulations.  
  5. After sending the order the customer receives confirmation of acceptance of his offer by electronic means (confirmation of the order), at the e-mail address indicated by the customer. After receiving above-mentioned acceptance agreement of sale is valid.
  
@@ -77,21 +76,16 @@ Web application must function and display properly in the following browser vers
 
 At the moment the customer has an already working bookstore, which provides every necessary product to the customers. Although purchasing books online is not yet possible, due to the lack of XYZ online bookshop. Our current project aims to extend the functionalities of the client company by providing a fully functional online bookstore.
 
+Before the release of the online bookstore, customers have to actually show up in some of the XYZ bookstores, which is not a problem on its own, because buying books in real life can be fun and have it's own feeling to hold a book or feel the scent of the new books, but it has very limited possibilities. For example, if a certain product is not available in the bookstore or it has been sold out, customers have to wait for the products sometimes more than a week which is quite frustrating, especially if you need your chosen book in hurry because it's as a gift, or you are in a rush because the beginning of the semester is right here and you don't have your required book for a course, so it's easy to assume that everyone wants to get their products as soon as possible. To solve this problem, we will create an online bookshop, which will be connected directly to the product storage, where the customers can find every single book they need, so it won't be necessary to ship the products to all XYZ bookstores, that means every order will be shipped right from the online bookstore, which makes the book buying / book shipping so much easier.
 
-Before the release of the online bookstore, customers have to actually show up in some of the XYZ bookstores, which is not a problem on its own, because buying books in real life can be fun and have its own feeling to hold a book or feel the scent of the new books, but it has very limited possibilities. For example, if a certain product is not available in the bookstore or it has been sold out, customers have to wait for the products sometimes more than a week which is quite frustrating, especially if you need your chosen book in hurry because it's as a gift, or you are in a rush because the beginning of the semester is right here and you don't have your required book for a course, so it's easy to assume that everyone wants to get their products as soon as possible. To solve this problem, we will create an online bookshop, which will be connected directly to the product storage, where the customers can find every single book they need, so it won't be necessary to ship the products to all XYZ bookstores, that means every order will be shipped right from the online bookstore, which makes the whole book buying/ book shipping thing so much easier.
-
-
-Furthermore, ordering an item online is much more convenient than taking any form of public transportation to get to the bookstore, not even mentioning the pollution that cars or any type of public transportation vehicle can cause to the atmosphere, and also you don't need to spend hours to get to the store, trying to find the book you wanted, especially if this day is one of the weekend days, you need to deal with the crowd everywhere in the city, and actually in this time you can't be with your loved ones or you can't just relax at home.Ordering from home is not just convenient but also protects the environment, and protect your nerves from becoming too angry about the lots of people all around the city.
-
+Furthermore, ordering an item online is much more convenient than taking any form of public transportation to get to the bookstore, not even mentioning the pollution that cars or any type of public transportation vehicle can cause to the atmosphere, and also you don't need to spend hours to get to the store, trying to find the book you wanted, especially if this day is one of the weekend days, you need to deal with the crowd everywhere in the city, and actually in this time you can't be with your loved ones or you can't just relax at home. Ordering from home is not just convenient but also protects the environment, and protect your nerves from becoming too angry about the lots of people all around the city.
 
 As a result, customers will more likely spend their money on books at the XYZ bookshop and hopefully they want to use the online bookstore more and more often, because it is so much easier if they can make an order from their computer at home, or from their phone at work, or any remote place that is not any of the bookstores of the Company. That is the main reason the website shall be created and help to make the customers' lives so much easier.
 
 # Requested business model
 - Customers must have an internet connection in order to connect to the website and use it without any disruption.
 
-- Being a registered user is not neccesary for online purchases.
-
-- Users who registered and logged in, they can use extra functions (for example a "favorites" option where they can save the items they want to buy later)
+- Being a registered user is not necessary for online purchases.
 
 - Database connection has to be set and fully functional.
 
@@ -106,11 +100,9 @@ As a result, customers will more likely spend their money on books at the XYZ bo
 # Requirement list
 **Home page:** The home page is the default page of the website, this is the first page the website visitors will see. People can see here a few featured book and they can navigate to other pages of the website, for example their profile page.
  
-**Register:** On this page, the website visitor can register. Registration is optional, the users can surf through the products without it as well. However, they need to be logged in if they want to buy something. Fullname, username, password, email address and birth date are required for registration.
+**Register:** On this page, the website visitor can register. Registration is optional, the users can surf through the products without it as well, and they don't need to be logged in if they want to buy something. Fullname, username, password, email address and birth date are required for registration.
  
 **Log in:** Registered users can log in to their account using this page. They required to give their username and password to do so.
- 
-**Profile page:** In this page the registered and logged in user can see their personal informations. They can change them if they want to but it should require some sort of verification. 
  
 **Categories:** Each book falls into one or more categories. These can be Romantic, Krimi, Youth an Children, Biography, Cartoon, Economy, History and Politics, Schoolbook, Sci-fi, Adventure etc. The customers can list the books by these categories.
  
@@ -118,24 +110,14 @@ As a result, customers will more likely spend their money on books at the XYZ bo
  
 **Shop page:** On this page all of the available book will display. The customers can see the book's cover, title, author and price as well. To make it more manageable, they diplay on multiple pages and the users are able to switch between these. The user can list the books by category as well. (Romantic, Krimi, Youth and children etc.). There should be a filter on this page, so the user could search a book by its name, author or publisher.
  
-**New/Used books:** The webshop can contain used books as well, besides the new ones. This should be marked in the book's description.
- 
-**Product page:** This page can be reached by clicking on one of the books on the shop page. This page should contain the informations about the selected book, such as the title, author, publisher, page number, hard-back/paperback, description, language, year of publication, ISBN. Customers can put the book to their shopping cart or their wish list.
- 
-**Discount:** There can be different discounts for some books or combinations. This is set by the admin. The discount should be displayed on the shop page as well as the product page. 
- 
-**Coupons:** The customers can have different coupons given by the shop/admin. They can use its code to get different discount in the webshop. They should use it when they choose the payment method.
- 
-**Wish list:** Here the products that had been added to the wish list will be displayed. Customers can delete a product if they would like to. This function only available for logged in users.
+**Product page:** This page can be reached by clicking on one of the books on the shop page. This page should contain the informations about the selected book, such as the title, author, publisher, page number, description, language, year of publication, ISBN. Customers can put the book to their shopping cart or their wish list.
  
 **Shopping cart:** The products that had been added to the shopping cart will be displayed here. Customers can delete a product and/or change quantity. This function only available for logged in users.
  
 **Order page:** Here customer can finalize their order by giving their shipping information. They should select the mode of delivery (the delivery company, the place of receipt). Moreover, they should choose the payment method.
 
 ## Admin interface: 
-**Product management:** The admin should be able to add, remove and modify books.  These functions should be user friendly and easy to do as well. Furthermore, they should be able to give discount on specific books and combination of books, which should be displayed on the shop page, the product page as well as on the order page.
+**Product management:** The admin should be able to add, remove and modify books.  These functions should be user friendly and easy to do as well.
 
 **Order management:** The admin should be able to review and manage the incoming orders.
 
-# Design Mockups
-<TEXT>
