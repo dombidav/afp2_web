@@ -1,4 +1,4 @@
-# Introduction
+﻿# Introduction
 
 Our team is a small but ambitious web developer team that aims to achieve the highest heights. The team consists of five trustworthy, young developers, who are eagerly helping out each other and solve problems together. Our main profile is highly dynamic, database-driven websites, especially webshops. We mainly use the Laravel framework, however, we are flexible with our technologies.
 
@@ -14,7 +14,7 @@ To keep this document easy to understand client report is not included. The orig
 
 # Current State
 
-XYZ-Books Kft. is a relatively new bookstore chain with shops in Budapest and Eger. The company sells both physical copies and e-books in multiple languages mainly Hungarian, English and German. As the customer base is growing rapidly it became harder and harder to complete orders in only these two locations over time. For this reason, XYZ-Books decided to expand to new cities and open a webshop, so customers can place orders on books from home.  As of now, the company has a website at XYZ-books.example.com, however, this site is a static website only containing basic contact information. Having a webshop would help the company keep in touch with customers, and help customers to purchase more easily and from a much wider inventory. That is why XYZ-Books Kft. contacted us.
+XYZ-Books Kft. is a relatively new bookstore chain with shops in Budapest and Eger. The company sells physical copies in multiple languages mainly Hungarian, English and German. As the customer base is growing rapidly it became harder and harder to complete orders in only these two locations over time. For this reason, XYZ-Books decided to expand to new cities and open a webshop, so customers can place orders on books from home.  As of now, the company has a website at XYZ-books.example.com, however, this site is a static website only containing basic contact information. Having a webshop would help the company keep in touch with customers, and help customers to purchase more easily and from a much wider inventory. That is why XYZ-Books Kft. contacted us.
 
 # Standards, Laws
 
@@ -43,9 +43,9 @@ Recommended IDE:
 
 Web application must function and display properly in the following browser versions:
 -   Mozilla Firefox
--   Apple Safari
+-    Microsoft Edge
 -   Google Chrome
--   Opera
+-   Internet Explorer
 
 ##  Online shop regulations
 
@@ -61,8 +61,7 @@ Web application must function and display properly in the following browser vers
 2.  The regulations define the rules for the conclusion between the seller and the customer contracts for the sale of goods by means of distance communication and use by customers of the online store.
 3. Information about the price given in the online store is binding from the moment of receipt of the e-mails. After successful submission of the order, this price will not change regardless of changes in the prices in the store, which may arise in relation to particular goods.
 4. Photos of the goods are placed in the online store for exemplary purposes only and are specifically indicated in the presentation of the goods.
- 5. Customers are not able to purchase goods in the online store if they not registrated users.
- 6. Prerequisite for a successful placing an order, is to provide accurate and real datas at registration as well as at the Order Page.
+ 5. Prerequisite for a successful placing an order, is to provide accurate and real datas at registration as well as at the Order Page.
 
 **The scope of the terms and conditions of use the online shop:** 
   1. To use the service provided by the online store, the customer need to cognize these rules and accept them.  
@@ -76,7 +75,7 @@ Web application must function and display properly in the following browser vers
 4. Sending the order by the customer constitutes an offer submitted by the customer to the seller to enter into a contract of sale, in accordance with the regulations.  
  5. After sending the order the customer receives confirmation of acceptance of his offer by electronic means (confirmation of the order), at the e-mail address indicated by the customer. After receiving above-mentioned acceptance agreement of sale is valid.
  
- ## Privacy and Cookie Policy
+## Privacy and Cookie Policy
 
  Obligation to EU privacy laws, it is our responsibility to inform users about how we handle their personal data. For this reason we will provide a Privacy Policy and a Cookie Policy for users to read. In the functional specification it will be explained in details.
 
@@ -85,12 +84,9 @@ Web application must function and display properly in the following browser vers
 
 At the moment the customer has an already working bookstore, which provides every necessary product to the customers. Although purchasing books online is not yet possible, due to the lack of XYZ online bookshop. Our current project aims to extend the functionalities of the client company by providing a fully functional online bookstore.
 
+Before the release of the online bookstore, customers have to actually show up in some of the XYZ bookstores, which is not a problem on its own, because buying books in real life can be fun and have its own feeling to hold a book or feel the scent of the new books, but it has very limited possibilities. For example, if a certain product is not available in the bookstore or it has been sold out, customers have to wait for the products sometimes more than a week which is quite frustrating, especially if you need your chosen book in hurry because it's as a gift, or you are in a rush because the beginning of the semester is right here and you don't have your required book for a course, so it's easy to assume that everyone wants to get their products as soon as possible. To solve this problem, we will create an online bookshop, which will be connected directly to the product storage, where the customers can find every single book they need, so it won't be necessary to ship the products to all XYZ bookstores, that means every order will be shipped right from the online bookstore, which makes the book buying/ book shipping so much easier.
 
-Before the release of the online bookstore, customers have to actually show up in some of the XYZ bookstores, which is not a problem on its own, because buying books in real life can be fun and have its own feeling to hold a book or feel the scent of the new books, but it has very limited possibilities. For example, if a certain product is not available in the bookstore or it has been sold out, customers have to wait for the products sometimes more than a week which is quite frustrating, especially if you need your chosen book in hurry because it's as a gift, or you are in a rush because the beginning of the semester is right here and you don't have your required book for a course, so it's easy to assume that everyone wants to get their products as soon as possible. To solve this problem, we will create an online bookshop, which will be connected directly to the product storage, where the customers can find every single book they need, so it won't be necessary to ship the products to all XYZ bookstores, that means every order will be shipped right from the online bookstore, which makes the whole book buying/ book shipping thing so much easier.
-
-
-Furthermore, ordering an item online is much more convenient than taking any form of public transportation to get to the bookstore, not even mentioning the pollution that cars or any type of public transportation vehicle can cause to the atmosphere, and also you don't need to spend hours to get to the store, trying to find the book you wanted, especially if this day is one of the weekend days, you need to deal with the crowd everywhere in the city, and actually in this time you can't be with your loved ones or you can't just relax at home.Ordering from home is not just convenient but also protects the environment, and protect your nerves from becoming too angry about the lots of people all around the city.
-
+Furthermore, ordering an item online is much more convenient than taking any form of public transportation to get to the bookstore, not even mentioning the pollution that cars or any type of public transportation vehicle can cause to the atmosphere, and also you don't need to spend hours to get to the store, trying to find the book you wanted, especially if this day is one of the weekend days, you need to deal with the crowd everywhere in the city, and actually in this time you can't be with your loved ones or you can't just relax at home. Ordering from home is not just convenient but also protects the environment, and protect your nerves from becoming too angry about the lots of people all around the city.
 
 As a result, customers will more likely spend their money on books at the XYZ bookshop and hopefully they want to use the online bookstore more and more often, because it is so much easier if they can make an order from their computer at home, or from their phone at work, or any remote place that is not any of the bookstores of the Company. That is the main reason the website shall be created and help to make the customers' lives so much easier.
 
@@ -98,7 +94,6 @@ As a result, customers will more likely spend their money on books at the XYZ bo
 
 - Customers must have an internet connection in order to connect to the website and use it without any disruption.
 - Being a registered user is not neccesary for online purchases.
-- Users who registered and logged in, they can use extra functions (for example a "favorites" option where they can save the items they want to buy later)
 - Database connection has to be set and fully functional.
 - Users have to use a 16:9 pc monitor for the best experience but other aspect rations can be used too.
 - Users have to be logged in in order to reach the profile page – guest users do not have a profile page, and only have limited permission to most of the possibilities (mostly only read, but no write.)
@@ -116,9 +111,6 @@ As a result, customers will more likely spend their money on books at the XYZ bo
 - Bestsellers
 - Shop page
 - Product page
-- Discount
-- Coupons
-- Wish list
 - Shopping cart
 - Order page
 
