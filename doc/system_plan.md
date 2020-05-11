@@ -9,8 +9,31 @@ The software requirements specification document lists requirements for the proj
 
 ## Project overview
 
-This document contains the various technologies and softwares that are gonna be used during development, the Business Requirements, Goals and objectives of the project, what reseources will be used during development, the work schedule, the team members that are going to work on this project, what members doing what in said project, the functional requirements of the project, the features requested by the clients, the database structure and plan, the laws and industry standards that this project is subjected, regulations, terms and conditions, privacy policy, consent about user data collecting and how said information is stored, cookies, logging, advertising policies, third party privacy policies, CCPA and GDPR data protection rights, and child protection services(childproofing the webshop).
-The clients were really specific about what they wanted, that maskes our job much easier.
+This document contains various technologies and softwares that are going to be used during development. The Business Requirements, Goals and objectives of the project will be the resources the team will use. Each of the team members are going to work on this project, and what the members will do, is said in the documents above. The documents we need to use during development:
+
+- the Functional Requirements of the project 
+
+- the features requested by the clients
+
+-  the database structure and plan
+
+- the laws and industry standards that this project is subjected
+
+- regulations
+
+- terms and conditions
+
+- cookies
+
+- logging
+
+- privacy policies like: advertising policies and third party privacy policies
+
+- CCPA and GDPR data protection rights
+
+- child protection services (childproofing the webshop).
+
+The clients were really specific about what they wanted and that makes our job much easier.
 
 
 
@@ -39,7 +62,7 @@ The PHP version which is going to be used is PHP 7.2 or higher since Laravel nee
 
 
 
-## Communication – Discord, GitHub
+## Communication – Discord, GitHub, Trello
 
 Discord is a communication software made for voice chat.
 Since Discord is free we are gonna use this software, because it is not sure that all of us will be in the same room when our company develops the webshop the client asked for. With this we will be able to communicate in real time with our coding partners, and since it has a normal chat function that follows the written messages, it will be easy to trace back with the problems that are brought up during development.
@@ -48,6 +71,7 @@ Since Discord is free we are gonna use this software, because it is not sure tha
 GitHub is a free repository where the project will be stored during development. With this we can share and retrivel the versions of our work, and if something is not working we can reroll the changes so we don't have to start from the beginning.
 
 
+Trello is a free web-based Kanban-style list-making application. We can create our task boards with several columns and move the tasks between them. Typically columns include task statuses: To Do, In Progress and Done.
 
 ## Data structure store – MySQL
 
@@ -66,10 +90,10 @@ During the development of this project our company plans to use the jQuery devel
 
 ## Scope
 - **Project objectives**
-We want to bulid a website that can be used to buy ebooks, and real life books too. With using the online bookshop too, we want to help the bookstore in its revenue increase by selling more books.
+We want to bulid a website that can be used to buy real life books. With using the online bookshop too, we want to help the bookstore in its revenue increase by selling more books.
 
 - **Goals**
-We want to bulid a fully working online bookstore where we can register in and log in too for buying some books. On this website there will some features too like saving books what we want to buy later. There will be two types of books: real life books and ebooks. For some specific products there will be sales and we could use coupon codes as well. Not just users can use the online bookshop but admins too who can add, modify and delete the products.
+We want to bulid a fully working online bookstore where we can register in and log in too for buying some books. Users don't need to be logged in to buy books.  Not just users can use the online bookshop but admins too who can add, modify and delete the products.
 
 - **Sub-phases**
 There would be several phases during the work to finish successfully each tasks:
@@ -150,9 +174,6 @@ To mark a task finished or completed we put our tasks in the **Validate** card a
 **Shopping cart:** The customer should be able to add products to his/her cart. 
 
 
-**Wish list:** The customer should be able to add products to his/her wish list.
-
-
 **Purchase:** The customer should be able to buy products. They could buy the products in their shopping cart. They can finalize their order by giving their shipping information. They should select the mode of delivery (the delivery company, the place of receipt). Moreover, they should choose the payment method. They should be able to use coupons.
 
 
@@ -163,7 +184,7 @@ To mark a task finished or completed we put our tasks in the **Validate** card a
 
 
 ## Management requirements 
-**Add product:** Should be able to add new product which are displayed at the shop page. They should be able to give the product"s title, author, publisher, page number, hard-back/paperback, description, language, year of publication and ISBN. As well as the price and possible discounts.
+**Add product:** Should be able to add new product which are displayed at the shop page. They should be able to give the product's title, author, publisher, page number, description, language, year of publication and ISBN and the price.
 
 
 **Delete product:** Should be able to delete product. After that the product is no longer available at the Shop Page.
@@ -174,15 +195,9 @@ To mark a task finished or completed we put our tasks in the **Validate** card a
 
 **Order management:** Should be able to rewiew the incoming orders.
 
-## Marketing requirements 
-**Coupons:** At the payment methods the customer should be able to use coupons which give them discounts.
-
-
-**Discounts:** The admin should be able to add discounts on products which should be displayed at the Shop Page, the Product Page and at the Order Page as well.
 
 ## Sales requirements 
 The management team should be able to add, delete and modify products. When they modify a product they can change any property which they gave to the product when they added it to the shop.
-
 
 They can review all the orders at the Order Management Page.
 
@@ -190,19 +205,27 @@ They can review all the orders at the Order Management Page.
 # Features
 
  **For customers:**
+
  - Registration
+
  - Log in / Log out
- - A product wishlist
+
  - Shopping cart
+
  - Profile Page with editable personal informations
+
  - Search by title/publisher/author/year of publication and categories
+
  - Filter by category
- - Coupon usage
+
 - Browsing the Shop Page
+
 - See detailed informations about the product on the Product Page
 
 **For admins:**
+
  - Add/delete/modify products
+
  - Review orders
 
 
@@ -219,12 +242,19 @@ Registration is recommended but not necessary. Every unregistered or logged out 
 Guests are allowed to:  
 
 - See informational pages (about us, policies, etc.)  
+
 - List every item in the shop inventory, if it is not deleted or hidden.  
+
 - Use the item filters.  
+
 - Show the details of a specific item.  
+
 - Purchase items  
+
 - Registrate a new account  
+
 - Log In to an existing account  
+
 - Ask for password reset on an existing account  
   
 
@@ -235,19 +265,26 @@ A customer is a user who registered through the registration form of the webshop
 They are allowed to:  
 
 - See informational pages (about us, policies, etc.)  
+
 - See their own profile  
+
 - Edit the following fields on their own account:  
-- Full name  
-- Email  
-- Password  
-- Date of birth  
-- Default UI language (in a later version)  
-- Saved billing address  
-- Saved shipping address  
+-- Full name  
+-- Email  
+-- Password  
+-- Date of birth  
+-- Default UI language (in a later version)  
+-- Saved billing address  
+-- Saved shipping address  
+
 - List every item in the shop inventory, if it is not deleted or hidden.  
+
 - Use the item filters.  
+
 - Show the details of a specific item.  
+
 - Purchase items  
+
 - Log Out to an existing account  
   
 
@@ -257,7 +294,9 @@ They are allowed to:
 This role can only be given by an Administrator. This role is responsible for managing stock items. Secretaries have every permission as a customer, furthermore, they can:  
 
 - Add new items  
+
 - Remove items  
+
 - Edit every field on items except the ID field.  
   
 
@@ -267,8 +306,11 @@ This role can only be given by an Administrator. This role is responsible for ma
 This role can only be given by an Administrator. This role is responsible for the user helpdesk. Supports have every permission as a customer, furthermore, they can:  
 
 - See every detail on customers  
+
 - Modify every field on customers except ID  
+
 - See every detail on orders  
+
 - Modify every field on orders except ID
 
 # Database
@@ -277,14 +319,24 @@ This role can only be given by an Administrator. This role is responsible for th
 
 - **User**: Every account registered on the site. 
 	- **ID**: Identification number, **unique** for every user. To avoid index vulnerabilities this field is NOT automaticaly incremented, but a randomly generated hexadecimal number (ex. 5e52c36ecd40a). The business layer is responsible for the uniquenes of the generated number. Can not be changed later!
+
 	- **Full name**: Full name of the user as filled in registration form.
+
 	- **Email**: Email address, must be valid.
+
 	- **Gender**: Choosable on registration.
-	- **Date of birth**: Optional. Birth date of user. In later versions might be used to automaticaly generate special offers or to recommend featured products
+
+	- **Date of birth**: Optional. Birth date of user. In later 
+versions might be used to automaticaly generate special offers or to recommend featured products
+
 	- **Language**: UI language for later version compatibility.
+
 	- **Password**:  One-way hashed password.
+
 	- **Billing address**: Default billing address for this user (if any).
+
 	- **Shipping address**: Default shipping address for this user (if any). If this is empty, but the Billing address is filled use that as shipping address.
+
 	- **Authority**: Authority of the user. As later versions will come out, new permissions might be implemented. Value can be:
 		- 0 = Account is deactivated.
 		- 1 = Email is not confirmed.
@@ -292,63 +344,82 @@ This role can only be given by an Administrator. This role is responsible for th
 		- 3 = Secretary.
 		- 4 = Support.
 		- 9 = Admin.
+
 	- **Created at**: This field will contain the date and time when the user registered.
+
 - **Book**: The products in the webshop inventory
 	- **ID**: Unique Identifier. Can be automatically incremented.
+
 	- **ISBN**: However this field should be unique it is possible that some book will not  have an ISBN.
+
 	- **Title**: Special UTF-8 characters are possible.
+
 	- **Author**: Multiple authors are possible.
+
 	- **Publisher**: Only one publisher per book.
+
 	- **Year of publishing**: Only the year is sufficient.
+
 	- **Genre**: Most books will be associated with more than one genre.
+
 	- **Page Count**: Page count of the book
+
 	- **Language**: Language of the book
+
 	- **Description**: Short, brief description of the book, mostly used in promotional materials. In a later version the website will operate in multiple languages, but description will be writen in the same language as the book it self. 
+
 	- **Price**: Current price of the book in Hungarian Forints. Decimals are not neccessary.
-	- **Discount**: The current discount (if any) in percentage. Can be empty, and 0% should be considered as empty.
+
 	- **In Stock**: Number of books on storage.
+
 	- **Can be Ordered**: Marks if this book can be ordered or not.
+
 	- **Can be Preordered**: Marks if users can order this book even if the invenoty does not have the neccessary amount.
+
 - **Order**: Note that order data DOES NOT contain the actualy ordered items. Those will be in a separate helper object, called "[package](#helper-tables)" which will have a referance to the order it self.
 	- **ID**: Identification number, **unique** for every order. To avoid index vulnerabilities this field is NOT automaticaly incremented, but a randomly generated hexadecimal number (ex. 5e52c36ecd40a). The business layer is responsible for the uniquenes of the generated number. Can not be changed later!
+
 	- **User**: To determine which user put the order. Can be empty if the customer was not logged in.
+
 	- **Billing**: Billing Address. If the user have a default billing address, copy the id here.
+
 	- **Shipping**: Shipping Address. If the user have a default shippingaddress, copy the id here.
-	- **Coupon**: Used coupon for this order (one coupon per order). Can be empty.
+
 - **Address**: To enable non-registered purchases adresses are stored separately from user data.
 	-  **TIN**: Tax Identification number. If the user is registered as a business, this field is neccessary, otherwise it is empty. For this reason logic layer can use this field to determine if the ordering customer is a natural person or a company.
+
 	- **Country**: Only real countries should be allowed
+
 	- **Post code**: Keep in mind that different countries have different postal code format. For now this field is not validated.
+
 	- **City**: In a later version this should be determined from post code.
+
 	- **Street**: Street name
+
 	- **House**: House number with all neccessary other information (floor, door, building, etc.)
+
 	- **Note**: Additional information about the shipping or the order.
 
 - **Author**:
 	- **ID**: Unique Identifier. Can be automatically incremented.
+
 	- **Name**: Name of the author
+
 - **Publsiher**:
 	- **ID**: Unique Identifier. Can be automatically incremented.
+
 	- **Name**: Name of the publisher 
+
 - **Genre**:
 	- **ID**: Unique Identifier. Can be automatically incremented.
+
 	- **Name**: Name of the genre
+
 - **Country**:
 	- **ID**: Unique Identifier. Can be automatically incremented.
+
 	- **Name**: Name of the country
-- **Coupon**:
-	- **ID**: Identification number, **unique** for every coupon. To avoid index vulnerabilities this field is NOT automaticaly incremented, but a randomly generated hexadecimal number (ex. 5e52c36ecd40a). The business layer is responsible for the uniquenes of the generated number. Can not be changed later!
-	- **Action**: ID of the discount this coupon should give
-	- **Used**: True if this coupon is used, empty or false otherwise
-- **Action**: This will be the discount a coupon can provide. Please note that some coupons does not give the customer cheeper product price, but for example gifts. These should be handled by logic layer.
-	- **ID**:  Identification number, **unique** for every coupon. To avoid index vulnerabilities this field is NOT automaticaly incremented, but a randomly generated hexadecimal number (ex. 5e52c36ecd40a). The business layer is responsible for the uniquenes of the generated number. Can not be changed later!
-	- **Description**: Text description for the action
-	- **Discount**: The amount of discount this action provides. If this coupon provides gifts, this field can be used as a parameter field.
-	- **Is percentage**:  If true, the "Discount" field is used as multiplicative ("0.2" is "-20%" because the price will be multiplied with the discount). If false the "Discount" field will be subtracted from the price.
-	- **From sum**: 
-		- If true, the Discount should be applied to the sum of the order. 
-		- If false it should be applied on the most expensive item only. 
-		- If empty, this action provides something other then discount.
+
 
 ## Helper tables
 
@@ -356,14 +427,21 @@ For some table connections additional "helper" tables are required.
 
 - **Multiple author of a single book**:
 	- Book ID
+
 	- Author ID
+
 - **Multiple genre of a single book**:
 	- Book ID
+
 	- Genre ID
+
 - **Multiple books in a single order (PACKAGE)**:
 	- Order ID
+
 	- Book ID
+
 	- Quantity
+
 ## Database Plan
 Database plan is also available [here](https://dbdiagram.io/d/5e52ac1b07a7395d994e032c)
 ### DSL
@@ -545,8 +623,11 @@ Ref: address.country > country.id
 ## General Standards
 Application must meet the following general standards:
  1.  Must be easily understandable and easy to use for the customers.
+
  2.  Must function in a logical manner for the users.
+
  3.  Must use the industry best practices.
+
  4.  Must use styles that are consistent throughout the application and within the associated Web site, including:
  
 - Error messages must appear in a consistent location and style.
@@ -557,8 +638,11 @@ Application must meet the following general standards:
 Web application requires the use of the following (or higher) technologies:
 
 -   PHP 7.2
+
 -   Apache 2.4.0
+
 -   MySQL 8.0
+
 Recommended IDE:
 -   NetBeans IDE 9.0
 
@@ -566,36 +650,56 @@ Recommended IDE:
 
 Web application must function and display properly in the following browser versions:
 -   Mozilla Firefox
--   Apple Safari
+
+-   Microsoft Edge
+
 -   Google Chrome
--   Opera
+
+-   Internet Explorer
 
 ##  Online shop regulations
 **Definitions:**
 1. The seller - XYZ-books
+
 2. Customer- An individual who is at least 14 years old, in case he/she is not 18 yet the consent of his/her legal representative is required. / A legal person or organization unit.
+
 3. Online store / Shop / Webshop -Internet service available at (*-not yet clarified-*) through which a customer can purche goods from the seller.
+
 4. Goods - Movaible items presented in the online shop.
+
 5.  Regulations - Rules of the online shop.
 
 **General provisions:**
+
 1.  Online shop is run by the seller.    
+
 2.  The regulations define the rules for the conclusion between the seller and the customer contracts for the sale of goods by means of distance communication and use by customers of the online store.
+
 3. Information about the price given in the online store is binding from the moment of receipt of the e-mails. After successful submission of the order, this price will not change regardless of changes in the prices in the store, which may arise in relation to particular goods.
+
 4. Photos of the goods are placed in the online store for exemplary purposes only and are specifically indicated in the presentation of the goods.
+
  5. Customers are not able to purchase goods in the online store if they not registrated users.
+
  6. Prerequisite for a successful placing an order, is to provide accurate and real datas at registration as well as at the Order Page.
 
 **The scope of the terms and conditions of use the online shop:** 
   1. To use the service provided by the online store, the customer need to cognize these rules and accept them.  
-  2. The provided informations in the registration form and Order Page should be truthful and current. If the customer provides incorrect or outdated information, in particular as regards to the personal data of the customer, the seller is not obliged to carry out orders. It is prohibited to transfer or make available by the customer illegal content or infringe the rights of third parties.    
+
+  2. The provided informations in the registration form and Order Page should be truthful and current. If the customer provides incorrect or outdated information, in particular as regards to the personal data of the customer, the seller is not obliged to carry out orders. It is prohibited to transfer or make available by the customer illegal content or infringe the rights of third parties.  
+  
 3. Seller shall take the necessary technical and organizational measures to prevent acquisition and modification data provided by the customer during registration and when ordering by unauthorized users.
 
-**Placing an order:**    
-1. Orders for goods available in the online shop are made through the Order Page, available in the store.    
-2. Placing an order through Order Page is possible around the clock, every day of the week. Orders placed on weekdays will be implemented on  an ongoing basis. Orders placed on saturdays, sundays and holidays will be implemented no earlier than the next business day.    
+**Placing an order:**
+    
+1. Orders for goods available in the online shop are made through the Order Page, available in the store.  
+  
+2. Placing an order through Order Page is possible around the clock, every day of the week. Orders placed on weekdays will be implemented on  an ongoing basis. Orders placed on saturdays, sundays and holidays will be implemented no earlier than the next business day.
+    
 3. An order shall be made by logging in to the store, addition of the goods to the shopping cart and confirmation of the order. In the absence of the customer registration in the online shop placing an oreder is not possible.  
+
 4. Sending the order by the customer constitutes an offer submitted by the customer to the seller to enter into a contract of sale, in accordance with the regulations.  
+
  5. After sending the order the customer receives confirmation of acceptance of his offer by electronic means (confirmation of the order), at the e-mail address indicated by the customer. After receiving above-mentioned acceptance agreement of sale is valid.
  
 For Privacy and Cookie Policy see appendix.
@@ -614,9 +718,11 @@ For Privacy and Cookie Policy see appendix.
 
 #### Only applicapble on Trello board:
 
+|  TERM / ACRONYM|  DEFINITION|
+|--|--|
 | RQ | Requirement specification |
 | FUNC | Functional specification |
-| SYS | System plan
+| SYS | System plan|
 
 ## Privacy Policy
 
@@ -643,11 +749,17 @@ When you register for an Account, we may ask for your contact information, inclu
 We use the information we collect in various ways, including to:
 
 -   Provide, operate, and maintain our website
+
 -   Improve, personalize, and expand our website
+
 -   Understand and analyze how you use our website
+
 -   Develop new services, features, and functionality
+
 -   Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the webste, and for marketing and promotional purposes
+
 -   Send you emails
+
 -   Find and prevent fraud
 
 ### Log Files
@@ -678,35 +790,35 @@ You can choose to disable cookies through your individual browser options. To kn
 
 Under the CCPA, among other rights, California consumers have the right to:
 
-Request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.
+- Request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.
 
-Request that a business delete any personal data about the consumer that a business has collected.
+- Request that a business delete any personal data about the consumer that a business has collected.
 
-Request that a business that sells a consumer's personal data, not sell the consumer's personal data.
+- Request that a business that sells a consumer's personal data, not sell the consumer's personal data.
 
-If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.
+- If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.
 
 ### GDPR Data Protection Rights
 
 We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
 
-The right to access – You have the right to request copies of your personal data. We may charge you a small fee for this service.
+- **The right to access** – You have the right to request copies of your personal data. We may charge you a small fee for this service.
 
-The right to rectification – You have the right to request that we correct any information you believe is inaccurate. You also have the right to request that we complete the information you believe is incomplete.
+- **The right to rectification** – You have the right to request that we correct any information you believe is inaccurate. You also have the right to request that we complete the information you believe is incomplete.
 
-The right to erasure – You have the right to request that we erase your personal data, under certain conditions.
+- **The right to erasure** – You have the right to request that we erase your personal data, under certain conditions.
 
-The right to restrict processing – You have the right to request that we restrict the processing of your personal data, under certain conditions.
+- **The right to restrict processing** – You have the right to request that we restrict the processing of your personal data, under certain conditions.
 
-The right to object to processing – You have the right to object to our processing of your personal data, under certain conditions.
+- **The right to object to processing** – You have the right to object to our processing of your personal data, under certain conditions.
 
-The right to data portability – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.
+- **The right to data portability** – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.
 
 If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.
 
 ### Children's Information
 
-Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.
+Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and / or monitor and guide their online activity.
 
 XYZ-books does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.
 
@@ -714,15 +826,18 @@ XYZ-books does not knowingly collect any Personal Identifiable Information from 
 
 This website, XYZ-books.com (the "Website"), is operated by XYZ-books.
 
-### **What are cookies?**
+### What are cookies?
 
 Cookies are a small text files that are stored in your web browser that allows XYZ-books or a third party to recognize you. Cookies can be used to collect, store and share bits of information about your activities across websites, including on XYZ-books.com website.
 
 Cookies might be used for the following purposes:
 
 -   To enable certain functions
+
 -   To provide analytics
+
 -   To store your preferences
+
 -   To enable ad delivery and behavioral advertising
 
 XYZ-books.com uses both session cookies and persistent cookies.
@@ -731,20 +846,22 @@ A session cookie is used to identify a particular visit to our Website. These co
 
 A persistent cookie will remain on your devices for a set period of time specified in the cookie. We use these cookies where we need to identify you over a longer period of time. For example, we would use a persistent cookie if you asked that we keep you signed in.
 
-### **How do third parties use cookies on the XYZ-books Website?**
+### How do third parties use cookies on the XYZ-books Website?
 
 Third party companies like analytics companies and ad networks generally use cookies to collect user information on an anonymous basis. They may use that information to build a profile of your activities on the XYZ-books website and other websites that you've visited.
 
-### **What are your cookies options?**
+### What are your cookies options?
 
 If you don't like the idea of cookies or certain types of cookies, you can change your browser's settings to delete cookies that have already been set and to not accept new cookies. To learn more about how to do this, visit the help pages of your browser.
 
 Please note, however, that if you delete cookies or do not accept them, you might not be able to use all of the features we offer, you may not be able to store your preferences, and some of our pages might not display properly.
 
-### **Where can I find more information about cookies?**
+### Where can I find more information about cookies?
 
 You can learn more about cookies by visiting the following third party websites:
 
 -   [About.com Browser Guide](http://browsers.about.com/od/faq/tp/delete-cookies.htm)
+
 -   [All About Cookies.org](http://allaboutcookies.org/)
+
 -   [Network Advertising Initiative](https://www.networkadvertising.org/)
