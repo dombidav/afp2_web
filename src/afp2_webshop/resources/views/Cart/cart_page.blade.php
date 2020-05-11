@@ -19,7 +19,7 @@
             <table class="table table-borderless text-md-center col-8">
                 <thead>
                 <tr class="border-top">
-                    <th scope="col"></th>
+                    <th scope="col">Image</th>
                     <th scope="col">Title</th>
                     <th scope="col">Piece</th>
                     <th scope="col">Unit price</th>
