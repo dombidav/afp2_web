@@ -11,7 +11,9 @@
 
                         <tbody>
                         <tr class="bg">
-                            <th scope="row"> <a href="#" class="img-wrap"> <img src="/images/unknown_product.png" class="img-sm"> </a>
+                            <th scope="row">
+                            <div class=" d-none d-sm-block"><a href="#" class="img-wrap"><img src="{{ asset("images/book/thumbnails/" . $book->thumbnail) }}" class="img-fluid w-25"> </a></div>
+                            <div class=" d-block d-sm-none" ><a href="#" class="img-wrap"><img src="{{ asset("images/book/thumbnails/" . $book->thumbnail) }}" class="img-fluid"> </a></div>
                             </th>
                             <th>
                                 @title
