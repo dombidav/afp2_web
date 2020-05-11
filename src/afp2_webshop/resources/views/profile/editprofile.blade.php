@@ -40,9 +40,9 @@
                                   <td>
                                       City:
                                   </td>
-                                  
+
                                   <td>
-                                      
+
                                       <input type="text" name="billing_city" value="{{ $user->billing() == null ? "" : $user->billing()->city }}">
                                   </td>
                               </tr>

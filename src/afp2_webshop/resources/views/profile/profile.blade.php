@@ -9,8 +9,8 @@
                         <h2> Your Profile
                         </h2>
                         <div class="table responsive">
-                    
-                    
+
+
                             <div class="divTableBody">
                                 <div class="divTableRow">
                                     <div class="divTableCell">Name: {{ $user->name }}</div>
@@ -35,8 +35,8 @@
                                 </div>
                             </div>
 
-                       
-                    
+
+
                         <p>
 
                         <div class="btn">
@@ -45,12 +45,12 @@
                         </div>
                         <br />
                         <div class="btn-group">
-                        <a href="{{ route('profile.edit') }}" class="btn-warning"> <!--This button looks different from the others for the purpose of the users not mixing them up-->
+                        <a href="{{ route('profile.edit') }}" class="btn btn-warning"> <!--This button looks different from the others for the purpose of the users not mixing them up-->
                         Edit Profile</a> <!--This button should enable the logged in user to edit his/her profile-->
                     </div>
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
 @endsection

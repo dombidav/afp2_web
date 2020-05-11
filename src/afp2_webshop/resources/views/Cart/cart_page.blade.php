@@ -30,7 +30,7 @@
                 <tbody>
                 @foreach($packs as $pack)
                     <tr class="bg">
-                        <th scope="row"> <a href="#" class="img-wrap"> <img src="images/unknown_product.png" class="img-sm img-cart"> </a></th>
+                        <th scope="row"> <a href="#" class="img-wrap"> <img src="{{ asset("images/book/thumbnails/" . $pack['book']->thumbnail) }}" class="img-sm img-cart"> </a></th>
                         <td>
                             {{ $pack['book']->title }}
                         </td>
@@ -68,6 +68,7 @@
             </section>
         @endif
     </div>
+
 
 @endsection
 
