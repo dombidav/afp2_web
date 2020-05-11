@@ -4,7 +4,7 @@
 | -- | -- |
 | Date-Time | 2020.05.10 19:00 |
 | Executed by | Bognár Viktória|
-| Written by | Márton Péter Márton, Dombi Tibor, Urbán Regina, Bognár Viktória |
+| Written by | Marton Péter Márton, Dombi Tibor, Urbán Regina, Bognár Viktória |
 | Result | Pass |
 ---
 

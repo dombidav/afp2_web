@@ -35,7 +35,7 @@ We must make sure:
 ### Roles and Responsibilities
 
 Testing will be executed by:
-	-Márton Péter Márton: Test manager, responsible for UI/UX testing
+	-Marton Péter Márton: Test manager, responsible for UI/UX testing
 	-Urbán Regina Enikő: responsible for UI/UX testing
 	-Bognár Viktória: responsible responsible for test documentations
 	-Dombi Tibor Dávid: responsible for DB testing

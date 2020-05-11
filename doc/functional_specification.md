@@ -43,32 +43,51 @@ Web application must function and display properly in the following browser vers
 
 ##  Online shop regulations
 **Definitions:**
+
 1. The seller - XYZ-books
+
 2. Customer- An individual who is at least 14 years old, in case he/she is not 18 yet the consent of his/her legal representative is required. / A legal person or organization unit.
+
 3. Online store / Shop / Webshop -Internet service available at (*-not yet clarified-*) through which a customer can purche goods from the seller.
+
 4. Goods - Movaible items presented in the online shop.
+
 5.  Regulations - Rules of the online shop.
 
 **General provisions:**
+
 1.  Online shop is run by the seller.    
+
 2.  The regulations define the rules for the conclusion between the seller and the customer contracts for the sale of goods by means of distance communication and use by customers of the online store.
+
 3. Information about the price given in the online store is binding from the moment of receipt of the e-mails. After successful submission of the order, this price will not change regardless of changes in the prices in the store, which may arise in relation to particular goods.
+
 4. Photos of the goods are placed in the online store for exemplary purposes only and are specifically indicated in the presentation of the goods.
+ 
  5. Prerequisite for a successful placing an order, is to provide accurate and real datas at registration as well as at the Order Page.
 
 **The scope of the terms and conditions of use the online shop:** 
+
   1. To use the service provided by the online store, the customer need to cognize these rules and accept them.  
-  2. The provided informations in the registration form and Order Page should be truthful and current. If the customer provides incorrect or outdated information, in particular as regards to the personal data of the customer, the seller is not obliged to carry out orders. It is prohibited to transfer or make available by the customer illegal content or infringe the rights of third parties.    
+
+  2. The provided informations in the registration form and Order Page should be truthful and current. If the customer provides incorrect or outdated information, in particular as regards to the personal data of the customer, the seller is not obliged to carry out orders. It is prohibited to transfer or make available by the customer illegal content or infringe the rights of third parties. 
+   
 3. Seller shall take the necessary technical and organizational measures to prevent acquisition and modification data provided by the customer during registration and when ordering by unauthorized users.
 
 **Placing an order:**    
+
 1. Orders for goods available in the online shop are made through the Order Page, available in the store.    
+
 2. Placing an order through Order Page is possible around the clock, every day of the week. Orders placed on weekdays will be implemented on  an ongoing basis. Orders placed on saturdays, sundays and holidays will be implemented no earlier than the next business day.    
+
 3. An order may be made by logging in to the store, addition of the goods to the shopping cart and confirmation of the order. In the absence of the customer registration, in the online shop placing an order is still possible.  
+
 4. Sending the order by the customer constitutes an offer submitted by the customer to the seller to enter into a contract of sale, in accordance with the regulations.  
+
  5. After sending the order the customer receives confirmation of acceptance of his offer by electronic means (confirmation of the order), at the e-mail address indicated by the customer. After receiving above-mentioned acceptance agreement of sale is valid.
  
- ## Privacy and Cookie Policy:
+## Privacy and Cookie Policy:
+ 
  Obligation to EU privacy laws, it is our responsibility to inform users about how we handle their personal data. For this reason we will provide a Privacy Policy and a Cookie Policy for users to read. In the functional specification it will be explained in details.
 
 
@@ -103,14 +122,16 @@ As a result, customers will more likely spend their money on books at the XYZ bo
 **Register:** On this page, the website visitor can register. Registration is optional, the users can surf through the products without it as well, and they don't need to be logged in if they want to buy something. Fullname, username, password, email address and birth date are required for registration.
  
 **Log in:** Registered users can log in to their account using this page. They required to give their username and password to do so.
+
+ **Profile page:** In this page the registered and logged in user can see their personal informations. They can change them if they want to but it should require some sort of verification. 
  
 **Categories:** Each book falls into one or more categories. These can be Romantic, Krimi, Youth an Children, Biography, Cartoon, Economy, History and Politics, Schoolbook, Sci-fi, Adventure etc. The customers can list the books by these categories.
  
-**Bestsellers:** This is a special category which contains the top 10 book based on which they sold the most. It automatically updates every week based on the sales.
+**Bestsellers:** This is a special category which contains the top 5 book based on which they sold the most. It automatically updates every week based on the sales.
  
 **Shop page:** On this page all of the available book will display. The customers can see the book's cover, title, author and price as well. To make it more manageable, they diplay on multiple pages and the users are able to switch between these. The user can list the books by category as well. (Romantic, Krimi, Youth and children etc.). There should be a filter on this page, so the user could search a book by its name, author or publisher.
  
-**Product page:** This page can be reached by clicking on one of the books on the shop page. This page should contain the informations about the selected book, such as the title, author, publisher, page number, description, language, year of publication, ISBN. Customers can put the book to their shopping cart or their wish list.
+**Product page:** This page can be reached by clicking on one of the books on the shop page. This page should contain the informations about the selected book, such as the title, author, publisher, page number, description, language, year of publication, ISBN. 
  
 **Shopping cart:** The products that had been added to the shopping cart will be displayed here. Customers can delete a product and/or change quantity. This function only available for logged in users.
  

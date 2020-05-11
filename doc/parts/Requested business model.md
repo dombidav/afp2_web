@@ -1,11 +1,8 @@
 ﻿## Requested business model
 
-
 - Customers must have an internet connection in order to connect to the website and use it without any disruption.
 
 - Being a registered user is not neccesary for online purchases.
-
-- Users who registered and logged in, they can use extra functions (for example a "favorites" option where they can save the items they want to buy later)
 
 - Database connection has to be set and fully functional.
 
