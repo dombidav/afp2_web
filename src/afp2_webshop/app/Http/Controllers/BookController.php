@@ -48,6 +48,8 @@ class BookController extends Controller
     }
 
     public function searchMiddleware(Request $request){
+        if(empty($request->get("search_ field")) || $request->get("search_ field") == null)
+            return redirect()->route('shop');
         return redirect()->route('shop.search.query', $request->input('search_field'));
     }
 
