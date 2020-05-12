@@ -5,7 +5,7 @@
     <div class="container">
         @if($packs != null)
         <header class="section-heading">
-            <h3 class="section-title text-md-center">Shopping cart</h3>
+            <h3 class="h1-responsive font-weight-bold text-center my-4">Shopping cart</h3>
         </header>
 
         <!-- sect-heading -->
@@ -16,7 +16,7 @@
                 <input type="hidden" name="status" value="place" />
                 <input type="hidden" name="order" value="{{ $order_id }}" />
             </form>
-            <table class="table table-borderless text-md-center col-8">
+            <table class="table table-borderless text-md-center col-8 table-responsive">
                 <thead>
                 <tr class="border-top">
                     <th scope="col">Image</th>
@@ -30,7 +30,7 @@
                 <tbody>
                 @foreach($packs as $pack)
                     <tr class="bg">
-                        <th scope="row"> <a href="#" class="img-wrap"> <img src="{{ asset("images/book/thumbnails/" . $pack['book']->thumbnail) }}" class="img-sm img-cart"> </a></th>
+                        <td scope="row"> <a href="#" class="img-wrap"> <img src="{{ asset("images/book/thumbnails/" . $pack['book']->thumbnail) }}" class="img-sm img-cart"> </a></td>
                         <td>
                             {{ $pack['book']->title }}
                         </td>
