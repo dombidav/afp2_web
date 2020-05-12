@@ -31,8 +31,8 @@ class GenreTest extends TestCase
         $response = $this->get('/genre');
         $response->assertStatus(200);
 
-        $content = json_decode($this->get('/genre')->content());
-        $this->assertNotEmpty($content[1]->id);
+        $content = $this->get('/genre')->content();
+        $this->assertNotEmpty(json_decode(str_replace("&quot;", "\"", $content)));
     }
 
     public function testSingleGenreShow(){
@@ -40,8 +40,8 @@ class GenreTest extends TestCase
         $response = $this->get('/genre/5');
         $response->assertStatus(200);
 
-        $content = json_decode($this->get('/genre/5')->content());
-        $this->assertNotEmpty($content->id);
+        $content = $this->get('/genre/5')->content();
+        $this->assertNotEmpty(json_decode(str_replace("&quot;", "\"", $content)));
     }
 
     public function testGenreAdd(){

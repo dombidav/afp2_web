@@ -11,6 +11,8 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use function GuzzleHttp\Psr7\str;
+
 //use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CartTest extends TestCase
@@ -29,7 +31,7 @@ class CartTest extends TestCase
         $response = $this->call('GET', '/cart', [], ['guest_id' => '0']);
         $response->assertStatus(200);
 
-        $response->assertSeeText(':');
+        self::assertTrue( strpos($response->content(), "empty") !== -1);
     }
 
     public function testCartIndexAsUser(){
@@ -37,19 +39,17 @@ class CartTest extends TestCase
         $response = $this->actingAs(User::testUser())->get('/cart');
         $response->assertStatus(200);
 
-        $response->assertSeeText(':');
+        self::assertTrue( strpos($response->content(), "empty") !== -1);
     }
 
     public function testCartShow(){
         $user_id = 0;
-        $order_id = '0000000000000000';
         $book_id = 1;
-        Order::CreateCart($user_id, $order_id);
-        Package::IncrementQuantityOrInsertNew($order_id, $book_id);
+        Order::CreateCart($user_id);
         $response = $this->get("/cart/$user_id");
         $response->assertStatus(200);
 
-        $response->assertSeeText(':');
+        self::assertTrue( strpos($response->content(), "empty") !== -1);
     }
 
     public function testCartAddAsGuest(){
@@ -59,7 +59,7 @@ class CartTest extends TestCase
         $response = $this->call('GET', "cart/add/$book", [], $cookies);
         $response->assertStatus(200);
 
-        $response->assertSeeText(':');
+        self::assertTrue( strpos($response->content(), "empty") !== -1);
     }
 
     public function testCartAddAsUser(){
@@ -67,6 +67,6 @@ class CartTest extends TestCase
         $book = '5';
         $user = User::testUser();
         $response = $this->actingAs($user)->get("cart/add/$book");
-        $response->assertSeeText(':');
+        self::assertTrue( strpos($response->content(), "empty") !== -1);
     }
 }

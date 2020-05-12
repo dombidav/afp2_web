@@ -31,8 +31,8 @@ class AuthorTest extends TestCase
         $response = $this->get('/author');
         $response->assertStatus(200);
 
-        $content = json_decode($this->get('/author')->content());
-        $this->assertNotEmpty($content[1]->id);
+        $content = $this->get('/author')->content();
+        $this->assertNotEmpty(json_decode(str_replace("&quot;", "\"", $content)));
     }
 
     public function testSingleAuthorShow(){
@@ -40,8 +40,8 @@ class AuthorTest extends TestCase
         $response = $this->get('/author/5');
         $response->assertStatus(200);
 
-        $content = json_decode($this->get('/author/5')->content());
-        $this->assertNotEmpty($content->id);
+        $content = $this->get('/author/5')->content();
+        $this->assertNotEmpty(json_decode(str_replace("&quot;", "\"", $content)));
     }
 
     public function testAuthorAdd(){

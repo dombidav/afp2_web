@@ -26,19 +26,4 @@ class UserTest extends TestCase
         $response = $this->get('/profile');
         $response->assertStatus(403);
     }
-
-    /*public function testUserFactory(){
-        $table_count = User::all()->count();
-        factory(User::class)->create();
-
-        $this->assertEquals($table_count + 1, User::all());
-    }*/
-
-    public function testIfProfileShowsData(){
-        $user = factory(User::class)->create();
-        $response = $this->actingAs($user)->get('/profile');
-
-        $response->assertStatus(200);
-        $this->assertNotEmpty(json_decode($response->content())->name);
-    }
 }

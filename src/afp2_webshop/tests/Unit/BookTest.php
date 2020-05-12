@@ -30,7 +30,7 @@ class BookTest extends TestCase
         $response = $this->get('/shop');
         $response->assertStatus(200);
 
-        $response->assertSeeText('et');
+        self::assertTrue(strpos($response->content(), "Search") !== -1);
     }
 
     public function testSingleBookShow(){
