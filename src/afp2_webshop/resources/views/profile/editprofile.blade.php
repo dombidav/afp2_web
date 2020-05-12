@@ -10,7 +10,7 @@
                         </h2>
                   <form id="edit_form" method="post" action="{{ route("profile.update") }}">
                       @csrf
-                          <table class="table responsive">
+                          <table class="table-responsive">
 
                               <thead>
                               <tr>
@@ -19,9 +19,9 @@
                               </tr>
                               <tr>
                               <th>Phone: <input id="phone" type="text" name="phone"></th>
-                           
+
                               <th>Date of birth: <input id="dateofbirth" type="date" name="dateofbirth"></th>
-                              
+
                               </tr>
                               <tr>
                               <th>Gender: <select id="genders">
