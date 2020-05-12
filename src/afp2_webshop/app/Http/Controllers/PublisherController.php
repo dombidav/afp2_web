@@ -54,7 +54,7 @@ class PublisherController extends Controller
     public function show($id)
     {
         //return (json_encode(Publisher::where('id', $id)->first()));
-        return view('publisher_id', ['publisher' => Publisher::where('id', $id)->first()]);
+        return view('publisher', ['publishers' => Publisher::where('id', $id)->first()]);
     }
 
     /**
