@@ -16,14 +16,20 @@
                               <tr>
                               <th>Name: <input id="name" type="text" name="name"></th>
                               <th>Email: <input id="email" type="email" name="email"></th>
+                              </tr>
+                              <tr>
                               <th>Phone: <input id="phone" type="text" name="phone"></th>
+                           
+                              <th>Date of birth: <input id="dateofbirth" type="date" name="dateofbirth"></th>
+                              
+                              </tr>
+                              <tr>
                               <th>Gender: <select id="genders">
                                       <option value="male">Male</option>
                                       <option value="female">Female</option>
                                       <option value="other">Other</option>
                                   </select>
                               </th>
-                              <th>Date of birth: <input id="dateofbirth" type="date" name="dateofbirth"></th>
                               </tr>
                               </thead>
                               <tbody>
