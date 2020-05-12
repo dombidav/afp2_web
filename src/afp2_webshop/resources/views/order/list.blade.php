@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div style="overflow-x:auto;">
 <div class="container">
 <div class="jumbotron" style="background:#F5F5F5">
 <div class="table responsive">
@@ -8,11 +9,12 @@
 <div class="col-xs-12 col-sm-12 col-md-12">
 
 
-<table>
+
+<table  class="table-responsive">
             <thead>
                 <tr>
                     <th>Order ID</th>
-                    <th>Items</th>
+                    <th class="my-longcol">Items</th>
                     <th>Total</th>
                     <th>Created at</th>
                     <th>Status</th>
@@ -24,7 +26,7 @@
                 <tr>
                     <td>{{ $order->id }}
                     </td>
-                    <td>@foreach(\App\Helpers\AppHelper::getPackages($order->id) as $pack)
+                    <td class="my-longcol">@foreach(\App\Helpers\AppHelper::getPackages($order->id) as $pack)
                        {{ $pack['count'] }}× {{ $pack['book']->title }}
                         @endforeach
                     </td>
@@ -74,6 +76,7 @@
 </div>    
 </div>
 </div>    
+</div>
 </div>
 </div>
 @endsection
