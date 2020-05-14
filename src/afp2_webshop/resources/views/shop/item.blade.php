@@ -69,19 +69,7 @@
                             </th>
                         </tr>
                         </tbody>
-                        <tbody>
-                        <tr class="bg table table-borderless text-md-center col-3">
-                            <th>Genre
-                            </th>
-                        </tr>
-                        </tbody>
-                        <tbody>
-                        <tr class="bg table table-borderless text-md-center col-3">
-                            <td>
-                                {{ $book->getGenreNames() }}
-                            </td>
-                        </tr>
-                        </tbody>
+
                         <tbody>
                         <tr class="bg table table-borderless text-md-center col-3">
                             <th>
