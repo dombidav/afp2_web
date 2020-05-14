@@ -29,7 +29,7 @@
                 </div> <!-- img-wrap.// -->
                 <figcaption class="info-wrap">
                     <div class="fix-height">
-                        <a href="#" class="title">{{$book->title}}</a>
+                        <a href="#" class="title">{{\App\Helpers\AppHelper::wrap($book->title, 45)}}</a>
                         <div class="price-wrap mt-2">
                             <span class="price">{{$book->price}} Ft</span>
                         </div> <!-- price-wrap.// -->
