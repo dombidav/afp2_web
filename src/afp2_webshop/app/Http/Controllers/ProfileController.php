@@ -23,6 +23,14 @@ class ProfileController extends Controller
     public function update(Request $request){
         if(!Auth::check())
             abort(403);
-
+        $user = Auth::user();
+        $user->name=$request->get('name');
+        $user->email=$request->get('email');
+        $user->phone=$request->get('phone');
+        $user->date_of_birth=$request->get('dateofbirth');
+        $user->save();
+        $user->refresh();
+        Auth::user()->refresh();
+        return redirect()->route('profile');
     }
 }
