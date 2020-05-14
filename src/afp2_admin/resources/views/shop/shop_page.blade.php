@@ -45,7 +45,7 @@
                                                 {{ $b->ISBN }}
                                             </td>
                                             <td>
-                                                {{ $b->title }}
+                                                <a href="{{ route('books.show', $b->id) }}">{{ $b->title }}</a>
                                             </td>
                                             <td>
                                                 {{ $b->publish_year }}
@@ -57,7 +57,7 @@
                                                 {{ $b->price }}
                                             </td>
                                             <td class="td-actions text-right">
-                                                <a rel="tooltip" class="btn btn-success btn-link" href="#" data-original-title="" title="">
+                                                <a rel="tooltip" class="btn btn-success btn-link" href="{{ route('books.edit', $b->id) }}" data-original-title="" title="">
                                                     <i class="material-icons">edit</i>
                                                     <div class="ripple-container"></div>
                                                 </a>

@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('books/create', 'BookController@create')->name('books.create');
     Route::post('books/store', 'BookController@store')->name('books.store');
     Route::get('books/{id}/edit', 'BookController@edit')->name('books.edit')->where('id', '[0-9]+');
-    Route::post('books/{id}/update', 'BookController@update')->name('books.update')->where('id', '[0-9]+');
+    Route::post('books/update', 'BookController@update')->name('books.update')->where('id', '[0-9]+');
     Route::get('books/{id}/delete', 'BookController@delete')->name('books.delete')->where('id', '[0-9]+');
 
     Route::get('orders', 'OrderController@index')->name('orders');

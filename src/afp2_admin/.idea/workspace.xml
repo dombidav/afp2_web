@@ -123,9 +123,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/shop" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\afp2_admin\resources\views\shop" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\afp2_admin\public\js" />
       <recent name="C:\xampp\htdocs\afp2_admin\public\css" />
@@ -161,7 +165,8 @@
       <option name="presentableId" value="Default" />
       <updated>1587397343411</updated>
       <workItem from="1587397357392" duration="19365000" />
-      <workItem from="1589447613666" duration="13820000" />
+      <workItem from="1589447613666" duration="14975000" />
+      <workItem from="1589464580965" duration="2017000" />
     </task>
     <servers />
   </component>
@@ -169,6 +174,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="690" y="311" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589464355817">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="690" y="311" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.30.1920.1050/-1360.30.1360.738@0.30.1920.1050" timestamp="1589464355817" />
     <state x="1152" y="260" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1589458065039">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
@@ -197,9 +206,9 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="616" y="258" key="run.anything.popup/0.30.1920.1050/-1360.30.1360.738@0.30.1920.1050" timestamp="1589455538965" />
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1589463308411">
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1589467569370">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050/-1360.30.1360.738@0.30.1920.1050" timestamp="1589463308411" />
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050/-1360.30.1360.738@0.30.1920.1050" timestamp="1589467569370" />
   </component>
 </project>

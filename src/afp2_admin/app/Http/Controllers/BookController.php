@@ -81,38 +81,41 @@ class BookController extends Controller
         return view('shop.item', ['book' => Book::where('id', $id)->first()]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Book $book
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Book $book)
+    public function edit($id)
     {
-        //
+        return view("shop.edit", ['book' => Book::find($id)]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Book $book
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Book $book)
+    public function update(Request $request)
     {
-        //
+        /** @var Book $book */
+        $book = \App\Book::find($request->get('book_id'));
+        $book->ISBN = $request->get('ISBN');
+        $book->title = $request->get('title');
+        $book->thumbnail = $request->get('thumbnail');
+        $book->publish_year = $request->get('publish_year');
+        $book->language = $request->get('language');
+        $book->page_count = $request->get('page_count');
+        $book->publisher_id = $request->get('publisher_id');
+        $book->description = $request->get('description');
+        $book->can_order = ($request->get('can_order') ?? 0) == 'on' ? 1 : 0;
+        $book->can_preorder = ($request->get('can_preorder') ?? 0) == 'on' ? 1 : 0;
+        $book->in_stock = $request->get('in_stock');
+        $book->price = $request->get('price');
+        $book->save();
+        $book->refresh();
+
+        $this->solveAuthor($request, $book);
+        $this->solveGenre($request, $book);
+
+        return redirect()->route('books');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\Book $book
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Book $book)
+
+    public function delete($id)
     {
-        //
+        Book::destroy($id);
+        return redirect()->route('books');
     }
 
     /**
