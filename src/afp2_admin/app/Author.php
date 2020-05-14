@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Author extends Model
 {
+    protected $fillable = ['name'];
+
     /**
      * @return array|bool
      * @var $ans Illuminate\Database\Eloquent\Collection

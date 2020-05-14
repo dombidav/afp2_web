@@ -62,7 +62,6 @@
         <!-- Library for adding dinamically elements -->
         <script src="{{ asset('material') }}/js/plugins/arrive.min.js"></script>
         <!--  Google Maps Plugin    -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE'"></script>
         <!-- Chartist JS -->
         <script src="{{ asset('material') }}/js/plugins/chartist.min.js"></script>
         <!--  Notifications Plugin    -->
@@ -70,6 +69,8 @@
         <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
         <script src="{{ asset('material') }}/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
         <script src="{{ asset('material') }}/js/settings.js"></script>
+        <link rel="stylesheet" href="{{ asset('css/amsify.suggestags.css') }}">
+        <script src="{{ asset('js/jquery.amsify.suggestags.js') }}"></script>
         <script type="text/javascript">
             $(document).ready( function () {
                 $('[id^=data_table]').DataTable();

@@ -54,7 +54,7 @@
                                                 {{ $u->id }}
                                             </td>
                                             <td>
-                                                {{ $u->name }}
+                                                <a href="{{ route('customers.show', $u->id) }}">{{ $u->name }}</a>
                                             </td>
                                             <td>
                                                 {{ $u->email }}

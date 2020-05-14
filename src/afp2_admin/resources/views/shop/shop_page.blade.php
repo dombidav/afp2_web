@@ -12,7 +12,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12 text-right">
-                                    <a href="#" class="btn btn-sm btn-primary">Add book</a>
+                                    <a href="{{ route('books.create') }}" class="btn btn-sm btn-primary">Add book</a>
                                 </div>
                             </div>
                             <div class="table-responsive">

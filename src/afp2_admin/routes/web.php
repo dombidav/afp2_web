@@ -17,10 +17,17 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('customers', 'UserController@index')->name('customers');
-    Route::get('customer/{id}', 'UserController@show')->name('customers.show');
-    Route::get('customer/{id}/delete', 'UserController@delete')->name('customers.delete');
+    Route::get('customer/{id}', 'UserController@show')->name('customers.show')->where('id', '[0-9]+');
+    Route::get('customer/{id}/delete', 'UserController@delete')->name('customers.delete')->where('id', '[0-9]+');
 
     Route::get('books', 'BookController@index')->name('books');
+    Route::get('books/{id}', 'BookController@show')->name('books.show')->where('id', '[0-9]+');
+    Route::get('books/create', 'BookController@create')->name('books.create');
+    Route::post('books/store', 'BookController@store')->name('books.store');
+    Route::get('books/{id}/edit', 'BookController@edit')->name('books.edit')->where('id', '[0-9]+');
+    Route::post('books/{id}/update', 'BookController@update')->name('books.update')->where('id', '[0-9]+');
+    Route::get('books/{id}/delete', 'BookController@delete')->name('books.delete')->where('id', '[0-9]+');
+
     Route::get('orders', 'OrderController@index')->name('orders');
 
 

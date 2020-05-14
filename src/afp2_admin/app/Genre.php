@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Genre extends Model
 {
+    protected $fillable = ['name_en'];
     /**
      * @return array|bool
      * @var $ans Illuminate\Database\Eloquent\Collection

@@ -12,6 +12,21 @@ use Illuminate\Support\Facades\DB;
  */
 class Book extends Model
 {
+    protected $fillable = [
+        'ISBN',
+        'title',
+        'thumbnail',
+        'publish_year',
+        'publisher_id',
+        'language',
+        'page_count',
+        'description',
+        'can_order',
+        'can_preorder',
+        'in_stock',
+        'price'
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Builder
      * @var $ans Illuminate\Database\Eloquent\Collection

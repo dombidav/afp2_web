@@ -125,6 +125,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\afp2_admin\public\js" />
+      <recent name="C:\xampp\htdocs\afp2_admin\public\css" />
+      <recent name="C:\xampp\htdocs\afp2_admin\resources\views\shop" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -154,7 +161,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587397343411</updated>
       <workItem from="1587397357392" duration="19365000" />
-      <workItem from="1589447613666" duration="2281000" />
+      <workItem from="1589447613666" duration="13820000" />
     </task>
     <servers />
   </component>
@@ -162,6 +169,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1152" y="260" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1589458065039">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="1152" y="260" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.30.1920.1050/-1360.30.1360.738@0.30.1920.1050" timestamp="1589458065039" />
     <state x="714" y="408" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1589449270491">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
@@ -170,10 +181,10 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="841" y="489" key="Laravel.ExtractPartialViewDialog/0.30.1920.1050/-1360.30.1360.738@0.30.1920.1050" timestamp="1587416244786" />
-    <state x="794" y="480" key="NewPhpFileDialog" timestamp="1589449072362">
+    <state x="794" y="480" key="NewPhpFileDialog" timestamp="1589451968686">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="794" y="480" key="NewPhpFileDialog/0.30.1920.1050/-1360.30.1360.738@0.30.1920.1050" timestamp="1589449072362" />
+    <state x="794" y="480" key="NewPhpFileDialog/0.30.1920.1050/-1360.30.1360.738@0.30.1920.1050" timestamp="1589451968686" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1587416238240">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
@@ -182,9 +193,13 @@
       <screen x="-1360" y="30" width="1360" height="738" />
     </state>
     <state x="-1360" y="30" width="1376" height="830" key="dock-window-1/0.30.1920.1050/-1360.30.1360.738@0.30.1920.1050" timestamp="1589449442352" />
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1587410355246">
+    <state x="616" y="258" key="run.anything.popup" timestamp="1589455538965">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050/-1360.30.1360.738@0.30.1920.1050" timestamp="1587410355246" />
+    <state x="616" y="258" key="run.anything.popup/0.30.1920.1050/-1360.30.1360.738@0.30.1920.1050" timestamp="1589455538965" />
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1589463308411">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050/-1360.30.1360.738@0.30.1920.1050" timestamp="1589463308411" />
   </component>
 </project>

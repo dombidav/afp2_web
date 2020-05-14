@@ -12,7 +12,7 @@
           </li>
         <li>
           <a href="https://www.github.com/dombidav" target="_blank">
-              Dombi Tibor Dávid (HL5U4V)
+              Urbán Regina, Bognár Viktória,  Márton Péter, Dombi Tibor
           </a>
         </li>
         <li>
@@ -24,8 +24,8 @@
 
       </ul>
     </nav>
-    <div class="copyright float-right">
+    <!--div class="copyright float-right">
        <a href="https://github.com/creativetimofficial/material-dashboard-laravel">Material Dashboard</a> by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> and <a href="https://www.updivision.com" target="_blank">UPDIVISION</a>
-    </div>
+    </div-->
   </div>
 </footer>
