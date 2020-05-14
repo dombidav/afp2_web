@@ -59,7 +59,7 @@
                         <tbody>
                         <tr class="bg table table-borderless text-md-center col-3">
                             <td>
-                                {{\App\Publisher::where('id', $book->publisher_id)->first()->name}}
+                                @publisher
                             </td>
                         </tr>
                         </tbody>
